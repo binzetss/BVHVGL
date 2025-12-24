@@ -1,0 +1,391 @@
+/* =========================== */
+/* WRAPPER */
+/* =========================== */
+.sumenh-wrapper {
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    #eef1f5 0%,
+    #eef1f5 40%,
+    #d7eaff 100%
+  );
+  padding: 30px 0;
+}
+
+/* =========================== */
+/* TITLE CHUẨN */
+/* =========================== */
+.sm-title,
+.vision-title,
+.lt-title,
+.lt-title-right {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0e73ba;
+  text-transform: uppercase;
+  margin-left: 70px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.sm-title::after,
+.vision-title::after,
+.lt-title::after,
+.lt-title-right::after {
+  content: "";
+  width: 260px;
+  height: 4px;
+  background: #0e73ba;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  border-radius: 4px;
+}
+
+/* =========================== */
+/* TITLE RIÊNG CHO MỤC 3 */
+/* =========================== */
+
+.lt-title-left {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0e73ba;
+  text-transform: uppercase;
+  margin-left: 0px !important;   /* ✔ KHÔNG CÓ 70PX */
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.lt-title-left::after {
+  content: "";
+  width: 260px;
+  height: 4px;
+  background: #0e73ba;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  border-radius: 4px;
+}
+
+/* =========================== */
+/* 1) SỨ MỆNH */
+/* =========================== */
+.sm-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sm-row {
+  display: flex;
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.sm-box {
+  flex: 1;
+  background: #fff;
+  padding: 35px 26px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.sm-icon {
+  width: 120px;
+  height:120px;
+  margin: 0 auto 18px;
+}
+
+/* =========================== */
+/* 2) TẦM NHÌN */
+/* =========================== */
+
+.vision-container {
+  max-width: 1500px;
+  margin: 40px auto 0 auto;
+  padding: 0 20px;
+}
+
+.vision-main {
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.vision-circle-icon {
+  width: 230px;
+  height: 210px;
+  margin-left: 100px;
+}
+
+.vision-right {
+  margin-left: 70px;
+  margin-top: -30px;
+  flex: 1;
+  border-left: 3px solid #0e73ba;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* =========================== */
+/* 3) LỢI THẾ – ẢNH TRÁI */
+/* =========================== */
+
+.lt-row {
+  max-width: 1500px;
+  margin: 70px auto 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 40px;
+}
+
+.lt-left {
+  flex: 1;
+  position: relative;
+}
+
+.lt-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50px;
+
+  z-index: 2;
+}
+
+.lt-img {
+  width: 100%;
+  border-radius: 14px;
+
+}
+
+.lt-right {
+  flex: 1;
+  padding-left: 25px;
+  margin-right: 100px;
+}
+
+/* =========================== */
+/* 4) LỢI THẾ – SWIPER */
+/* =========================== */
+
+.lt-geo-row {
+  max-width: 1500px;
+  margin: 30px auto 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 40px;
+}
+
+.lt-geo-left > p {
+  margin-left: 70px;
+  margin-right: 70px;
+  text-align: justify;
+}
+
+.lt-geo-left {
+  flex: 1;
+  width: 50%;
+}
+
+.lt-geo-right {
+  flex: 1;
+  width: 50%;
+}
+
+.lt-geo-img {
+  width: 80%;
+  height: 330px;
+  border-radius: 22px;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+  background: #c3cfe6 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #0e73ba !important;
+}
+@media (max-width: 768px) {
+
+  .sumenh-wrapper {
+   padding-top: 10px;
+    margin-top: -120px;
+  }
+
+  /* ===== TITLE ===== */
+  .sm-title,
+  .vision-title,
+  .lt-title,
+  .lt-title-left {
+    font-size: 22px;
+    margin-left: 0;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  .sm-title::after,
+  .vision-title::after,
+  .lt-title::after,
+  .lt-title-left::after {
+    width: 140px;
+    height: 3px;
+  }
+
+  /* =====================
+     1) SỨ MỆNH
+  ===================== */
+  .sm-row {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .sm-box {
+    padding: 10px 14px;
+  }
+
+  .sm-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+  }
+
+  .sm-box-title {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .sm-box p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* =====================
+     2) TẦM NHÌN
+  ===================== */
+  .vision-main {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .vision-circle-icon {
+    width: 120px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .vision-right {
+    margin: 0;
+    padding-left: 14px;
+    border-left-width: 2px;
+  }
+
+  .vision-right p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* =====================
+     3) LỢI THẾ – ẢNH TRÁI
+  ===================== */
+  .lt-row {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .lt-right {
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  .lt-right p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* =====================
+     4) LỢI THẾ – SWIPER
+  ===================== */
+  .lt-geo-row {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .lt-geo-left,
+  .lt-geo-right {
+    width: 100%;
+  }
+
+  .lt-geo-left > p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .lt-geo-img {
+    width: 100%;
+    height: 220px;
+    border-radius: 16px;
+  }
+}
+@media (max-width: 768px) {
+
+  .vision-main {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .vision-left {
+    flex: 0 0 80px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .vision-circle-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0;
+  }
+
+  .vision-right {
+    flex: 1;
+    margin: 0;
+    padding-left: 12px;
+    border-left-width: 2px;
+  }
+
+  .vision-right p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+@media (max-width: 768px) {
+
+  .sm-box p {
+    text-align: center;
+    line-height: 1.6;
+    word-spacing: normal;
+  }
+
+
+  .vision-right p,
+  .lt-right p,
+  .lt-geo-left p {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.6;
+  }
+
+}
+
+

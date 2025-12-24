@@ -1,0 +1,220 @@
+/* NỀN CHUNG CHO TRANG TIỆN ÍCH (giống style các trang khác) */
+.wrapper {
+  background: linear-gradient(to bottom, #ffffff 0%, #f4f8fd 40%, #e3f0ff 100%);
+}
+
+/* KHUNG CHÍNH */
+.tienich-wrapper {
+  max-width: 1500px;
+  margin: 0 auto 0px;
+  padding:0px 20px 0px;
+}
+
+
+.home-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #0e73ba;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+.icon-home {
+  font-size: 15px;
+}
+
+.sep {
+  opacity: 0.6;
+}
+
+.current {
+  text-transform: capitalize;
+}
+
+/* HEADER */
+.tienich-header-box {
+  padding: 24px 26px 20px;
+  border-radius: 18px;
+  background: linear-gradient(#f2f6ff, #ffffff);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+  margin-bottom: 26px;
+}
+
+.tienich-title {
+  font-size: 26px;
+  color: #0e73ba;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.tienich-intro {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* LIST = GRID 2 CỘT */
+.tienich-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* CARD CHÍNH */
+.tienich-card {
+  display: flex;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.tienich-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
+/* ẢNH BÊN TRÁI */
+.tienich-card-image {
+  flex: 0 0 260px;
+  max-width: 260px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.tienich-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.tienich-card:hover .tienich-card-image img {
+  transform: scale(1.08);
+}
+
+/* NỘI DUNG BÊN PHẢI */
+.tienich-card-content {
+  padding: 16px 20px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tienich-card-top {
+  margin-bottom: 8px;
+}
+
+/* TAG NHỎ TRÊN ĐẦU */
+.tienich-card-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e4f2ff;
+  color: #0e73ba;
+  margin-bottom: 6px;
+}
+
+/* TITLE + DESC */
+.tienich-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 4px;
+}
+
+.tienich-card-desc {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* LINK DƯỚI CÙNG */
+.tienich-card-bottom {
+  margin-top: 6px;
+}
+
+.tienich-card-link {
+  font-size: 14px;
+  color: #0e73ba;
+  font-weight: 600;
+}
+
+.tienich-card:hover .tienich-card-link {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .tienich-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .tienich-card-image {
+    flex: 0 0 220px;
+    max-width: 220px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tienich-wrapper {
+    padding: 10px 12px 30px;
+  }
+
+  .tienich-header-box {
+    padding: 18px 16px;
+  }
+
+  .tienich-title {
+    font-size: 22px;
+  }
+
+  .tienich-card {
+    flex-direction: column;
+  }
+
+  .tienich-card-image {
+    width: 100%;
+    max-width: 100%;
+    height: 180px;
+  }
+
+  .tienich-card-content {
+    padding: 14px 16px 16px;
+  }
+}
+.tienich-show-more {
+  text-align: center;
+  margin-top: 22px;
+}
+
+.tienich-more-btn {
+  background: #0e73ba;
+  color: #fff;
+  padding: 11px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(8, 90, 146, 0.35);
+  transition: 0.2s ease;
+}
+
+.tienich-more-btn:hover {
+  background: #085a92;
+  transform: translateY(-2px);
+}

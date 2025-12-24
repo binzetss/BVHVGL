@@ -1,0 +1,533 @@
+/* ================= BASE ================= */
+
+.doctor-detail-wrapper {
+  margin-top: 8px;
+  line-height: 1.6;
+  color: #333;
+  max-width: 1200px;
+
+}
+
+
+
+/* Header wrapper */
+.dd-left {
+
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+/* Ảnh bác sĩ bên trái */
+.dd-photo-box {
+  width: 180px;
+  min-width: 180px;
+  border-top: 2px solid #0e73ba;
+  border-bottom: 2px solid #0e73ba;
+  border-left: 2px solid #0e73ba;
+  padding: 4px;
+  background: #fff;
+}
+
+.dd-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Khối nền xanh bên phải */
+.dd-left-name-box {
+  flex: 1;
+  background: #0e73ba;
+  color: #fff;
+  padding: 22px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Tên */
+.dd-left-name {
+  font-size: 26px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* Học vị */
+.dd-left-degree {
+  font-size: 18px;
+  opacity: 0.95;
+  margin-bottom: 6px;
+}
+
+
+
+.dd-right {
+  width: 100%;
+}
+
+.dd-name-main {
+  display: none;
+}
+
+
+
+.dd-block {
+  max-width: 1000px;
+  margin: 26px auto 0;
+}
+
+.dd-block-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0e73ba;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.dd-desc {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* ================= TIMELINE ================= */
+
+.dd-timeline {
+  padding-left: 16px;
+}
+
+.dd-timeline-row {
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.dd-timeline-row::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0e73ba;
+}
+
+.dd-timeline-year {
+  font-weight: 600;
+  color: #0e73ba;
+  margin-right: 6px;
+}
+
+.dd-timeline-text {
+  font-size: 18px;
+}
+
+/* ================= HÌNH ẢNH HOẠT ĐỘNG ================= */
+
+.dd-activity-block .dd-activity-figure {
+  max-width: 1000px;
+  margin: 10px auto 0;
+  border: 1px solid #d8dde6;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dd-activity-figure img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: contain;
+}
+
+.dd-activity-caption {
+  background: #0e73ba;
+  color: #fff;
+  font-size: 16px;
+  padding: 6px 10px;
+}
+
+/* ================= RELATED ================= */
+
+.related-wrapper {
+  margin-top: 40px;
+}
+
+.related-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0e73ba;
+  margin-bottom: 16px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .dd-left {
+    flex-direction: column;
+  }
+
+  .dd-photo-box {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .dd-left-name-box {
+    text-align: center;
+  }
+
+  .dd-left-name {
+    font-size: 22px;
+  }
+}
+
+.dd-left-name-box .dd-line-main {
+  color: #fff;
+  font-weight: 800;
+  font-size: 25px;
+  margin-top: 6px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.dd-left-name-box .dd-line-main1 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 6px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.dd-left-name-box .dd-line-main .dd-left-name-box .dd-line-main:first-of-type {
+  font-weight: 600;
+}
+
+.dd-left-degree {
+  font-size: 18px;
+  opacity: 0.95;
+  margin-top: 4px;
+}
+
+
+.related-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.related-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.related-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 22px rgba(5, 86, 150, 0.18);
+  overflow: hidden;
+  width: 220px;
+  max-width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(5, 86, 150, 0.26);
+}
+
+
+.related-card-top {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 0px 0px;
+}
+
+.related-img {
+  width:150px ;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 14px;
+
+}
+
+
+.related-card-bottom {
+  background: #0e73ba;
+  color: #fff;
+  padding: 14px 12px 16px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.related-name {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.related-role {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.related-hospital {
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+
+@media (max-width: 768px) {
+  .related-card {
+    width: 230px;
+    height: 310px;
+  }
+
+  .related-img {
+    width: 180px;
+    height: 170px;
+  }
+}
+
+.dd-left-name-row {
+
+  align-items: flex-end;
+  gap: 6px;
+  /* khoảng cách giữa degree & name */
+}
+
+/* Giữ style cũ cho degree */
+.dd-left-degree {
+  font-size: 36px;
+
+  text-transform: uppercase;
+}
+
+/* Giữ style cũ cho name */
+.dd-left-name {
+  font-size: 50px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.related-link {
+  text-decoration: none;
+}
+/* =====================================================
+   =============== DOCTOR DETAIL – MOBILE ==============
+===================================================== */
+@media (max-width: 768px) {
+
+  /* WRAPPER */
+  .doctor-detail-wrapper {
+    max-width: 100%;
+    padding: 0 14px;
+  }
+
+  /* ===== HEADER ===== */
+  .dd-left {
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+
+  /* IMAGE */
+  .dd-photo-box {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+    border: 2px solid #0e73ba;
+  }
+
+  .dd-photo-box img {
+    height: auto;
+  }
+
+  /* NAME BOX */
+  .dd-left-name-box {
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  .dd-left-name-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* DEGREE */
+  .dd-left-degree {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  /* NAME */
+  .dd-left-name {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  /* POSITION / DEPARTMENT */
+  .dd-line-main1 {
+    font-size: 10px;
+    font-weight: 500;
+  }
+
+  .dd-line-main {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  /* ===== CONTENT ===== */
+  .dd-block {
+    margin-top: 18px;
+  }
+
+  .dd-block-title {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .dd-desc {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ===== ACTIVITY IMAGES ===== */
+  .dd-activity-figure img {
+    max-height: 280px;
+    object-fit: contain;
+  }
+
+  .dd-activity-caption {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* ===== RELATED DOCTORS ===== */
+  .related-title {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .related-card {
+    width: 240px;
+    height: 320px;
+  }
+
+  .related-img {
+    width: 170px;
+    height: 200px;
+  }
+
+  .related-name {
+    font-size: 14px;
+  }
+
+  .related-role {
+    font-size: 13px;
+  }
+
+  .related-hospital {
+    font-size: 12px;
+  }
+}
+/* ================= RELATED LIST – MOBILE ================= */
+@media (max-width: 768px) {
+
+  .related-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 12px;
+  }
+
+  .related-list-item {
+    display: flex;
+    gap: 14px;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(5, 86, 150, 0.12);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .related-list-img {
+    width: 90px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .related-list-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .related-list-name {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0e73ba;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .related-list-role {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 2px;
+  }
+
+  .related-list-hospital {
+    font-size: 12px;
+    color: #666;
+  }
+   /* ===== NAME ROW: CÙNG 1 HÀNG ===== */
+  .dd-left-name-row {
+    display: flex;
+    flex-direction: row;        /* 🔥 nằm cùng hàng */
+     align-items: baseline;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;            /* phòng trường hợp tên dài */
+  }
+
+  /* DEGREE */
+  .dd-left-degree {
+    font-size: 18px;            /* 🔽 giảm chữ */
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  /* NAME */
+  .dd-left-name {
+    font-size: 25px;            /* 🔽 giảm chữ */
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+   .dd-left-name-box .dd-line-main {
+    font-size: 16px;      /* nhỏ lại */
+    font-weight: 600;     /* nhẹ hơn */
+    line-height: 1.3;
+    margin-top: 4px;
+    text-transform: none; /* bỏ uppercase cho dễ đọc mobile */
+    opacity: 0.95;
+  }
+}
+

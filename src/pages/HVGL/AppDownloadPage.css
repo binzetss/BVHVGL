@@ -1,0 +1,654 @@
+/* NỀN CHUNG */
+.appdl-wrapper {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #f4f8fd 40%,
+    #e3f0ff 100%
+  );
+}
+
+.appdl-inner {
+  max-width: 1500px;
+  margin:  auto;
+  padding: 0 20px 0;
+}
+
+/* ===== HERO ===== */
+.appdl-hero {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-size:100% auto !important; /* zoom nhỏ lại ảnh */
+  background-position: right center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0 0 30px 30px;
+  overflow: hidden;
+}
+
+.appdl-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, #4fb3ff, #0e73ba);
+  margin-left: 50px;
+}
+
+.appdl-hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.55)
+  ); */
+}
+
+.appdl-hero-text {
+  position: absolute;
+  bottom: 36px;
+  left: 40px;
+  right: 40px;
+  color: #0e73ba;
+  max-width: 720px;
+}
+
+.appdl-hero-text h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.appdl-hero-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.96;
+}
+
+/* ===== BODY LAYOUT ===== */
+.appdl-container {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  margin-top: -10px;
+}
+
+.appdl-left {
+  flex: 1;
+}
+
+.appdl-right {
+  width: 360px;
+  position: sticky;
+  top: 140px;
+  align-self: flex-start;
+  margin-bottom: 30px;
+}
+
+/* BREADCRUMB – tái sử dụng style giống PriceDetailPage */
+/* .breadcrumb {
+  margin: 18px 0 14px;
+  display: flex;
+  gap: 6px;
+  font-size: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.breadcrumb .link {
+  color: #0e73ba;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.breadcrumb .link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .sep {
+  opacity: 0.7;
+}
+
+.breadcrumb .current {
+  font-weight: 700;
+}
+
+.icon-home {
+  font-size: 14px;
+} */
+
+/* BLOCK CHÍNH */
+.appdl-block {
+  background: #ffffff;
+  padding: 24px 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.06);
+  margin-bottom: 26px;
+}
+
+.appdl-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0e73ba;
+  margin-bottom: 8px;
+}
+
+.appdl-desc {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+/* LƯỚI CHÍNH: QR + DOWNLOAD */
+.appdl-main-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr;
+  gap: 18px;
+}
+
+/* QR CARD */
+.appdl-qr-card {
+  background: #f8fbff;
+  border-radius: 14px;
+  padding: 16px 18px;
+  border: 1px solid #dbeafe;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.appdl-qr-header {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.appdl-qr-icon {
+  font-size: 30px;
+  color: #0e73ba;
+  flex-shrink: 0;
+}
+
+.appdl-qr-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0e73ba;
+}
+
+.appdl-qr-sub {
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.appdl-qr-box {
+  margin-top: 4px;
+  align-self: center;
+  width: 180px;
+  height: 180px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.appdl-qr-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: qrZoom 6s ease-in-out infinite;
+  transition: opacity 0.3s ease;
+}
+@keyframes qrZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.appdl-note-small {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* DOWNLOAD CARD */
+.appdl-download-card {
+  background: #f9fafb;
+  border-radius: 14px;
+  padding: 16px 18px;
+  border: 1px solid #e5e7eb;
+}
+
+/* BUTTON GROUP */
+.appdl-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.appdl-store-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.22s ease;
+}
+
+.appdl-store-btn.ios {
+  background: #0e73ba;
+  color: #ffffff;
+}
+
+.appdl-store-btn.android {
+  background: #ffffff;
+  color: #0e73ba;
+  border-color: #0e73ba;
+}
+
+.appdl-store-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(15, 118, 178, 0.18);
+}
+
+.appdl-store-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.appdl-store-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.appdl-store-text .small {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.appdl-store-text .big {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.appdl-store-arrow {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* STEPS */
+.appdl-steps {
+  margin-top: 4px;
+}
+
+.appdl-steps-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 4px;
+}
+
+.appdl-steps ol {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.appdl-steps li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+/* ===== RIGHT – PHONE PREVIEW ===== */
+.appdl-phone-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  margin-top: 60px;
+}
+
+.appdl-phone-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin: 6px 0 4px;
+}
+
+.appdl-phone-header p {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.appdl-chip {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0e73ba;
+  font-weight: 600;
+}
+
+.appdl-phone-body {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+/* PHONE MOCKUP */
+.appdl-phone-mockup {
+  width: 230px;
+  height: 440px;
+  border-radius: 40px;
+  background: #0f172a;
+  padding: 10px;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
+}
+
+.appdl-phone-mockup::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 70px;
+  height: 6px;
+  border-radius: 999px;
+  background: #020617;
+  transform: translateX(-50%);
+}
+
+.appdl-phone-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.appdl-phone-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+.appdl-phone-features ul {
+  list-style: disc;
+  padding-left: 18px;
+  margin: 0;
+}
+
+.appdl-phone-features li {
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+/* TIP BOX */
+.appdl-tip-box {
+  background: #e8f4ff;
+  border-radius: 14px;
+  padding: 12px 14px;
+  border: 1px solid #c4e0ff;
+}
+
+.appdl-tip-box h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 4px;
+}
+
+.appdl-tip-box p {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .appdl-container {
+    flex-direction: column;
+  }
+
+  .appdl-right {
+    width: 100%;
+    position: static;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .appdl-hero {
+    height: 230px;
+  }
+
+  .appdl-hero-text {
+    left: 20px;
+    right: 20px;
+    bottom: 24px;
+  }
+
+  .appdl-hero-text h1 {
+    font-size: 26px;
+  }
+
+  .appdl-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .appdl-phone-mockup {
+    width: 200px;
+    height: 380px;
+  }
+
+  .appdl-block {
+    padding: 18px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .appdl-hero-text h1 {
+    font-size: 22px;
+  }
+
+  .appdl-hero-text p {
+    font-size: 15px;
+  }
+}
+/* ==== FEATURE IMAGE SECTION ==== */
+.appdl-feature-section {
+  margin-top: 25px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.appdl-feature-section img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* BUTTON DOWNLOAD – STATE BASE */
+.appdl-store-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.22s ease;
+  cursor: pointer;
+}
+
+.appdl-store-icon {
+  font-size: 22px;
+}
+
+.appdl-store-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.appdl-store-text .small {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.appdl-store-text .big {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* iOS / Android active / inactive */
+.appdl-store-btn.ios-active {
+  background: #0e73ba;
+  color: #ffffff;
+  border-color: #0e73ba;
+  box-shadow: 0 6px 18px rgba(14, 115, 186, 0.35);
+}
+
+.appdl-store-btn.ios-inactive {
+  background: #ffffff;
+  color: #0e73ba;
+  border-color: #cbd5f5;
+}
+
+.appdl-store-btn.android-active {
+  background: #0e73ba;
+  color: #ffffff;
+  border-color: #0e73ba;
+  box-shadow: 0 6px 18px rgba(14, 115, 186, 0.35);
+}
+
+.appdl-store-btn.android-inactive {
+  background: #ffffff;
+  color: #0e73ba;
+  border-color: #0e73ba;
+}
+
+.appdl-store-btn:hover {
+  transform: translateY(-1px);
+}
+/* QR WRAPPER – SIMPLE */
+.appdl-qr-wrapper {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* QR Title */
+.appdl-qr-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 10px;
+}
+
+/* QR IMAGE ONLY */
+.appdl-qr-image {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+
+  /* zoom + fade */
+  animation: qrZoomFade 8s ease-in-out infinite;
+}
+
+/* Zoom + Fade */
+@keyframes qrZoomFade {
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .appdl-hero {
+    background-size: cover !important;
+    background-position: center center !important;
+    height: 220px;
+  }
+}
+@media (max-width: 768px) {
+  .appdl-main-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* QR LÊN TRÊN */
+  .appdl-qr-wrapper {
+    order: 1;
+    margin-bottom: 14px;
+  }
+
+  /* DOWNLOAD CARD */
+  .appdl-download-card {
+    order: 2;
+  }
+}
+@media (max-width: 576px) {
+  .appdl-store-btn {
+    padding: 14px 16px;
+    border-radius: 14px;
+  }
+
+  .appdl-store-text .big {
+    font-size: 15px;
+  }
+
+  .appdl-store-icon {
+    font-size: 24px;
+  }
+}
+@media (max-width: 768px) {
+  .appdl-right {
+    position: static;
+    width: 100%;
+   
+  }
+
+  .appdl-phone-card {
+    margin-top: 0;
+  }
+
+  .appdl-phone-mockup {
+    width: 180px;
+    height: 340px;
+  }
+}
+@media (max-width: 768px) {
+  .appdl-steps {
+    margin-top: 16px;
+  }
+}

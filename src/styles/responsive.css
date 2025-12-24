@@ -1,0 +1,14 @@
+/* --------- BASE MOBILE --------- */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* --------- BASE TABLET --------- */
+@media (max-width: 1024px) {
+}
+
+/* --------- SMALL PHONE --------- */
+@media (max-width: 480px) {
+}

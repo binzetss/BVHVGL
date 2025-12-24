@@ -1,0 +1,64 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  backface-visibility: hidden;
+* {
+  font-family: "Roboto", sans-serif !important;
+}
+}
+
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0e73ba;
+  margin: 0px 0 0px !important; 
+  background: transparent !important;
+}
+
+
+.breadcrumb a,
+.breadcrumb .link {
+  color: #003f7f;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: 0.25s ease;
+}
+.breadcrumb a,
+.breadcrumb a:hover,
+.breadcrumb .link:hover {
+  color: #0e73ba;
+}
+.breadcrumb a:hover{
+    text-decoration: underline;
+}
+
+
+.breadcrumb .icon-home {
+  font-size: 14px;
+}
+
+
+.breadcrumb .sep {
+  margin: 0 6px;
+  color: #000;
+}
+
+
+.breadcrumb .current {
+  color: #000;
+  font-weight: 500;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+

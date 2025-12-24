@@ -1,0 +1,89 @@
+/* =========================================================
+   🔍 SEARCH BOX (DESKTOP ONLY)
+========================================================= */
+
+.hv-search-center {
+  position: relative;
+}
+
+/* ================================
+   HỘP KẾT QUẢ
+================================ */
+.search-results {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 6px;
+  z-index: 99999;
+  max-height: 260px;
+  overflow-y: auto;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+/* ================================
+   ITEM
+================================ */
+.search-item {
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #0e73ba;
+  border-bottom: 1px solid #f2f2f2;
+  cursor: pointer;
+}
+
+.search-item:last-child {
+  border-bottom: none;
+}
+
+.search-item:hover {
+  background: #eaf4ff;
+}
+
+/* Item ACTIVE khi dùng phím ↑ ↓ */
+.search-item.active {
+  background: #d5e9ff !important;
+  color: #084f99 !important;
+}
+
+/* Scrollbar đẹp */
+.search-results::-webkit-scrollbar {
+  width: 6px;
+}
+.search-results::-webkit-scrollbar-thumb {
+  background: #c2def7;
+  border-radius: 8px;
+}
+
+/* Ẩn trên mobile */
+@media screen and (max-width: 768px) {
+  .search-results {
+    display: none !important;
+  }
+
+   .hv-search-center input {
+    font-size: 16px;
+  }
+
+  /* Mobile search overlay */
+  .mobile-search input {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+.search-empty {
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #777;
+  background: #f8f8f8;
+  border-bottom: 1px solid #eee;
+}

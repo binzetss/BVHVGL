@@ -1,0 +1,330 @@
+/* ===== KHUNG TRANG ===== */
+.org-page {
+  width: 100%;
+  background: #ffffff;
+  padding: 0px 0 40px;
+
+  /* để màn nhỏ (15") không ép layout thu nhỏ → chỉ scroll ngang */
+  overflow-x: auto;
+}
+
+.org-inner {
+  width: 1500px;     /* GIỮ CỐ ĐỊNH layout như màn 20 inch */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== BREADCRUMB ===== */
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.home-link {
+  color: #0e73ba;
+  font-weight: 600;
+}
+
+.sep {
+  margin: 0 6px;
+}
+
+/* ===== TITLE ===== */
+.org-title {
+  text-align: left;
+  color: #0e73ba;
+  font-size: 24px;
+  font-weight: 800;
+  margin-top: 70px;
+
+  text-transform: uppercase;
+}
+
+/* ===== NODE CƠ BẢN ===== */
+.org-node {
+  position: relative;
+}
+.org-node.main-layout.overlap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.org-photo {
+   margin-left: 50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+   z-index: 100000;
+}
+.org-photo2 {
+  margin-left: 35px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+   position: relative;
+  z-index: 2;
+}
+.org-node.main-layout .org-role.main-role,
+.org-node.main-layout .org-name.main-name {
+  width: 250px;
+  margin-left: -25px;   
+}
+.org-node.main-layout .org-role.main-role {
+  margin-top: 0px;
+  position: relative;
+  z-index: 1;
+}
+.org-node.main-layout .org-name.main-name {
+  margin-top: 0;
+}
+
+.org-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 100000;
+ 
+}
+
+.org-photo2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 100000;
+}
+/* ===== 2 THANH XANH ===== */
+.org-role.main-role {
+  background: #1e97dc;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 4px 4px 0 0;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 10px;
+  width: 100%;
+
+}
+
+.org-name.main-name {
+  background: #0060aa;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  padding: 8px 18px;
+  border-radius: 0 0 4px 4px;
+  text-align: center;
+  margin-top: 0;
+  width: 100%;
+
+}
+
+/* ===== ROW ===== */
+.org-row-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.org-row-five {
+  display: flex;
+  justify-content: center;
+  gap: 110px;
+  margin-top: 25px;
+}
+
+.org-row-three {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  margin-top: 25px;
+  margin-left: 14px; /* bạn chỉnh tay → mình giữ nguyên */
+}
+
+/* ===== CHỦ TỊCH / GIÁM ĐỐC: ẢNH TRÁI - TEXT PHẢI ===== */
+.org-node.main-layout {
+  margin-left: 230px;   
+  display: flex;
+  align-items: center;
+  gap: -30px;
+  justify-content: center;
+}
+
+.org-node.main-layout .org-photo {
+  margin: 0;
+  z-index: 1;
+}
+
+.org-main-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ===== LINE ===== */
+.line-vertical {
+  width: 2px;
+  background: #0e73ba;
+  margin: 0 auto;
+}
+
+.line-vertical.big {
+  height: 30px;
+  margin-left: 742px; 
+  margin-bottom: -12px;
+  margin-top: 20px;
+}
+.line-vertical.big2 {
+  height: 30px;
+  margin-left: 744px; 
+  margin-bottom: -12px;
+  margin-top: 20px;
+}
+
+.line-horizontal {
+  height: 2px;
+  background: #0e73ba;
+}
+
+.line-horizontal.big {
+  width: 85.66%;
+  margin: 12px auto 30px;
+  position: relative;
+  margin-bottom: 40px;
+  margin-left:112px;
+}
+
+.line-horizontal.small {
+  width: 49.88%;
+  margin-left: 445.2px; /* giữ nguyên */
+  margin: 12px auto 30px;
+  position: relative;
+   margin-bottom: 40px;
+   margin-left: 377px;
+}
+
+/* ===== LINE DOWN ===== */
+.line-down {
+  width: 2px;
+  height: 35px;
+  background: #0e73ba;
+  position: relative;
+}
+
+.line-down::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #0e73ba;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Dot trên avatar */
+.org-node::after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #0e73ba;
+  border-radius: 50%;
+}
+
+/* Line xuống avatar */
+.org-node::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 35px;
+  background: #0e73ba;
+  margin-top: 0px;
+}
+
+/* Ẩn line + dot cho node đặc biệt */
+.org-node.no-line::before,
+.org-node.no-line::after,
+.org-node.no-line-top::before,
+.org-node.no-line-top::after {
+  display: none !important;
+}
+
+/* Không vẽ line dọc ngay sau title */
+.org-title + .line-vertical {
+  display: none !important;
+}
+.org-node:hover .org-photo {
+  transform: scale(1.1);
+  transition: 0.25s ease;
+
+}
+.org-node:hover .main-role {
+  background: #1c99f9;
+}
+
+.org-node:hover .main-name {
+  background: #0077cc;
+}
+.org-node {
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.org-node:hover {
+  transform: translateY(-5px);
+}
+
+.org-node:hover {
+  filter: drop-shadow(0 0 8px rgba(116, 187, 245, 0.55));
+}
+.org-node:not(.main-layout) {
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.org-node:not(.main-layout):hover {
+  transform: translateY(-6px);
+  filter: drop-shadow(0 0 10px rgba(0, 118, 210, 0.45));
+}
+
+.org-node:not(.main-layout):hover .org-photo {
+  transform: scale(1.08);
+  transition: 0.25s ease;
+}
+
+.org-node:not(.main-layout):hover .main-role {
+  background: #34a8ff;
+}
+
+.org-node:not(.main-layout):hover .main-name {
+  background: #0077cc;
+}
+
+@media (max-width: 768px) {
+
+  .org-page {
+    overflow-x: auto;   /* cho phép kéo ngang */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .org-inner {
+    width: 1500px;     
+    transform: scale(0.35);   
+    transform-origin: top left;
+  }
+}

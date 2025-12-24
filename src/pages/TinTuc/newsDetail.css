@@ -1,0 +1,442 @@
+/* ================== WRAPPER ================== */
+.nd-wrapper {
+  width: 100%;
+  background: #ffffff;
+}
+
+.nd-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 5px 0 40px;
+  display: flex;
+  gap: 40px;
+}
+
+/* ================== LEFT SIDE ================== */
+.nd-left {
+  width: 68%;
+  padding-right: 20px;
+}
+
+.nd-left::-webkit-scrollbar {
+  width: 0;
+}
+.nd-left {
+  scrollbar-width: none;
+}
+
+/* ================== TITLE ================== */
+.nd-title {
+  font-size: 32px;
+  color: #0e73ba;
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 10px 0 5px;
+}
+
+.nd-date {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 18px;
+  padding-left: 2px;
+}
+
+/* ================== MỤC LỤC ================== */
+.nd-main-menu {
+  width: 100%;
+  background: #e8f2ff;
+  border: 1px solid #cfe2ff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #0e73ba;
+  margin-bottom: 18px;
+}
+
+.nd-main-icon {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* ================== NỘI DUNG ================== */
+.nd-content {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 22px;
+}
+
+.nd-content p {
+  margin-bottom: 14px;
+}
+
+.nd-content strong {
+  color: #0e73ba;
+}
+
+/* ================== IMAGE ================== */
+.nd-image-box {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.nd-image {
+  width: 95%;
+  height: auto;
+  max-width: 900px;
+  border-radius: 8px;
+  border: 1px solid #d0d7e2;
+  display: block;
+  margin: 0 auto;
+}
+.nd-bottom {
+  margin-top: 28px;
+  padding: 10px 12px;
+  background: #f2f4f7;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 25px;
+  border: 1px solid #e1e7ef;
+}
+
+/* VIEW */
+.nd-views-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nd-icon {
+  width: 22px;
+  height: 22px;
+  opacity: 0.85;
+}
+
+.nd-views-number {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* GROUP */
+.nd-react-group {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 8px;
+}
+
+/* BUTTON */
+.nd-react-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nd-icon-sm {
+  width: 24px;
+  height: 24px;
+}
+
+
+.nd-help-text {
+  font-size: 15px;
+  color: #444;
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+/* ACTIVE STATES */
+.active-like {
+  background: #0e73ba !important;
+  border-color: #0e73ba !important;
+}
+
+.active-like img {
+  filter: brightness(8); /* icon trắng */
+}
+
+.active-dislike {
+  background: #d32f2f !important;
+  border-color: #d32f2f !important;
+}
+
+.active-dislike img {
+  filter: brightness(8);
+}
+
+.nd-help-text {
+  margin-left: 10px;
+  font-size: 15px;
+  color: #444;
+  font-weight: 500;
+}
+
+
+/* ================== RIGHT SIDEBAR ================== */
+.nd-right {
+  width: 420px;
+  position: sticky;
+  top: 150px;
+  align-self: flex-start;
+  height: fit-content;
+  max-height: calc(100vh - 170px);
+  overflow-y: auto;
+  padding-left: 15px;
+  border-left: 1px solid #e0e6ef;
+  background: #ffffff;
+}
+
+.nd-right::-webkit-scrollbar {
+  width: 0;
+}
+
+/* ================== SIDEBAR TITLE ================== */
+.nd-right-title {
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #0e73ba;
+  margin-bottom: 12px;
+}
+
+/* ================== LIST ================== */
+.nd-right-list {
+  background: #f6f9ff;
+  border: 1px solid #dde6f2;
+  border-radius: 6px;
+}
+
+.nd-right-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #dde6f2;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nd-right-item:hover {
+  background: #e7f1ff;
+}
+
+.nd-right-item:last-child {
+  border-bottom: none;
+}
+
+/* ================== THUMB ================== */
+.nd-right-thumb {
+  width: 90px;
+  height: 65px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* ================== TEXT ================== */
+.nd-right-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nd-right-item-title {
+  font-size: 14px;
+  color: #0e73ba;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.nd-right-item-date {
+  font-size: 13px;
+  color: #777;
+}
+
+/* ================== BREADCRUMB ================== */
+/* .breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #0e73ba;
+  margin: 2px 0 18px;
+  font-weight: 500;
+  gap: 6px;
+}
+
+.breadcrumb .link {
+  cursor: pointer;
+  color: #0e73ba;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.breadcrumb .link:hover {
+  color: #2ca8e0;
+}
+
+.breadcrumb .sep {
+  color: #000;
+}
+
+.breadcrumb .current {
+  color: #000;
+  font-weight: 600;
+} */
+
+.nd-subtitle {
+  font-size: 17px;
+    color: #0e73ba !important;
+    font-weight: 800;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.icon-home {
+  font-size: 14px;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 1024px) {
+  .nd-container {
+    flex-direction: column;
+  }
+
+  .nd-left {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .nd-right {
+    width: 100%;
+    border-left: none;
+    max-height: none;
+    position: static;
+    padding-left: 0;
+  }
+
+  .nd-right-list {
+   margin-bottom: 25px;
+  }
+}
+.nd-right-item-active {
+  background: #0e73ba !important;
+  color: white !important;
+}
+
+.nd-right-item-active .nd-right-item-title,
+.nd-right-item-active .nd-right-item-date {
+  color: white !important;
+}
+.nd-right-item-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+}
+
+
+.nd-date {
+  font-size: 14px;
+  color: #0e73ba;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.nd-date-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.nd-author {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 16px;
+  font-weight: 500;
+  color: #0e73ba;
+}
+
+.nd-author-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.9;
+}
+/* ================= MOBILE: SIDEBAR XUỐNG CUỐI ================= */
+@media (max-width: 768px) {
+
+  .nd-container {
+    flex-direction: column;
+    padding: 0px 14px 40px;
+    gap: 0;
+  }
+
+  .nd-left {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  /* SIDEBAR -> BLOCK CUỐI */
+  .nd-right {
+    position: static;
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+    margin-top: 30px;
+    padding-left: 0;
+    border-left: none;
+    background: transparent;
+  }
+
+  .nd-right-title {
+    margin-top: 0;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .nd-right-list {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .nd-right-item {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .nd-right-thumb {
+    width: 100px;
+    height: 70px;
+  }
+
+  .nd-right-item-title {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .nd-right-item-date {
+    font-size: 13px;
+  }
+
+  /* IMAGE TRONG NỘI DUNG */
+  .nd-image {
+    width: 100%;
+    max-width: 100%;
+  }
+}

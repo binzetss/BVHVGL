@@ -1,0 +1,12 @@
+/* Giảm chiều cao ban đầu */
+.ck-editor__editable {
+  min-height: 120px !important;
+  height: auto !important;
+  overflow-y: hidden !important;
+  padding: 12px !important;
+}
+
+/* Khi người dùng gõ nhiều → tự mở rộng */
+.ck-editor__editable.ck-focused {
+  min-height: 160px !important;
+}

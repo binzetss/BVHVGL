@@ -1,0 +1,80 @@
+/* ===========================
+   APP DEFAULT
+=========================== */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ===========================
+   🚀 GLOBAL FIX — KHÔNG CHẠY TRANG MOBILE
+=========================== */
+
+/* KHÓA CUỘN NGANG – KHÔNG BAO GIỜ LỆCH LAYOUT */
+html, body {
+  width: 100%;
+  overflow-x: hidden !important;
+  position: relative;
+  max-width: 100%;
+}
+
+/* MỌI PHẦN TỬ ĐỀU TUÂN THEO KHUNG MÀN HÌNH */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif !important;
+  letter-spacing: 0.2px;
+}
+
+/* ===========================
+   TEXT DEFAULT
+=========================== */
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  color: #0e73ba;
+}
+
+p, span, a, li, input, button, textarea {
+  font-weight: 400;
+  color: #333;
+}

@@ -1,0 +1,318 @@
+/* =========================
+   BACKGROUND
+========================= */
+.wrapper {
+  background: linear-gradient(to bottom, #ffffff 0%, #f4f8fd 40%, #e3f0ff 100%);
+}
+
+/* =========================
+   WRAPPER CHUNG
+========================= */
+.pricelist-wrapper {
+  width: 100%;
+  max-width: 1500px;
+  margin: 10px auto 60px;
+  padding: 0 8px;
+}
+
+/* =========================
+   BREADCRUMB
+========================= */
+.home-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #0e73ba;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+.sep {
+  margin: 0 6px;
+  opacity: 0.6;
+}
+
+.current {
+  text-transform: capitalize;
+}
+
+/* =========================
+   HEADER BOX
+========================= */
+.pricelist-header-box {
+  padding: 24px 26px 20px;
+  border-radius: 18px;
+  background: linear-gradient(#f2f2f2, #fafafa);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+}
+
+.pricelist-title {
+  font-size: 26px;
+  color: #0e73ba;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* =========================
+   FILTER BAR
+========================= */
+.pricelist-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* =========================
+   SELECT
+========================= */
+.pricelist-select-wrapper {
+  position: relative;
+  flex: 1 1 280px;
+}
+
+.pricelist-select-wrapper select {
+  width: 100%;
+  height: 40px;
+  padding: 0 38px 0 14px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  appearance: none;
+  outline: none;
+}
+
+.pricelist-select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url("../../assets/BangGia/chevron-down.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+/* =========================
+   SEARCH
+========================= */
+.pricelist-search-wrapper {
+  position: relative;
+  flex: 1 1 260px;
+  max-width: 360px;
+}
+
+.pricelist-search-wrapper input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px 0 36px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  outline: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.pricelist-search-wrapper input:focus {
+  border-color: #0e73ba;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #999;
+  pointer-events: none;
+}
+
+/* =========================
+   GRID
+========================= */
+.pricelist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+.pricelist-card {
+  display: flex;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.pricelist-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
+/* IMAGE */
+.pricelist-card-image {
+  flex: 0 0 260px;
+  max-width: 260px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.pricelist-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.pricelist-card:hover img {
+  transform: scale(1.08);
+}
+
+/* CONTENT */
+.pricelist-card-content {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pricelist-card-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e4f2ff;
+  color: #0e73ba;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 4px;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.card-detail-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0e73ba;
+}
+
+/* =========================
+   SHOW MORE
+========================= */
+.pricelist-show-more {
+  text-align: center;
+  margin-top: 22px;
+}
+
+.pricelist-more-btn {
+  background: #0e73ba;
+  color: #fff;
+  padding: 11px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(8, 90, 146, 0.35);
+}
+
+/* =========================
+   RESPONSIVE – TABLET
+========================= */
+@media (max-width: 1024px) {
+  .pricelist-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .pricelist-card-image {
+    flex: 0 0 200px;
+    max-width: 200px;
+    height: 150px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .card-desc {
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   RESPONSIVE – MOBILE
+========================= */
+@media (max-width: 600px) {
+
+  .pricelist-header-box {
+    height: auto;
+  }
+
+  .pricelist-title {
+    font-size: 22px;
+  }
+
+  /* FILTER BAR MOBILE */
+  .pricelist-filter-bar {
+ 
+    gap: 10px;
+  }
+
+  /* SEARCH TRÊN */
+  .pricelist-search-wrapper {
+    order: 1;
+    max-width: 100%;
+  }
+
+  /* SELECT DƯỚI */
+  .pricelist-select-wrapper {
+    order: 2;
+  }
+
+  /* IOS SAFE */
+  .pricelist-search-wrapper input,
+  .pricelist-select-wrapper select {
+    font-size: 16px;
+  }
+
+  /* GRID 1 CỘT */
+  .pricelist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricelist-card {
+    flex-direction: column;
+  }
+
+  .pricelist-card-image {
+    width: 100%;
+    max-width: 100%;
+    height: 180px;
+  }
+}

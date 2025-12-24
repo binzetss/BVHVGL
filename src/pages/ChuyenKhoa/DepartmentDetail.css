@@ -1,0 +1,204 @@
+/* WRAPPER */
+.dpd-wrapper {
+  width: 100%;
+  background: #fff;
+}
+
+/* LAYOUT */
+.dpd-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 0 30px;
+  display: flex;
+  gap: 40px;
+}
+
+/* LEFT CONTENT */
+.dpd-left {
+  width: 68%;
+  padding-right: 20px;
+  scrollbar-width: none;
+}
+.dpd-left::-webkit-scrollbar {
+  width: 0;
+}
+
+/* RIGHT SIDEBAR */
+.dpd-right {
+  margin-top: 10px;
+  width: 320px;
+  position: sticky;
+  top: 150px;
+  align-self: flex-start;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  background: #fff;
+  padding-left: 20px;
+  border-left: 1px solid #e0e6ef;
+  scrollbar-width: none;
+}
+
+/* RIGHT TITLE */
+.dpd-right-title {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #0e73ba;
+}
+
+.dpd-right-list {
+  background: #f7faff;
+  border: 1px solid #dde6f2;
+  border-radius: 6px;
+}
+
+.dpd-right-item {
+  padding: 10px 12px;
+  font-size: 15px;
+  border-bottom: 1px solid #dde6f2;
+  cursor: pointer;
+}
+.dpd-right-item:hover {
+  background: #e5f1ff;
+  padding-left: 18px;
+  transition: 0.2s;
+}
+
+/* TITLE */
+.dpd-title {
+  margin-top: 10px;
+  font-size: 30px;
+  color: #0e73ba;
+  font-weight: 800;
+}
+
+/* DATE */
+.dpd-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #777;
+}
+.dpd-date-icon {
+  width: 18px;
+  opacity: 0.9;
+}
+
+/* =============================== */
+/*  THANH "NỘI DUNG CHÍNH"         */
+/* =============================== */
+.dpd-main-menu {
+  margin-top: 15px;
+  width: 100%;
+  background: #d9e9ff;
+  border: 1px solid #c0d7fa;
+  padding: 12px 16px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #0e73ba;
+  font-size: 17px;
+}
+.dpd-main-icon {
+  font-size: 20px;
+  opacity: 0.7;
+  margin-right: 10px;
+}
+
+/* =============================== */
+/*  TEXT SECTIONS                  */
+/* =============================== */
+.dpd-section {
+  margin-top: 25px;
+}
+
+.dpd-subtitle {
+  font-size: 22px;
+  color: #0e73ba;
+  font-weight: 800;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.dpd-text {
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* =============================== */
+/*  IMAGE BLOCK + CAPTION          */
+/* =============================== */
+.dpd-img-box {
+  margin: 20px auto 30px;
+  text-align: center;
+}
+
+.dpd-img {
+  width: 80%;
+  max-width: 850px;     
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  object-fit: cover;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dpd-caption {
+  font-size: 15px;
+  color: #666;
+  font-style: italic;
+  margin-top: 6px;
+}
+/* ================= MOBILE TỐI ƯU ================= */
+@media (max-width: 768px) {
+
+  .dpd-container {
+    flex-direction: column;
+    padding: 0px 14px 40px;
+  }
+
+  .dpd-left {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  /* SIDEBAR -> BLOCK CUỐI */
+  .dpd-right {
+    position: static;
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+    margin-top: 30px;
+    padding: 0;
+    border-left: none;
+  }
+
+  .dpd-right-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .dpd-right-list {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .dpd-right-item {
+    font-size: 15px;
+    padding: 12px 14px;
+  }
+
+  .dpd-right-item.active {
+    background: #0e73ba;
+    color: #fff;
+    font-weight: 700;
+  }
+  .dpd-title{
+    margin-top: 10px;
+
+  }
+}

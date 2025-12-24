@@ -1,0 +1,118 @@
+/* KHUNG SLIDER — DÀI HƠN NHẸ */
+.gt-slider {
+  width: 100%;
+  aspect-ratio: 16 / 6;   /* 👈 tăng từ 16/5 lên 16/6 */
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid #e3e6e9;
+
+}
+
+/* ẢNH TỪ TRÊN XUỐNG */
+.gt-slider-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* DOTS */
+.swiper-pagination-bullet {
+  background: rgba(255,255,255,0.7);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #0e73ba !important;
+}
+/* ===== OVERLAY TEXT ===== */
+.gt-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-left: 80px;
+/* 
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(0, 0, 0, 0) 70%
+  ); */
+
+  color: #0e73ba;
+}
+
+/* MAIN TITLE */
+.gt-title-text {
+  font-size: 58px;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.05;
+  opacity: 0;
+  animation: fadeInTitle 1.2s ease forwards;
+}
+
+/* SUB TEXT */
+.gt-sub-text {
+  font-size: 24px;
+  max-width: 600px;
+  margin-top: 12px;
+  opacity: 0;
+  animation: fadeInSub 1.8s ease forwards;
+}
+
+ @keyframes fadeInTitle {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSub {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .gt-title-text { font-size: 42px; }
+  .gt-sub-text { font-size: 20px; }
+  .gt-overlay { padding-left: 50px; }
+}
+
+@media (max-width: 768px) {
+  .gt-title-text { font-size: 32px; }
+  .gt-sub-text { font-size: 18px; }
+  .gt-overlay {
+    padding-left: 20px;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0)
+    );
+  }
+}
+
+@media (max-width: 480px) {
+  .gt-title-text { font-size: 26px; }
+  .gt-sub-text { font-size: 16px; }
+} 

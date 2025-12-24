@@ -1,0 +1,123 @@
+/* WRAPPER */
+.why-wrapper {
+  max-width: 1400px;
+  margin: auto;
+  /* padding: 20px; */
+}
+
+/* TIÊU ĐỀ CHÍNH */
+.why-title {
+  color: #0e73ba;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: left;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+/* Gạch nhấn */
+.why-title::after {
+  content: "";
+  width: 360px;
+  height: 4px;
+  background: #0e73ba;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  border-radius: 4px;
+}
+
+/* 2 CỘT */
+.why-content {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ẢNH */
+.why-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* TEXT */
+.why-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.why-text p {
+  font-size: 16px;
+  line-height: 1.55;
+  margin-bottom: 8px;
+  text-align: justify;
+}
+
+/* "XEM TẤT CẢ" − canh sát mép phải */
+.why-more-wrap {
+  width: 100%;
+  text-align: right;
+  margin: 8px 0 16px;
+}
+
+.why-more {
+  color: #0e73ba;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 3 BOX */
+.why-features {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.feat-box {
+  flex: 1;
+  text-align: center;
+  background: #0e73ba;
+  padding: 12px 0;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  line-height: 1.3;
+}
+
+/* TIÊU ĐỀ HỢP TÁC */
+.why-sub-title {
+  font-size: 20px;
+  color: #0e73ba;
+ 
+  font-weight: 700;
+}
+
+/* LOGO BỆNH VIỆN – gần nhau hơn */
+.why-partners {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.partner-item {
+  text-align: center;
+  width: 28%;
+}
+
+.partner-item img {
+  width: 140px;
+  height: auto;
+}
+
+.partner-item p {
+  color: #0e73ba;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}

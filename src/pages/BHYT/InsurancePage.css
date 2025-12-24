@@ -1,0 +1,407 @@
+/* NỀN CHUNG TRANG (giữ cùng phong cách với PriceDetailPage) */
+.ins-wrapper {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #f4f8fd 40%,
+    #e3f0ff 100%
+  );
+}
+
+.ins-inner {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px 0;
+}
+
+/* ===== HERO ===== */
+.ins-hero {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 0 0 30px 30px;
+  overflow: hidden;
+}
+
+/* Nền hero: có thể thay bằng hình bệnh viện nếu bạn có */
+.ins-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, #4fb3ff, #0e73ba);
+  background-size: cover;
+  background-position: center;
+}
+
+.ins-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.55)
+  );
+}
+
+.ins-hero-text {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  color: #fff;
+  max-width: 720px;
+}
+
+.ins-hero-text h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.ins-hero-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* ===== BODY ===== */
+.ins-container {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  margin-top: 0px;
+}
+
+.ins-left {
+  flex: 1;
+}
+
+/* ===== BREADCRUMB ===== */
+.ins-breadcrumb {
+  margin: 0px 0 14px;
+  display: flex;
+  gap: 6px;
+  font-size: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ins-breadcrumb .link {
+  color: #0e73ba;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ins-breadcrumb .link:hover {
+  text-decoration: underline;
+}
+
+.ins-breadcrumb .sep {
+  opacity: 0.7;
+}
+
+.ins-breadcrumb .current {
+  font-weight: 700;
+}
+
+.icon-home {
+  font-size: 14px;
+}
+
+/* ===== BLOCK CHÍNH ===== */
+.ins-block {
+  background: #fff;
+  padding: 24px 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.06);
+  margin-bottom: 26px;
+}
+
+.ins-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.ins-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0e73ba;
+}
+
+.ins-updated {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* NOTE BOX */
+.ins-note {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #e8f4ff;
+  border: 1px solid #c4e0ff;
+  margin-bottom: 16px;
+}
+
+.ins-note-icon {
+  font-size: 24px;
+  color: #0e73ba;
+  flex-shrink: 0;
+}
+
+.ins-note-title {
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 4px;
+}
+
+/* SECTION CHUNG */
+.ins-section {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.ins-section:first-of-type {
+  border-top: none;
+  padding-top: 4px;
+  margin-top: 8px;
+}
+
+.ins-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 8px;
+}
+
+.ins-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+/* GRID 2 CỘT */
+.ins-grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+/* CARD TRẮNG */
+.ins-card {
+  background: #f8fbff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  border: 1px solid #dbeafe;
+}
+
+.ins-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 6px;
+}
+
+/* LIST CHUNG */
+.ins-list {
+  padding-left: 18px;
+  margin: 0;
+  list-style: disc;
+}
+
+.ins-list li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+/* STEPS */
+.ins-steps {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ins-steps li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 15px;
+  color: #111827;
+}
+
+.ins-step-badge {
+  flex-shrink: 0;
+  min-width: 70px;
+  text-align: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #0e73ba;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* TAG LIST */
+.ins-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.ins-tag {
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0e73ba;
+  border: 1px solid #bfdbfe;
+}
+
+/* FAQ */
+.ins-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.ins-faq-item {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.ins-faq-q {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 4px;
+}
+
+/* ===== SIDEBAR ===== */
+.ins-right {
+  width: 320px;
+  position: sticky;
+  top: 150px;
+  align-self: flex-start;
+  margin-top: 75px;
+  margin-bottom: 10px;
+}
+
+.ins-side-box {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+
+.ins-side-title {
+  color: #0e73ba;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.ins-side-text {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 10px;
+}
+
+.ins-side-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.ins-side-icon {
+  font-size: 18px;
+  color: #0e73ba;
+  flex-shrink: 0;
+}
+
+.ins-side-label {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.ins-side-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.ins-side-list {
+  list-style: disc;
+  padding-left: 18px;
+  margin: 4px 0 0;
+}
+
+.ins-side-list li {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .ins-container {
+    flex-direction: column;
+  }
+
+  .ins-right {
+    width: 100%;
+    position: static;
+    margin-top: 8px;
+  }
+
+  .ins-hero {
+    height: 260px;
+  }
+
+  .ins-hero-text {
+    left: 20px;
+    right: 20px;
+    bottom: 24px;
+  }
+
+  .ins-hero-text h1 {
+    font-size: 26px;
+  }
+
+  .ins-grid-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .ins-block {
+    padding: 18px 16px;
+  }
+
+  .ins-hero-text h1 {
+    font-size: 22px;
+  }
+
+  .ins-hero-text p {
+    font-size: 15px;
+  }
+}

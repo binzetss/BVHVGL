@@ -1,0 +1,353 @@
+/* WRAPPER */
+.nstb-wrapper {
+  width: 100%;
+  padding: 30px 0;
+}
+
+/* CONTAINER */
+.nstb-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* TITLE */
+.gt-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0e73ba;
+  margin-left: 70px;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.gt-title::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 220px;
+  height: 4px;
+  background: #0e73ba;
+  border-radius: 4px;
+}
+/* ========================== */
+/* 1) ĐỘI NGŨ NHÂN SỰ – BOX */
+/* ========================== */
+
+.nstb-row {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* 3 BOX – nền là ảnh thật */
+.nstb-box {
+  flex: 1;
+  padding: 25px;
+  border-radius: 16px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  box-shadow: 0 8px 16px rgba(0,0,0,0.09);
+
+  background-size: cover;
+  background-position: center;
+}
+
+/* BACKGROUND ẢNH */
+.nstb-box.bg1 {
+  background-image: url("../../../assets/vechungtoi/lichsuhinhthanh/ls-2022.jpg");
+}
+
+.nstb-box.bg2 {
+  background-image: url("../../../assets/vechungtoi/lichsuhinhthanh/ls-2023.jpg");
+}
+
+.nstb-box.bg3 {
+  background-image: url("../../../assets/vechungtoi/lichsuhinhthanh/ls-2024.jpg");
+}
+
+/* OVERLAY — mỗi box 1 màu khác nhau */
+.nstb-box.bg1::before,
+.nstb-box.bg2::before,
+.nstb-box.bg3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 16px;
+}
+
+/* Màu overlay CHUẨN theo mẫu bạn gửi */
+.nstb-box.bg1::before {
+  background: rgba(14, 115, 186, 0.75); /* xanh đậm */
+}
+
+.nstb-box.bg2::before {
+  background: rgba(46, 142, 214, 0.75); /* xanh trung bình */
+}
+
+.nstb-box.bg3::before {
+  background: rgba(102, 174, 233, 0.75); /* xanh nhạt */
+}
+
+/* Nội dung bên trong */
+.nstb-box * {
+  position: relative;
+  z-index: 2;
+}
+
+/* TITLE + dấu › */
+.nstb-box-header {
+  font-size: 35px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+
+}
+
+.nstb-box-header::before {
+  content: "› ";
+  font-size: 32px;
+  font-weight: 900;
+  margin-right: 4px;
+}
+
+/* TEXT */
+.nstb-box p {
+ font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  margin: 0;
+  text-align: justify;     
+  text-align-last: left; 
+
+}
+
+/* ========================== */
+/* 2) TRANG THIẾT BỊ */
+.nstb-equip-row {
+  margin-top: 40px;
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* LEFT */
+.nstb-equip-left {
+  flex: 0 0 60%;
+}
+
+.nstb-equip-left p {
+  margin-left: 70px;
+  margin-right: 50px;
+  text-align: justify;
+  margin-bottom: 15px;
+  color: #0e73ba;
+  font-size: 18px;
+}
+
+/* RIGHT */
+.nstb-equip-right {
+  flex: 0 0 40%;
+  min-width: 420px;
+}
+
+.nstb-equip-right .swiper {
+  height: 400px;
+}
+
+/* SLIDE CARD */
+.nstb-slide-card {
+  height: auto;
+  width: 90%;
+  background: #fff;
+  border-radius: 20px;
+  padding: 18px;
+  border: 1px solid #dcd9d9; 
+}
+
+/* IMAGE */
+.nstb-slide-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* TITLE */
+.nstb-slide-title {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0e73ba;
+}
+
+.nstb-slide-underline {
+  width: 140px;
+  height: 3px;
+  background: #0e73ba;
+  margin: 6px 0 10px 0;
+  border-radius: 4px;
+}
+
+/* DESC */
+.nstb-slide-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* DOTS */
+.swiper-pagination-bullet {
+  background: #c3cfe6 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #0e73ba !important;
+}
+@media (max-width: 768px) {
+
+  /* =========================
+     WRAPPER
+  ========================= */
+  .nstb-wrapper {
+    padding: 20px 0;
+  }
+
+  /* =========================
+     TITLE
+  ========================= */
+  .gt-title {
+    font-size: 22px;
+    margin-left: 0;
+    margin-bottom: 24px;
+  }
+
+  .gt-title::after {
+    width: 140px;
+    height: 3px;
+  }
+
+  /* =========================
+     1) ĐỘI NGŨ NHÂN SỰ
+     👉 GIỮ 1 HÀNG 3 CỤC
+  ========================= */
+  .nstb-row {
+    gap: 10px;
+  }
+
+  .nstb-box {
+    padding: 14px;
+    min-height: 150px;
+  }
+
+  .nstb-box-header {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .nstb-box-header::before {
+    font-size: 18px;
+  }
+
+  .nstb-box p {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  /* =========================
+     2) TRANG THIẾT BỊ
+  ========================= */
+  .nstb-equip-row {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  /* TEXT TRÊN */
+  .nstb-equip-left {
+    flex: unset;
+    width: 100%;
+  }
+
+  .nstb-equip-left p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* SLIDER DƯỚI */
+  .nstb-equip-right {
+    flex: unset;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .nstb-equip-right .swiper {
+    height: auto;
+  }
+
+  .nstb-slide-card {
+    width: 100%;
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .nstb-slide-img {
+    height: 200px;
+    border-radius: 14px;
+  }
+
+  .nstb-slide-title {
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+
+  /* ÉP HÀNG CHA CĂNG ĐỀU */
+  .nstb-row {
+    display: flex;
+    align-items: stretch;
+  }
+
+  /* BOX CHUẨN HOÁ */
+  .nstb-box {
+    height: 190px;                 /* 🔥 cao hơn chút cho an toàn */
+    padding: 14px 12px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  /* HEADER KHÔNG ĐẨY BOX */
+  .nstb-box-header {
+    font-size: 17px;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  /* TEXT CỐ ĐỊNH SỐ DÒNG + TRÁNH GIÃN */
+  .nstb-box p {
+    font-size: 13px;
+    line-height: 1.45;
+    text-align: left;              /* 🔥 bỏ justify trên mobile */
+    margin: 0;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

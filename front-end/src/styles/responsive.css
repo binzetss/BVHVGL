@@ -1,0 +1,431 @@
+/* =====================================================
+   BREAKPOINT CHUẨN WEBSITE
+===================================================== */
+
+@media (max-width: 1400px) {}
+@media (max-width: 1200px) {}
+@media (max-width: 992px) {}
+@media (max-width: 768px) {}
+@media (max-width: 576px) {}
+@media (max-width: 420px) {}
+
+
+
+/* =====================================================
+   HEADER — MOBILE RESPONSIVE FIX
+====================================================== */
+
+/* TABLET + MOBILE (≤ 992px) */
+@media (max-width: 992px) {
+
+  .hv-top {
+    padding: 6px 14px !important;
+    grid-template-columns: 42px 1fr 70px !important;
+    column-gap: 8px !important;
+  }
+
+  /* LOGO NHỎ LẠI */
+  .hv-logo {
+    height: 32px !important;
+  }
+
+  /* TÊN BỆNH VIỆN — nếu có */
+  .hv-name {
+    font-size: 14px !important;
+  }
+  .hv-name-sub {
+    font-size: 9px !important;
+  }
+
+  /* SEARCH BOX THU NHỎ */
+  .hv-search-center {
+    height: 30px !important;
+    padding: 4px 10px !important;
+    border-radius: 20px !important;
+    border-width: 1.5px !important;
+  }
+
+  .hv-search-center input {
+    font-size: 13px !important;
+  }
+
+  .hv-search-icon {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* ICON BÊN PHẢI */
+  .hv-right {
+    gap: 6px !important;
+  }
+
+  .hv-icon span,
+  .hv-hotline-text {
+    display: none !important;
+  }
+
+  .hv-icon-img,
+  .hv-icon-img1,
+  .hv-icon-img2 {
+    width: 18px !important;
+  }
+
+  /* NGÔN NGỮ */
+  .hv-lang-selected {
+    padding: 4px 6px !important;
+    border-radius: 6px !important;
+    height: 28px !important;
+    max-width: 70px !important;
+  }
+
+  .hv-lang-selected span {
+    font-size: 10px !important;
+  }
+
+  .hv-flag-img {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* GIẤU MENU DESKTOP */
+  .hv-menu {
+    display: none !important;
+  }
+}
+
+
+
+/* =====================================================
+   MOBILE RẤT NHỎ (≤ 480px) 
+====================================================== */
+@media (max-width: 480px) {
+
+  .hv-top {
+    padding: 6px 10px !important;
+    grid-template-columns: 38px 1fr 62px !important;
+  }
+
+  .hv-logo {
+    height: 28px !important;
+  }
+
+  .hv-search-center {
+    height: 28px !important;
+    padding: 3px 8px !important;
+  }
+
+  .hv-search-center input {
+    font-size: 12px !important;
+  }
+
+  .hv-search-icon {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .hv-lang-selected {
+    height: 26px !important;
+    max-width: 62px !important;
+    padding: 2px 4px !important;
+  }
+
+  .hv-lang-selected span {
+    font-size: 9px !important;
+  }
+
+  .hv-flag-img {
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
+
+
+
+
+
+
+/* =====================================================
+   WHY CHOOSE SECTION
+===================================================== */
+
+@media (max-width: 992px) {
+
+  .why-content {
+    grid-template-columns: 1fr !important;
+  }
+
+  .why-features {
+    flex-direction: column !important;
+  }
+
+  .partner-item {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .why-title {
+    text-align: center !important;
+    font-size: 22px !important;
+  }
+
+  .why-title::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .why-text p {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    text-align: justify !important;
+  }
+
+  .why-image img {
+    width: 100% !important;
+    border-radius: 10px !important;
+  }
+
+  .why-partners {
+    flex-direction: column !important;
+    gap: 18px !important;
+    text-align: center !important;
+  }
+
+  .partner-item img {
+    width: 90px !important;
+  }
+}
+
+
+
+
+
+/* =====================================================
+   SERVICE SECTION — MOBILE FIX
+===================================================== */
+
+@media (max-width: 992px) {
+  .service-inner {
+    padding: 24px 20px !important;
+  }
+
+  .service-title {
+    font-size: 24px !important;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .service-inner {
+    padding: 18px 14px !important;
+  }
+
+  .service-title {
+    font-size: 22px !important;
+  }
+
+  .service-title-wrap {
+    flex-direction: column !important;
+    gap: 6px !important;
+    text-align: center !important;
+  }
+
+  .service-title::after {
+    width: 160px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .service-bg {
+    background-size: contain !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-color: #f4f4f4 !important;
+  }
+
+  .service-img {
+    height: 210px !important;
+  }
+
+  .service-box h3 {
+    font-size: 17px !important;
+  }
+
+  .service-box p {
+    font-size: 13px !important;
+  }
+
+  .nav-btn {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 18px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .service-img {
+    height: 180px !important;
+  }
+
+  .service-box h3 {
+    font-size: 16px !important;
+  }
+}
+
+
+
+
+/* =====================================================
+   FOOTER — 3 CỘT CHIA ĐỀU
+===================================================== */
+
+@media (max-width: 992px) {
+  .footer-container {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 30px !important;
+  }
+
+  .footer-links {
+    padding: 0 !important;
+  }
+
+  .footer-links li {
+    list-style: none !important;
+  }
+
+  .footer-buttons {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .hv-footer {
+    padding: 20px 14px !important;
+  }
+
+  .footer-logo-new {
+    width: 220px !important;
+  }
+
+  .fancy-footer span {
+    font-size: 13px !important;
+  }
+}
+
+
+
+
+/* =====================================================
+   GLOBAL FIX — CHẶN TRÀN MÀN HÌNH
+===================================================== */
+
+html,
+body {
+  height: 100% !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+
+
+/* =====================================================
+   BOOKING SECTION — MOBILE FIX
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .booking-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 25px !important;
+    padding: 16px !important;
+  }
+
+  .booking-left {
+    width: 100% !important;
+    padding: 18px !important;
+    border-radius: 16px !important;
+  }
+
+  .booking-title {
+    font-size: 22px !important;
+    text-align: center !important;
+    margin-bottom: 12px !important;
+  }
+
+  .booking-left input,
+  .booking-left select,
+  .booking-left textarea {
+    font-size: 15px !important;
+    padding: 12px 14px !important;
+  }
+
+  .booking-submit-btn {
+    font-size: 16px !important;
+    padding: 12px !important;
+    width: 100% !important;
+  }
+
+  .right-grid {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+  }
+
+  .right-item {
+    padding: 12px !important;
+    border-radius: 14px !important;
+  }
+
+  .right-item img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .right-item-title {
+    font-size: 16px !important;
+    margin-top: 6px !important;
+  }
+
+  .emergency-box {
+    width: 100% !important;
+    padding: 10px 14px !important;
+    font-size: 18px !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 480px) {
+
+  .booking-wrapper {
+    padding: 12px !important;
+  }
+
+  .right-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .right-item img {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .right-item-title {
+    font-size: 15px !important;
+  }
+
+  .booking-title {
+    font-size: 20px !important;
+  }
+
+  .booking-left input,
+  .booking-left select {
+    font-size: 14px !important;
+  }
+}
+

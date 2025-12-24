@@ -1,0 +1,244 @@
+/* WRAPPER */
+.why-wrapper {
+  max-width: 1400px;
+  margin: auto;
+  /* padding: 20px; */
+}
+
+/* TIÊU ĐỀ CHÍNH */
+.why-title {
+  color: #0e73ba;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: left;
+  margin-bottom: 30px;
+  position: relative;
+}
+.why-html p {
+  margin-bottom: 12px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.why-html ul {
+  padding-left: 18px;
+  margin-bottom: 12px;
+}
+
+.why-html img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Gạch nhấn */
+.why-title::after {
+  content: "";
+  width: 360px;
+  height: 4px;
+  background: #0e73ba;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  border-radius: 4px;
+}
+
+/* 2 CỘT */
+.why-content {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ẢNH */
+.why-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* TEXT */
+.why-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.why-text p {
+  font-size: 16px;
+  line-height: 1.55;
+  margin-bottom: 8px;
+  text-align: justify;
+}
+
+/* "XEM TẤT CẢ" − canh sát mép phải */
+.why-more-wrap {
+  width: 100%;
+  text-align: right;
+  margin: 8px 0 16px;
+}
+
+.why-more {
+  color: #0e73ba;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 3 BOX */
+.why-features {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.feat-box {
+  flex: 1;
+  text-align: center;
+  background: #0e73ba;
+  padding: 12px 0;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  line-height: 1.3;
+}
+
+/* TIÊU ĐỀ HỢP TÁC */
+.why-sub-title {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #0e73ba;
+  font-weight: 700;
+}
+
+/* LOGO BỆNH VIỆN – gần nhau hơn */
+.why-partners {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+
+.partner-item {
+
+  margin: 0 auto;
+}
+
+.partner-item img {
+  margin-left: 10px;
+  width: 140px;
+  height:140px;
+  margin-bottom: 20px;
+}
+
+.partner-item p {
+  color: #0e73ba;
+  font-size: 16px;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+
+  .why-wrapper {
+    padding: 16px;
+  }
+
+  .why-title {
+    font-size: 22px;
+    line-height: 1.35;
+    margin-bottom: 20px;
+  }
+
+  .why-title::after {
+    width: 180px;
+    height: 3px;
+  }
+
+  .why-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .why-image img {
+    border-radius: 8px;
+  }
+
+  .why-text p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .why-more {
+    font-size: 14px;
+  }
+
+  .why-features {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .feat-box {
+    flex: 1 1 calc(50% - 10px);
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .why-sub-title {
+    font-size: 18px;
+    margin-top: 28px;
+    text-align: center;
+  }
+
+  .why-partners {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .partner-item {
+    width: 45%;
+    text-align: center;
+  }
+
+  .partner-item img {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 12px;
+  }
+
+  .partner-item p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+
+  .why-partners {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .partner-item {
+    width: 33.333%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .partner-item img {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 6px;
+  }
+
+  .partner-item p {
+    font-size: 8px;
+    line-height: 1.3;
+  }
+}
+

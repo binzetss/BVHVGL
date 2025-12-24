@@ -1,0 +1,381 @@
+/* ===== DESKTOP STYLES ===== */
+.album-wrapper {
+  width: 100%;
+  background: linear-gradient(to bottom, #ffffff 0%, #f4f8fd 40%, #e3f0ff 100%);
+}
+
+.album-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* BREADCRUMB */
+.album-breadcrumb {
+  display: flex;
+  gap: 6px;
+  font-size: 13px;
+  margin: 14px 0;
+}
+
+.album-breadcrumb-home,
+.album-breadcrumb-link {
+  color: #0e73ba;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.album-breadcrumb-current {
+  font-weight: 600;
+}
+
+/* HERO */
+.album-hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1.1fr;
+  gap: 40px;
+}
+
+.album-hero-tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0e73ba;
+}
+
+.album-hero-title {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+/* SUMMARY */
+.album-summary-box {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.album-summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.album-summary-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0e73ba;
+}
+
+.album-summary-detail-btn {
+  background: #0e73ba;
+  color: #fff;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* IMAGE */
+.album-photo-thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.album-photo-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.album-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.album-photo-thumb:hover .album-photo-overlay {
+  opacity: 1;
+}
+
+.album-photo-overlay-text {
+  background: #0e73ba;
+  color: #fff;
+  padding: 6px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* GALLERY */
+.album-gallery-section {
+  margin-top: 40px;
+}
+
+.album-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* OTHER EVENTS */
+.album-other-events {
+  margin-top: 48px;
+}
+
+.album-other-events-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0e73ba;
+  margin-bottom: 18px;
+}
+
+.album-other-events-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.album-other-events-card:hover {
+  transform: translateY(-4px);
+}
+
+.album-other-events-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.album-other-events-card-title {
+  padding: 12px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* LIGHTBOX */
+.album-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.album-lightbox-inner {
+  max-width: 95vw;
+  max-height: 95vh;
+}
+
+.album-lightbox-inner img {
+  max-width: 100%;
+  max-height: 95vh;
+  object-fit: contain;
+}
+
+/* SUMMARY MODAL */
+.album-summary-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+}
+
+.album-summary-modal {
+  position: relative;
+  width: min(1050px, 95vw);
+  height: 85vh;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.album-summary-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #f3f4f6;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.album-summary-modal-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  gap: 18px;
+  min-height: 0;
+}
+
+.album-summary-modal-left {
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.album-summary-section {
+  margin-bottom: 20px;
+}
+
+.album-summary-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 10px;
+}
+
+.album-summary-modal-right {
+  border-left: 1px solid #e5e7eb;
+  padding-left: 10px;
+  min-height: 0;
+  display: flex;
+}
+
+.album-summary-slider {
+  width: 100%;
+  height: 100%;
+}
+
+.album-summary-slider .swiper-wrapper {
+  height: 100%;
+}
+
+.album-summary-slider .swiper-slide {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.album-summary-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== MOBILE STYLES ===== */
+@media (max-width: 992px) {
+  /* Container - FIX SCROLL NGANG */
+  .album-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .album-inner {
+    padding: 0 16px 40px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Hero */
+  .album-hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .album-hero-title {
+    font-size: 22px;
+  }
+
+  /* Gallery - 2 COLUMNS */
+  .album-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .album-photo-thumb {
+    border-radius: 10px;
+  }
+
+  .album-photo-card {
+    width: 100%;
+  }
+
+  /* Other Events - 2 SLIDES PER VIEW */
+  .album-other-events {
+    margin-top: 32px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .album-other-events .swiper {
+    overflow: visible;
+  }
+
+  .album-other-events-title {
+    font-size: 18px;
+  }
+
+  /* Summary Modal */
+  .album-summary-modal {
+    width: 95vw;
+    height: 90vh;
+  }
+
+  .album-summary-modal-content {
+    grid-template-columns: 1fr;
+  }
+
+  .album-summary-modal-right {
+    border-left: none;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 12px;
+    padding-left: 0;
+    height: 220px;
+  }
+
+  .album-summary-slider {
+    height: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .album-hero-title {
+    font-size: 20px;
+  }
+
+  .album-summary-box {
+    padding: 14px;
+  }
+
+  .album-summary-title {
+    font-size: 16px;
+  }
+
+  .album-summary-detail-btn {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  .album-gallery-grid {
+    gap: 10px;
+  }
+}

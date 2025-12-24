@@ -1,0 +1,208 @@
+/* ============================================================
+   ⭐ BASE – VỊ TRÍ CHUNG
+============================================================ */
+
+.floating-left,
+.floating-contact {
+  position: fixed;
+  z-index: 9000;
+}
+
+/* ============================================================
+   ⭐ BÊN PHẢI – Messenger + Zalo (DESKTOP)
+============================================================ */
+
+.floating-contact {
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fc-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+  cursor: pointer;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25));
+  transition: transform 0.2s ease;
+}
+
+.fc-item img:hover {
+  transform: scale(1.09);
+}
+
+/* ============================================================
+   ⭐ BÊN TRÁI – Hotline + Đặt lịch (DESKTOP)
+============================================================ */
+
+.floating-left {
+  left: 20px;
+  bottom: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+/* Nút bên trái */
+.left-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0e73ba;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  transition: 0.2s ease;
+}
+
+.left-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+.left-btn.hotline {
+  border: 2px solid #0e73ba;
+}
+
+.left-btn.booking {
+  background: #ff8800;
+  color: white;
+}
+
+.left-btn img {
+  width: 26px;
+  height: 26px;
+}
+
+/* ============================================================
+   ⭐ HIỆU ỨNG RUNG NHẸ
+============================================================ */
+
+@keyframes shakeA {
+  0%,100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+}
+
+@keyframes shakeB {
+  0%,100% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+@keyframes cornerPop {
+  0%, 100% { transform: rotate(0deg); }
+  25%  { transform: rotate(8deg); }
+  50%  { transform: rotate(-8deg); }
+  75%  { transform: rotate(6deg); }
+}
+
+/* Icon rung nhẹ */
+.left-btn img {
+  animation: shakeA 1.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Nút rung riêng */
+.left-btn {
+  animation: shakeB 1.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Messenger + Zalo rung nhẹ */
+.floating-contact .fc-item img {
+  animation: cornerPop 1.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* ============================================================
+   📱 TABLET & MOBILE (≤ 768px)
+============================================================ */
+
+@media (max-width: 768px) {
+
+  /* BÊN PHẢI – icon nhỏ lại 1 chút */
+  .floating-contact {
+    right: 12px;
+    bottom: 18px;
+    gap: 8px;
+  }
+
+  .floating-contact .fc-item img {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* BÊN TRÁI – cho gọn, xếp dọc */
+  .floating-left {
+    left: 12px;
+    bottom: 18px;
+    gap: 6px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .left-btn {
+    padding: 8px 10px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .left-btn img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Giảm bớt độ "rung" trên mobile cho đỡ nhức mắt */
+  .left-btn,
+  .left-btn img,
+  .floating-contact .fc-item img {
+    animation-duration: 2.2s;
+  }
+}
+
+/* ============================================================
+   📱 MÀN SIÊU NHỎ (≤ 360px) – ƯU TIÊN KHÔNG CHE NỘI DUNG
+============================================================ */
+
+@media (max-width: 360px) {
+  .left-btn span {
+    display: none;          /* chỉ còn icon */
+  }
+
+  .left-btn {
+    padding: 8px;
+    min-width: 40px;
+    justify-content: center;
+  }
+}
+.floating-wrapper {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.floating-wrapper.hide-floating {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+/* Nút lên đầu trang */
+.scroll-top-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Tắt rung cho nút scroll top */
+.scroll-top-btn img {
+  animation: none !important;
+}

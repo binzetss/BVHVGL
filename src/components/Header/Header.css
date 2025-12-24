@@ -1,0 +1,518 @@
+/* =============================== HEADER WRAPPER ================================ */
+.hv-header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* =============================== TOP BAR – DESKTOP ================================ */
+.hv-top {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 12px 40px;
+  column-gap: 30px;
+  margin: 0 170px;
+}
+
+.hv-logo {
+  height: 60px;
+  width: 400px;
+  object-fit: contain;
+}
+
+/* ================= SEARCH DESKTOP ================= */
+.hv-search-center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 18px;
+  border: 2px solid #2ca8e0;
+  border-radius: 28px;
+  background: white;
+  position: relative;
+}
+
+.hv-search-center input {
+  border: none;
+  outline: none;
+  font-size: 15px;
+  width: 100%;
+}
+
+.hv-search-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* ================= RIGHT DESKTOP ================= */
+.hv-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  white-space: nowrap;
+}
+
+.hv-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0e73ba;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.hv-icon-img { width: 35px; }
+.hv-icon-img2 { width: 30px; }
+
+/* ================= LANGUAGE DESKTOP ================= */
+.hv-lang {
+  position: relative;
+  cursor: pointer;
+}
+
+.hv-lang-selected {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid #2ca8e0;
+  border-radius: 6px;
+  background: white;
+}
+
+.hv-flag-img {
+  width: 22px;
+  height: 22px;
+}
+
+.hv-lang-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  min-width: 150px;
+  background: white;
+  border: 1px solid #2ca8e0;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.hv-lang-item {
+  padding: 8px 12px;
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.hv-lang-item:hover {
+  background: #eaf6ff;
+}
+
+/* =============================== NAV DESKTOP ================================ */
+.hv-menu {
+  background: #0e73ba;
+  display: flex;
+  justify-content: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.hv-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 14px 0;
+}
+
+.hv-menu > ul > li {
+  color: white;
+  font-size: 18px;
+  padding: 8px 16px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Dropdown desktop */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 230px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #2ca8e0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.2s ease;
+  z-index: 9999;
+}
+
+.hv-menu > ul > li:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.dropdown li {
+  padding: 8px 14px;
+  font-size: 16px;
+  color: #0e73ba;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown li:hover {
+  background: #2ca8e0;
+  color: #fff;
+}
+
+/* =============================== MOBILE CLEAN ================================ */
+@media (max-width: 768px) {
+
+  /* 🔥 TẮT DESKTOP HOÀN TOÀN */
+  .hv-top,
+  .hv-menu,
+  .dropdown {
+    display: none !important;
+  }
+
+  /* HEADER */
+  .hv-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: white;
+    z-index: 5000;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    overflow: hidden; 
+  }
+
+  /* MOBILE BAR */
+  .hv-mobile-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    padding: 0 16px;
+    background: linear-gradient(135deg, #2ca7e043,#2ca7e01b);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 51000;
+  }
+
+  body {
+    padding-top: 56px !important;
+    overflow-x: hidden;
+  }
+
+  .m-logo {
+    max-width: 200px;
+    height: auto;
+  }
+
+  .m-icon-btn {
+    width: 26px;
+    height: 26px;
+  }
+
+  .m-icons {
+    display: flex;
+    gap: 12px;
+  }
+
+  /* SEARCH MOBILE */
+  .m-search-box {
+    position: fixed;
+    top: 64px;
+    left: 16px;
+    right: 16px;
+    z-index: 5200;
+  }
+
+  /* SIDE MENU */
+  .m-side-menu {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    z-index: 5300;
+    transition: 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .m-side-menu.open {
+    left: 0;
+  }
+
+  /* OVERLAY */
+  .m-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 5200;
+  }
+}
+@media (min-width: 769px) {
+
+  /* Ẩn toàn bộ header mobile */
+  .hv-mobile-bar,
+  .m-search-box,
+  .m-side-menu,
+  .m-overlay {
+    display: none !important;
+  }
+
+  /* Reset header desktop đúng flow */
+  .hv-header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+}
+/* =====================================================
+   📱 MOBILE SIDE MENU – CLEAN & MODERN UI
+===================================================== */
+@media (max-width: 768px) {
+
+  /* ===== MENU CONTAINER ===== */
+  .m-side-menu {
+    background: #ffffff;
+    box-shadow: 6px 0 24px rgba(0, 0, 0, 0.15);
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+
+  /* ===== HEADER ===== */
+  .m-side-header {
+    padding: 18px 20px;
+    background: linear-gradient(135deg, #2ca7e01b, #2ca7e0);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .m-close-btn {
+    width: 24px;
+    filter: brightness(0) invert(1);
+  }
+
+  /* ===== MAIN MENU ===== */
+  .m-main-menu {
+    margin: 0;
+    padding: 8px 0;
+  }
+
+  /* ===== MENU ITEM (CHA) ===== */
+  .m-item {
+    padding: 14px 20px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #0e73ba;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eef2f6;
+    background: #fff;
+    transition: background 0.2s ease;
+  }
+
+  .m-item:hover {
+    background: #f3f8ff;
+  }
+
+  /* ===== ARROW ===== */
+  .m-arrow {
+    width: 18px;
+    transition: transform 0.25s ease;
+  }
+
+  /* Khi mở dropdown */
+  li:has(.m-submenu) .m-arrow {
+    transform: rotate(180deg);
+  }
+
+  /* ===== SUB MENU ===== */
+  .m-submenu {
+    background: #f7faff;
+    padding: 6px 0;
+    border-left: 4px solid #2ca8e0;
+  }
+
+  .m-submenu li {
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #0e73ba;
+    border-bottom: 1px solid #e6edf5;
+  }
+
+  .m-submenu li:hover {
+    background: #eaf4ff;
+  }
+
+  .m-submenu li:last-child {
+    border-bottom: none;
+  }
+
+  /* ===== REMOVE TAP HIGHLIGHT ===== */
+  .m-item,
+  .m-submenu li {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+/* =====================================================
+   🖥️ DESKTOP – LOCK DROPDOWN ORIGINAL BEHAVIOR
+===================================================== */
+@media (min-width: 769px) {
+
+  .dropdown {
+    display: block !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: none !important;
+  }
+
+  .hv-menu > ul > li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Desktop header KHÔNG được overflow hidden */
+  .hv-header {
+    overflow: visible !important;
+  }
+}
+@media (max-width: 768px) {
+
+  .m-menu-logo {
+    height: 32px;          /* chỉnh theo mắt nhìn */
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .m-side-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 768px) {
+
+  /* SEARCH BOX TRONG MENU */
+  .m-menu-search {
+    padding: 12px 16px;
+    border-bottom: 1px dashed #e6edf5;
+  }
+
+  .m-menu-search input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 20px;
+    border: 1.5px solid #2ca8e0;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .m-menu-search-results {
+    margin-top: 8px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    overflow: hidden;
+  }
+
+  .m-search-item {
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #0e73ba;
+    cursor: pointer;
+  }
+
+  .m-search-item.active,
+  .m-search-item:hover {
+    background: #eaf6ff;
+  }
+
+  .m-search-empty {
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #999;
+  }
+}
+@media (max-width: 768px) {
+
+  .m-main-menu,
+  .m-submenu {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .m-main-menu li,
+  .m-submenu li {
+    list-style: none;
+  }
+}
+/* =====================================================
+   📱 MOBILE SEARCH – SAME AS DESKTOP
+===================================================== */
+@media (max-width: 768px) {
+
+  .m-search-wrapper {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    z-index: 5200;
+    padding: 0 16px;
+  }
+
+  .hv-search-center.mobile-search {
+    width: 100%;
+    padding: 8px 18px;
+    border-radius: 28px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  }
+
+  .hv-search-center.mobile-search input {
+    font-size: 15px;
+  }
+
+  /* MOBILE SEARCH RESULT – GIỐNG DESKTOP */
+  .hv-search-center.mobile-search .search-results {
+    display: block !important;
+    max-height: 260px;
+  }
+  
+}
+
+.hv-icon,
+.hv-icon:link,
+.hv-icon:visited,
+.hv-icon:hover,
+.hv-icon:active {
+  text-decoration: none;
+  color: #0e73ba;
+}
+
+/* Mobile icon link */
+.m-icon-btn {
+  text-decoration: none;
+}

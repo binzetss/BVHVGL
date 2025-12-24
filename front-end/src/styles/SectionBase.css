@@ -1,0 +1,52 @@
+/* ==== BASE FOR ALL SECTIONS ==== */
+.section-wrapper {
+  width: 100%;
+  padding: 60px 20px;
+  margin: 0 auto;
+}
+
+.section-inner {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: #0e73ba;
+  margin-bottom: 45px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 160px;
+  height: 4px;
+  background: #0e73ba;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 3px;
+}
+
+/* Text thu nhỏ đồng bộ */
+.section-desc {
+  font-size: 15px;
+  opacity: 0.9;
+  line-height: 1.55;
+}
+
+/* Card chung — corners mềm hơn */
+.section-card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  background: #ffffff;
+}
+
+/* Mobile nhỏ */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 26px;
+  }
+}

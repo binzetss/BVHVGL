@@ -1,0 +1,81 @@
+.dp-wrapper {
+  width: 100%;
+ 
+  background: linear-gradient(to bottom, #ffffff 0%, #f4f8fd 40%, #e3f0ff 100%);
+}
+
+.dp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 0 60px;
+}
+
+.dp-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0e73ba;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.dp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.dp-item {
+  background: #f8f9fc;
+  border: 2px solid #dce2eb;
+  border-radius: 14px;
+  padding: 25px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.dp-item:hover {
+  border-color: #0e73ba;
+  transform: translateY(-4px);
+}
+
+.dp-icon {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 15px;
+}
+
+.dp-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0e73ba;
+}
+/* ================= MOBILE: 2 CARD / 1 HÀNG ================= */
+@media (max-width: 768px) {
+
+  .dp-container {
+    padding: 0 12px 40px;
+  }
+
+  /* GRID 2 CỘT */
+  .dp-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .dp-item {
+    padding: 16px 12px;
+    border-radius: 12px;
+  }
+
+  .dp-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+  }
+
+  .dp-name {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+}

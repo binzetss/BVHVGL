@@ -1,0 +1,155 @@
+/* ============================================
+   WRAPPER
+============================================ */
+.cus-wrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 10px 0 45px;
+}
+
+/* ============================================
+   TITLE
+============================================ */
+.cus-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: #0e73ba;
+  margin-bottom: 40px;
+}
+
+.cus-title::after {
+  content: "";
+  width: 220px;
+  height: 4px;
+  background: #0e73ba;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+/* ============================================
+   SWIPER FIX
+============================================ */
+.customer-swiper {
+  overflow: visible !important;
+  padding-bottom: 50px !important;
+}
+
+.customer-swiper .swiper-slide,
+.customer-swiper .swiper-wrapper {
+  overflow: visible !important;
+}
+
+/* ============================================
+   CARD
+============================================ */
+/* ============================================
+   CARD
+============================================ */
+.cus-card {
+  height: 120px;                 /* ✅ tăng chiều cao */
+  /* padding: 18px 24px; */
+  background: white;
+  border-radius: 22px;
+
+  margin: 10px;
+  margin-bottom: 50px;
+
+  display: flex;                 /* ✅ center ảnh */
+  align-items: center;
+  justify-content: center;
+
+  border-left: 4px solid #ababab;
+  border: 0.5px solid #ababab;
+
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  transition: 0.25s ease;
+}
+
+.cus-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.22);
+}
+
+/* LOGO */
+.cus-img {
+  max-width: 100%;     /* ✅ logo to */
+  max-height: 100px;   /* ✅ kiểm soát chiều cao */
+  object-fit: contain;
+}
+
+
+.cus-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.22);
+}
+
+
+/* ============================================
+   PAGINATION
+============================================ */
+.customer-swiper .swiper-pagination {
+   position: relative !important;
+  bottom: -25px !important;     /* đẩy xuống dưới swiper */
+  margin-top: 25px !important;  
+}
+
+.swiper-pagination-bullet {
+  background: #0e73ba !important;
+  opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+}
+
+/* ============================================
+   REMOVE SWIPER DEFAULT NAVIGATION
+============================================ */
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
+@media (max-width: 576px) {
+
+  .cus-wrapper {
+    padding: 10px 0 30px;
+  }
+
+  .cus-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .cus-title::after {
+    width: 120px;
+    height: 3px;
+    margin-top: 6px;
+  }
+
+  .cus-card {
+    height: 80px;
+    padding: 10px 12px;
+    margin: 6px;
+    width: auto;
+    border-radius: 14px;
+  }
+
+  .cus-img {
+    max-height: 48px;
+  }
+
+  .cus-swiper {
+    padding-bottom: 30px !important;
+  }
+
+  .swiper-pagination {
+    bottom: -10px !important;
+  }
+}
+

@@ -1,0 +1,214 @@
+.hv-footer {
+  background: #0e73ba;
+  color: #fff;
+  padding: 50px 180px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ===== BỐ CỤC ===== */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* ===== CỘT 1 ===== */
+.footer-logo {
+  width: 70px;
+  margin-right: 14px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5PX;
+}
+
+.footer-brand h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.footer-sub {
+  font-size: 14px;
+  margin-top: 2px;
+  opacity: 0.9;
+}
+
+.footer-info p {
+  margin: 6px 0;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 150;
+ 
+}
+
+/* ===== NÚT ===== */
+.footer-buttons {
+  margin-top: 20px;
+}
+
+.footer-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #0e73ba;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.footer-btn img {
+  width: 20px;
+}
+
+/* Nút đăng ký khám – màu cam */
+.booking {
+  background: #ff8800;
+  color: #fff;
+}
+
+/* ===== CỘT 2 ===== */
+.col-2 h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight:600;
+}
+.col-2 p {
+  font-size: 15px;
+  margin: 5px 0;
+  font-weight: 150;
+}
+.col-2 b{
+  font-weight: 300;
+}
+
+/* ===== CỘT 3 ===== */
+.social-icons img {
+  width: 34px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.footer-links {
+  margin-top: 20px;
+  padding-left: 18px;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 150;
+}
+
+/* Email box */
+.email-box {
+  display: flex;
+  margin-top: 14px;
+}
+
+.email-box input {
+  padding: 10px 12px;
+  flex: 1;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  font-size: 14px;
+}
+
+.email-send {
+  background: white;
+  border: none;
+  width: 48px;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+
+.email-send img {
+  width: 22px;
+}
+
+/* Margin tiện dụng */
+.mt20 {
+  margin-top: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.footer-brand-new {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-logo-new {
+  width: 350px;
+  height: 50%;
+}
+
+.footer-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.footer-subtitle {
+  margin: 2px 0 0;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.4px;
+}
+iframe {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 999999 !important;
+}
+.fancy-footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0 8px; /* giảm chiều cao */
+ margin-bottom: -30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.4px;
+  font-family: "Roboto", sans-serif; 
+}
+
+.footer-brand {
+  display: block;
+  opacity: 0.95;
+  transition: opacity 0.25s ease;
+}
+
+.footer-brand:hover {
+  opacity: 1;
+}
+.info{
+  font-weight: 600;
+  margin-top: 20px;
+}
+.footer-info b{
+  font-weight: 500;
+}
+.hotline{
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+}

@@ -1,0 +1,152 @@
+/* ===== WRAPPER ===== */
+.eq-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* ===== KHUNG 1500PX ===== */
+.eq-container {
+  width: 100%;
+  max-width: 1500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* ===== BACKGROUND ===== */
+.eq-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.eq-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+ 
+  z-index: 2;
+}
+
+/* ===== CONTENT LAYER ===== */
+.eq-inner {
+  position: relative;
+  z-index: 5;
+  padding: 40px 60px;
+}
+
+/* ===== TITLE ===== */
+.eq-title {
+  color: #0e73ba;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 30px;
+
+  background: #ffffff;              /* nền trắng */
+  padding: 14px 28px;               /* nệm đẹp */
+  display: inline-block;
+  border-radius: 12px;              /* bo góc đẹp */
+  border-left: 5px solid #0e73ba;   /* hiệu ứng nỗi bật */
+  border-right: 5px solid #0e73ba;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12); /* bóng nhẹ */
+}
+
+/* ===== SWIPER SLIDE ===== */
+.eq-slide {
+  position: relative;          /* CHO PHÉP BOX ABSOLUTE */
+  width: 100%;
+  height: 420px;               /* chiều cao cố định như ảnh bạn đưa */
+}
+
+/* ===== ẢNH PHẢI ===== */
+.eq-img-box {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 75%;                  /* rộng lớn giống hình mẫu */
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  z-index: 3;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.eq-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== BOX TRÁI ĐÈ LÊN ẢNH ===== */
+.eq-box {
+  position: absolute;
+  left: 40px;                  /* ĐẨY BOX LÊN ẢNH */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 380px;
+  background: white;
+  padding: 25px 28px;
+  border-radius: 18px;
+  z-index: 10;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.eq-box h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0e73ba;
+}
+
+.eq-box p {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+/* ===== BUTTON ===== */
+.eq-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border-radius: 25px;
+  background: #0e73ba;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.eq-btn:hover {
+  background: #1694e6;
+}
+
+/* ===== NAV BUTTONS ===== */
+.eq-prev,
+.eq-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #0e73ba;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.eq-prev { left: 10px; }
+.eq-next { right: 10px; }
+
+.eq-prev:hover,
+.eq-next:hover {
+  background: #0e73ba;
+  color: white;
+}

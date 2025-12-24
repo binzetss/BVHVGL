@@ -1,0 +1,315 @@
+/* ================= WRAPPER ================= */
+.wrapper {
+  min-height: 100vh; /* QUAN TRỌNG: giữ footer ở đáy */
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #ffffff 0%, #fafcff 40%, #c1e3ff 100%);
+}
+
+.doctor-wrapper {
+  flex: 1; /* đẩy footer xuống */
+width: 1300px;
+  margin: 10px auto 40px;
+  padding: 0 20px 0px;
+  box-sizing: border-box;
+}
+
+/* ================= TITLE ================= */
+.doctor-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  color: #0e73ba;
+  margin: 12px 0 22px;
+  position: relative;
+}
+
+.doctor-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 3px;
+  border-radius: 999px;
+  background: #0e73ba;
+}
+
+/* ================= FILTER ================= */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.filter-row::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #0e73ba;
+}
+
+.search-box,
+.filter-row select {
+  height: 42px;
+  border-radius: 8px;
+  border: 1px solid #c9d6e8;
+  padding: 0 12px;
+  font-size: 15px;
+  color: #0e73ba;
+  width: 200px;
+}
+
+.search-box {
+  width: 360px;
+  max-width: 100%;
+}
+
+.search-box:focus,
+.filter-row select:focus {
+  outline: none;
+  border-color: #0e73ba;
+  box-shadow: 0 0 0 2px rgba(14, 115, 186, 0.15);
+}
+
+/* ================= EMPTY STATE ================= */
+.doctor-empty {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+/* ================= LIST ================= */
+.doctor-list {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 24px;
+}
+
+.doctor-item {
+  display: flex;
+  gap: 20px;
+  padding: 18px 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e1ecf7;
+  box-shadow: 0 8px 18px rgba(10, 71, 134, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.doctor-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(10, 71, 134, 0.15);
+}
+
+/* LEFT */
+.doctor-left {
+  flex: 0 0 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.doctor-img {
+  width: 130px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* RIGHT */
+.doctor-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.doctor-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 6px;
+}
+
+.doctor-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* BUTTON */
+.doctor-right-footer {
+  margin-top: 12px;
+}
+
+.doctor-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 22px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #0e73ba, #2ca8e0);
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.doctor-btn::after {
+  content: "›";
+  margin-left: 6px;
+}
+
+/* ================= PAGINATION ================= */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 30px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #0e73ba;
+  color: #fff;
+  border-color: #0e73ba;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+  .doctor-list {
+    grid-template-columns: 1fr;
+  }
+}
+/* =====================================================
+   =============== MOBILE OPTIMIZATION =================
+===================================================== */
+@media (max-width: 768px) {
+
+  /* WRAPPER */
+  .doctor-wrapper {
+    width: 100%;
+
+  }
+
+  /* TITLE */
+  .doctor-title {
+    font-size: 20px;
+    margin: 10px 0 18px;
+  }
+
+  .doctor-title::after {
+    width: 120px;
+  }
+
+  /* FILTER */
+  .filter-row {
+    gap: 10px;
+    padding-bottom: 12px;
+  }
+
+  .search-box {
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .filter-row select {
+    width: 48%;
+    height: 42px;
+    font-size: 14px;
+  }
+
+  /* LIST */
+  .doctor-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* CARD */
+  .doctor-item {
+    flex-direction: column;
+    padding: 16px;
+    gap: 14px;
+  }
+
+  /* IMAGE */
+  .doctor-left {
+    flex: none;
+    width: 100%;
+    align-items: center;
+  }
+
+  .doctor-img {
+    width: 160px;
+    height: 200px;
+    border-radius: 14px;
+  }
+
+  /* INFO */
+  .doctor-right {
+    align-items: center;
+    text-align: center;
+  }
+
+  .doctor-name {
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+
+  .doctor-line {
+    justify-content: center;
+    font-size: 13px;
+  }
+
+  .doctor-line img {
+    width: 16px;
+  }
+
+  /* BUTTON */
+  .doctor-right-footer {
+    margin-top: 10px;
+  }
+
+  .doctor-btn {
+    font-size: 13px;
+    padding: 8px 26px;
+  }
+
+  /* PAGINATION */
+  .pagination {
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .pagination button {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+   .search-box {
+    font-size: 16px;
+  }
+
+  .filter-row select {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,145 @@
+/* =========== WRAPPER & CONTAINER (giống DepartmentDetail) =========== */
+
+.sv-wrapper {
+  width: 100%;
+background: linear-gradient(to bottom, #ffffff 0%, #f4f8fd 40%, #e3f0ff 100%);
+}
+
+.sv-container {
+  max-width: 1200px;            /* cùng kích thước với .dpd-container */
+  margin: 0 auto;
+  padding: 0px 0 60px;
+}
+
+
+/* =========== TITLE =========== */
+
+.sv-title {
+  margin-top: 20px;
+  font-size: 30px;
+  color: #0e73ba;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+/* =========== GRID 3 CỘT =========== */
+
+.sv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+/* Link bọc card */
+.sv-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Card dịch vụ */
+.sv-card {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e3edf7;
+  box-shadow: 0 8px 22px rgba(5, 86, 150, 0.14);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(5, 86, 150, 0.22);
+}
+
+/* Ảnh dịch vụ */
+.sv-card-img-box img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Tên dịch vụ */
+.sv-card-name {
+  padding: 4px 2px 6px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0e73ba;
+  background: #ffffff;
+  border-top: 1px solid #eef3ff;
+  min-height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========== PHÂN TRANG =========== */
+
+.sv-pagination {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sv-page-btn {
+  min-width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  border: 1px solid #d3e2f4;
+  background: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sv-page-btn-active {
+  background: #0e73ba;
+  color: #ffffff;
+  border-color: #0e73ba;
+}
+
+.sv-page-btn-disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  .sv-container {
+    padding: 0px 14px 40px;
+  }
+
+  /* GRID 2 CỘT */
+  .sv-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  /* CARD GỌN HƠN */
+  .sv-card-img-box img {
+    height: 140px;
+  }
+
+ .sv-card-name {
+  padding: 6px 6px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0e73ba;
+  background: #ffffff;
+  border-top: 1px solid #eef3ff;
+
+  /* QUAN TRỌNG */
+  min-height: 60px;      /* desktop */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+}

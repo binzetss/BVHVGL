@@ -1,0 +1,120 @@
+/* ===== TOÀN BỘ SECTION ===== */
+.service-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* ===== KHUNG GIỚI HẠN 1500PX ===== */
+.service-container {
+  width: 100%;
+  max-width: 1500px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* ===== BACKGROUND NẰM SAU NỘI DUNG ===== */
+.service-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+}
+
+/* ===== LỚP OVERLAY ===== */
+.service-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  
+}
+
+/* ===== NỘI DUNG — ĐÈ LÊN BACKGROUND ===== */
+.service-inner {
+  position: relative;
+  z-index: 5;
+padding: 40px 50px; 
+}
+
+/* ===== TITLE ===== */
+.service-title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.service-title {
+  color: #0e73ba;
+  font-size: 32px;
+  font-weight: 800;
+  position: relative;
+}
+
+.service-title::after {
+  content: "";
+  width: 260px;
+  height: 4px;
+  background: #0e73ba;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  border-radius: 4px;
+}
+
+.service-seeall {
+  color: #0e73ba;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== CARD ===== */
+.service-card {
+  background: #0e73ba;
+  border-radius: 35px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.service-swiper {
+  position: relative;
+  padding: 20px 0; /* tạo không gian cho nút điều hướng */
+}
+.service-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.service-box {
+  background: #0e73ba;
+  padding: 18px;
+  color: white;
+}
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  background: white;
+  border: 2px solid #0e73ba;
+  border-radius: 50%;
+  color: #0e73ba;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;       /* tăng từ 10 → 20 */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-prev { left: 10px; }   /* dịch sát vào trong hơn */
+.btn-next { right: 10px; }

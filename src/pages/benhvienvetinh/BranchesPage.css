@@ -1,0 +1,254 @@
+/* WRAPPER CHUNG */
+.branches-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto 60px;
+  padding: 0 8px;
+}
+
+/* BREADCRUMB */
+.home-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #0e73ba;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+.icon-home {
+  font-size: 16px;
+}
+
+.sep {
+  margin: 0 6px;
+  opacity: 0.6;
+}
+
+.current {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* INTRO BOX */
+.branches-intro {
+  padding: 20px 24px;
+  border-radius: 18px;
+  background: linear-gradient(#f2f4f7, #fafbff);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 22px;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.7;
+}
+
+.branches-intro p + p {
+  margin-top: 8px;
+}
+
+/* LIST CARD */
+.branches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* CARD CƠ SỞ */
+.branch-card {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1.6fr) minmax(0, 1.1fr);
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e2e6ef;
+}
+
+/* CỘT MÀU BÊN TRÁI */
+.branch-left-strip {
+  background: linear-gradient(180deg, #0e73ba, #0b5f98);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.branch-number {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0e73ba;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* NỘI DUNG TEXT GIỮA */
+.branch-content {
+  padding: 16px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.branch-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0e73ba;
+  text-align: center;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.branch-short {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.branch-intro {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* NÚT XEM CHI TIẾT */
+.branch-btn {
+  margin-top: 14px;
+  align-self: center;
+  padding: 7px 22px;
+  border-radius: 999px;
+  border: 1px solid #0e73ba;
+  background: #ffffff;
+  color: #0e73ba;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.branch-btn:hover {
+  background: #0e73ba;
+  color: #ffffff;
+}
+
+/* ẢNH BÊN PHẢI */
+.branch-image {
+  position: relative;
+  min-height: 190px;
+  max-height: 260px;
+  overflow: hidden;
+}
+
+.branch-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.branch-card:hover .branch-image img {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .branch-card {
+    grid-template-columns: 80px minmax(0, 1.5fr) minmax(0, 1.2fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .branch-card {
+    grid-template-columns: 1fr;
+  }
+
+  .branch-left-strip {
+    justify-content: flex-start;
+    padding-left: 16px;
+  }
+
+  .branch-content {
+    padding: 14px 16px 16px;
+  }
+
+  .branch-image {
+    max-height: 220px;
+  }
+}
+/* ================= MOBILE OPTIMIZE – KHÔNG ẢNH HƯỞNG DESKTOP ================= */
+@media (max-width: 768px) {
+
+  .branches-wrapper {
+    padding: 0 10px;
+  }
+
+  /* INTRO gọn hơn */
+  .branches-intro {
+    padding: 16px 16px;
+    font-size: 14px;
+    border-radius: 14px;
+  }
+
+  /* CARD */
+  .branch-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+  }
+
+  /* STRIP → thành header nhỏ */
+  .branch-left-strip {
+    width: 100%;
+    padding: 10px 14px;
+    justify-content: flex-start;
+  }
+
+  .branch-number {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  /* CONTENT */
+  .branch-content {
+    padding: 14px 14px 10px;
+    text-align: center;
+  }
+
+  .branch-title {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .branch-short {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* IMAGE full width */
+  .branch-image {
+    order: 3;
+    max-height: 200px;
+  }
+
+  .branch-image img {
+    border-radius: 0 0 14px 14px;
+  }
+
+  /* BUTTON nổi bật hơn */
+  .branch-btn {
+    margin-top: 12px;
+    padding: 8px 26px;
+    font-size: 14px;
+  }
+}

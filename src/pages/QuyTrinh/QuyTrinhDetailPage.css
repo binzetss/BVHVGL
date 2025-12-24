@@ -1,0 +1,229 @@
+/* NỀN CHUNG GIỐNG TIỆN ÍCH */
+html,
+body {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #f4f8fd 40%,
+    #e3f0ff 100%
+  );
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* WRAPPER + KHUNG 1800PX */
+.workflow-detail-wrapper {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #f4f8fd 40%,
+    #e3f0ff 100%
+  );
+}
+
+.workflow-inner {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px 0;
+}
+
+/* ===== HERO ===== */
+.workflow-hero {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 0 0 30px 30px;
+}
+
+.workflow-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.workflow-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.55)
+  );
+}
+
+.workflow-hero-text {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: #fff;
+}
+
+.workflow-hero-text h1 {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.workflow-hero-text p {
+  font-size: 18px;
+  opacity: 0.9;
+  max-width: 520px;
+}
+
+/* ===== BODY ===== */
+.workflow-container {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+}
+
+.workflow-left {
+  flex: 1;
+}
+
+/* BREADCRUMB */
+/* .breadcrumb {
+  margin-bottom: 14px;
+  display: flex;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.breadcrumb .link {
+  color: #0e73ba;
+  cursor: pointer;
+}
+
+.breadcrumb .link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .sep {
+  opacity: 0.7;
+}
+
+.current {
+  font-weight: 700;
+} */
+
+/* ===== BẢNG CHÍNH (GIỐNG ti-block) ===== */
+.wf-block {
+  background: #fff;
+  padding: 24px 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.06);
+  margin-bottom: 26px;
+}
+
+/* Tiêu đề quy trình */
+.wf-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0e73ba;
+  margin-bottom: 4px;
+}
+
+.wf-date {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Tiêu đề mô tả chính */
+.wf-subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 8px;
+}
+
+/* Đoạn văn */
+.wf-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+}
+
+/* Nhóm các bước */
+.wf-steps {
+  margin-top: 20px;
+}
+
+/* Mỗi subsection trong cùng 1 bảng */
+.wf-subsection {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.wf-step-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 6px;
+}
+
+/* ===== SIDEBAR – DANH MỤC QUY TRÌNH ===== */
+.workflow-right {
+   margin-top: 70px;
+  width: 320px;
+  position: sticky;
+
+  align-self: flex-start;
+  height: fit-content;
+    margin-bottom: 25px;
+}
+
+.side-title {
+  
+  color: #0e73ba;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.side-list {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.side-item {
+  padding: 12px 18px;
+  border-bottom: 1px solid #eef2f7;
+  cursor: pointer;
+  transition: 0.25s;
+  font-size: 15px;
+}
+
+.side-item:last-child {
+  border-bottom: none;
+}
+
+.side-item:hover {
+  padding-left: 26px;
+  background: #eaf4ff;
+}
+
+.side-active {
+  background: #0e73ba !important;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .workflow-container {
+    flex-direction: column;
+  }
+
+  .workflow-right {
+    width: 100%;
+    position: static;
+    margin-top: 10px;
+  }
+}

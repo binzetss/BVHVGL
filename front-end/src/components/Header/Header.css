@@ -1,0 +1,244 @@
+/* ===============================
+   HEADER WRAPPER
+================================ */
+.hv-header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* ===============================
+   TOP BAR 3 CỘT
+================================ */
+.hv-top {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 12px 40px;
+  column-gap: 30px;
+
+  margin-right: 170px;
+  margin-left: 170px;
+
+}
+
+.hv-logo {
+  height: 60px;
+  width: 400px;
+  object-fit: contain;
+}
+
+/* SEARCH */
+.hv-search-center {
+  display: flex;
+  align-items: center;
+  border: 2px solid #2ca8e0;
+  border-radius: 28px;
+  padding: 6px 18px;
+  height: 25px;
+  background: white;
+  gap: 10px;
+}
+
+.hv-search-center input {
+  border: none;
+  outline: none;
+  font-size: 15px;
+  width: 100%;
+}
+
+.hv-search-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* ===============================
+   RIGHT SIDE ICONS
+================================ */
+.hv-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  white-space: nowrap;
+}
+
+.hv-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0e73ba;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.hv-icon:hover {
+  color: #2bbcff;
+}
+
+/* ICON SIZES */
+.hv-icon-img {
+  width: 35px;
+}
+.hv-icon-img2 {
+  width: 30px;
+}
+.hv-icon-img1 {
+  width: 25px;
+}
+
+/* HOTLINE 2 DÒNG */
+.hv-hotline-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+/* ===============================
+   NGÔN NGỮ
+================================ */
+
+.hv-lang {
+  position: relative;
+  cursor: pointer;
+}
+
+.hv-lang-selected {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #2ca8e0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: white;
+}
+
+.hv-lang-selected span {
+  font-weight: 600;
+  color: #0e73ba;
+}
+
+.hv-flag-img {
+  width: 22px;
+  height: 22px;
+}
+
+/* DROPDOWN NGÔN NGỮ */
+.hv-lang-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 100%;
+  min-width: 150px;
+  border-radius: 6px;
+  background: white;
+  border: 1px solid #2ca8e0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.hv-lang-item {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.hv-lang-item:hover {
+  background: #eaf6ff;
+}
+
+/* ===============================
+   NAV MENU
+================================ */
+
+.hv-menu {
+  background: #0e73ba;
+  display: flex;
+  justify-content: center;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+.hv-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 14px 0;
+}
+
+.hv-menu > ul > li {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 16px;
+  cursor: pointer;
+  position: relative;
+}
+
+.hv-menu > ul > li:hover {
+  color: #2ca8e0;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.dropdown {
+  display: block !important;
+  flex-direction: column !important;
+
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+
+  min-width: 230px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #2ca8e0;
+  padding: 6px 0;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(8px);
+  transition: all 0.2s ease;
+  z-index: 9999;
+}
+
+/* HIỆN DROPDOWN */
+.hv-menu > ul > li:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* ITEM */
+.dropdown li {
+  display: block !important;
+  padding: 10px 14px;
+  font-size: 16px;
+  color: #0e73ba;
+  border-bottom: 1px solid #e6e6e6;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: left !important;
+}
+
+.dropdown li:last-child {
+  border-bottom: none;
+}
+
+.dropdown li:hover {
+  background: #2ca8e0;
+  color: #fff;
+}

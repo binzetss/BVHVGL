@@ -1,0 +1,142 @@
+/* ===== OVERLAY ===== */
+.bookingcal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999 !important;
+}
+
+/* ===== POPUP BOX ===== */
+.bookingcal-box {
+  width: 420px;
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+  animation: fadeInCal 0.25s ease;
+}
+
+@keyframes fadeInCal {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* TITLE */
+.calendar-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #0e73ba;
+  text-align: center;
+}
+
+/* HEADER */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #0e73ba;
+  transition: 0.2s;
+}
+
+.calendar-header button:hover {
+  transform: scale(1.2);
+}
+
+/* WEEK DAYS */
+.calendar-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: 600;
+  color: #0e73ba;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+/* DAY GRID */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-day {
+  padding: 10px 0;
+  background: #eef6ff;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.calendar-day:hover {
+  background: #0e73ba;
+  color: white;
+}
+
+/* SELECTED */
+.selected-day {
+  background: #0e73ba !important;
+  color: white !important;
+}
+
+/* TIME GRID */
+.time-grid {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.time-item {
+  padding: 12px;
+  background: #e5f1ff;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.time-item:hover {
+  background: #0e73ba;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* CLOSE BUTTON */
+.btn-close-popup {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #ccc;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+/* FIX CLICK CALENDAR ICON */
+.calendar,
+.hv-lich-icon {
+  pointer-events: auto !important;
+  z-index: 999 !important;
+}
+.calendar {
+  position: relative !important;
+  z-index: auto !important;
+}
+.hv-lich-icon {
+  z-index: 5 !important;
+}

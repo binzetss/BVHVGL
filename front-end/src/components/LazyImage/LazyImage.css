@@ -1,0 +1,26 @@
+/* Animation cho lazy loading */
+.lazy-image {
+  will-change: opacity, filter;
+}
+
+.lazy-image.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.lazy-image.loaded {
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+/* Background lazy loading */
+.lazy-bg {
+  will-change: background-image, opacity;
+}

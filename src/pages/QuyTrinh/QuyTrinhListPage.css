@@ -1,0 +1,230 @@
+/* NỀN CHUNG (giống các trang khác) */
+.wrapper {
+  background: linear-gradient(to bottom, #ffffff 0%, #f4f8fd 40%, #e3f0ff 100%);
+}
+
+/* KHUNG CHÍNH */
+.workflow-wrapper {
+  max-width: 1500px;
+  margin: 10px auto 0;
+  padding: 0 20px 40px;
+}
+
+/* BREADCRUMB */
+/* .breadcrumb {
+  font-size: 14px;
+  margin: 12px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+}
+
+.home-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #0e73ba;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+.icon-home {
+  font-size: 15px;
+}
+
+.sep {
+  opacity: 0.6;
+}
+
+.current {
+  text-transform: capitalize;
+} */
+
+/* HEADER */
+.workflow-header-box {
+  padding: 24px 26px 20px;
+  border-radius: 18px;
+  background: linear-gradient(#f2f6ff, #ffffff);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+  margin-bottom: 26px;
+}
+
+.workflow-title {
+  font-size: 26px;
+  color: #0e73ba;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.workflow-intro {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* LIST = GRID 2 CỘT (NHƯ TIỆN ÍCH) */
+.workflow-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* CARD CHÍNH */
+.workflow-card {
+  display: flex;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.workflow-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
+/* ẢNH BÊN TRÁI – FULL HEIGHT CARD */
+.workflow-card-image {
+  flex: 0 0 260px;
+  max-width: 260px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.workflow-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.workflow-card:hover .workflow-card-image img {
+  transform: scale(1.08);
+}
+
+/* NỘI DUNG BÊN PHẢI */
+.workflow-card-content {
+  padding: 16px 20px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.workflow-card-top {
+  margin-bottom: 8px;
+}
+
+/* TAG NHỎ */
+.workflow-card-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e4f2ff;
+  color: #0e73ba;
+  margin-bottom: 6px;
+}
+
+/* TITLE + DESC */
+.workflow-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 4px;
+}
+
+.workflow-card-desc {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* LINK DƯỚI CÙNG */
+.workflow-card-bottom {
+  margin-top: 6px;
+}
+
+.workflow-card-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0e73ba;
+}
+
+.workflow-card:hover .workflow-card-link {
+  text-decoration: underline;
+}
+
+/* NÚT XEM THÊM / THU GỌN */
+.workflow-show-more {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.workflow-more-btn {
+  background: #0e73ba;
+  color: #fff;
+  padding: 11px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(8, 90, 146, 0.35);
+  transition: 0.2s ease;
+}
+
+.workflow-more-btn:hover {
+  background: #085a92;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .workflow-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-card-image {
+    flex: 0 0 220px;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .workflow-wrapper {
+    padding: 0 12px 30px;
+  }
+
+  .workflow-header-box {
+    padding: 18px 16px;
+  }
+
+  .workflow-title {
+    font-size: 22px;
+  }
+
+  .workflow-card {
+    flex-direction: column;
+  }
+
+  .workflow-card-image {
+    width: 100%;
+    max-width: 100%;
+    height: 180px;
+  }
+
+  .workflow-card-content {
+    padding: 14px 16px 16px;
+  }
+}

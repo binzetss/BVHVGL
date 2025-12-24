@@ -1,0 +1,363 @@
+/* =========================================================
+   ADMIN NEWS DARK THEME – HÙNG VƯƠNG GIA LAI
+   Tối ưu màu sắc – khoảng cách – hover – border – spacing
+   Hoàn toàn độc lập, không xung đột global admin theme
+   ========================================================= */
+.bg-dark {
+    background-color: #ffffff !important; /* bạn đổi thành màu bạn muốn */
+    color: #000000 !important;
+}
+/* Wrapper chung */
+.admin-news-wrapper {
+  color: #ffffff;
+  background: transparent;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ================================
+   CARD (KHUNG NGOÀI)
+   ================================ */
+.admin-news-card {
+  background: #ffffff !important;           /* Nền chính */
+  padding: 20px 24px;
+  border-radius: 10px;
+  border: 1px solid #2d343c;
+  color: #000000 !important;
+  margin-bottom: 22px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  transition: 0.25s ease;
+}
+
+.admin-news-card:hover {
+  border-color: #0ec5ff75;
+}
+
+/* ================================
+   TITLES
+   ================================ */
+.admin-news-title-main {
+    text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  color: #0e73ba;
+  margin-bottom: 18px;
+}
+
+.admin-news-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0e73ba;
+  margin-bottom: 12px;
+}
+
+.admin-news-title-small {
+  font-size: 17px;
+  font-weight: 600;
+  color: #0e73ba;
+  margin-bottom: 12px;
+}
+.text-info{
+    color: #0e73ba;
+}
+/* ================================
+   LABELS
+   ================================ */
+.admin-news-label {
+  color: #0e73ba;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ================================
+   INPUTS
+   ================================ */
+.admin-news-input {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #3a424c;
+  color: #000000 !important;
+  margin-bottom: 10px;
+  transition: 0.25s ease;
+  font-size: 15px;
+}
+
+.admin-news-input:focus {
+  border-color: #0e73ba;
+  box-shadow: 0 0 0 2px rgba(14, 197, 255, 0.25);
+  outline: none;
+}
+
+/* TEXTAREA */
+.admin-news-input textarea {
+  min-height: 90px;
+}
+
+/* ================================
+   CHECKBOX
+   ================================ */
+.admin-news-checkbox {
+    color: #000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.admin-news-checkbox input {
+  width: 18px;
+  height: 18px;
+}
+
+/* ================================
+   LIST ITEM (DANH SÁCH BÀI VIẾT)
+   ================================ */
+.admin-news-item {
+  padding: 12px 6px;
+  border-bottom: 1px solid #333a42;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.25s ease;
+}
+
+.admin-news-item:hover {
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* TEXT TRONG LIST */
+.admin-news-item-title {
+  color: #000000 !important;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.admin-news-item-date {
+  font-size: 13px;
+  color: #b5c0cd !important;
+  margin-top: 2px;
+}
+
+/* LEFT BLOCK */
+.admin-news-item-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ================================
+   UTILITY FLEX
+   ================================ */
+.admin-news-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================================
+   DRAG & DROP BLOCK
+   ================================ */
+.admin-news-dnd-card {
+  background: #2a3038;
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid #3b434d;
+  color: #ffffff;
+}
+
+.admin-news-dnd-card:hover {
+  border-color: #0e73ba;
+  box-shadow: 0 0 10px rgba(14, 197, 255, 0.15);
+}
+
+/* DRAG HANDLE */
+.admin-news-drag {
+  color: #ffd166;
+  font-weight: 700;
+  margin-bottom: 10px;
+  cursor: grab;
+}
+
+/* ================================
+   IMAGE PREVIEW
+   ================================ */
+.admin-news-image-preview {
+  width: 260px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: 1px solid #3f4750;
+}
+
+/* ================================
+   BUTTON OVERRIDES
+   ================================ */
+
+.btn-success {
+  background: #0e73ba !important;
+  border: none !important;
+}
+
+.btn-success:hover {
+  background: #0e73ba !important;
+}
+
+.btn-warning {
+  background: #0e73ba !important;
+  color: #ffffff !important;
+}
+
+.btn-danger {
+  background: #e63946 !important;
+}
+
+.btn-primary {
+  background: #0e73ba !important;
+}
+
+.btn-primary:hover {
+  background: #0e73ba !important;
+}
+
+/* ================================
+   SCROLL FIX
+   ================================ */
+.admin-news-wrapper ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-news-wrapper ::-webkit-scrollbar-thumb {
+  background: #3a424c;
+  border-radius: 10px;
+}
+
+.admin-news-wrapper ::-webkit-scrollbar-thumb:hover {
+  background: #4a545f;
+}
+/* ============================
+   ADMIN CUSTOM SELECT (DARK)
+   ============================ */
+
+.admin-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.admin-select {
+  width: 100%;
+  padding: 12px 14px;
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #3e4650;
+  border-radius: 8px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.admin-select:focus {
+  border-color: #0e73ba;
+  box-shadow: 0 0 0 2px rgba(14, 197, 255, 0.25);
+  outline: none;
+}
+
+/* Icon ▼ */
+.admin-select-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #9aa3ad;
+  font-size: 13px;
+}
+
+/* Dropdown options */
+.admin-select option {
+  background: #ffffff;
+  color: #000000;
+  padding: 10px;
+  border-radius: 0;
+}
+
+.admin-select option:hover,
+.admin-select option:checked {
+  background: #0e73ba !important;
+  color: #ffffff !important;
+}
+/* =========================================================
+   MEDIA ALBUM – BUTTON STYLE (SAFE ADDON)
+   Không ảnh hưởng admin khác
+   ========================================================= */
+
+.media-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: #f4f6f9;
+  color: #0e73ba;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.media-btn:hover {
+  background: #e8f1fb;
+}
+
+/* Primary */
+.media-btn.primary {
+  background: #0e73ba;
+  color: #ffffff;
+}
+
+.media-btn.primary:hover {
+  background: #0b5f9a;
+}
+
+/* Outline */
+.media-btn.outline {
+  background: #ffffff;
+  border: 1px dashed #c9d2df;
+  color: #0e73ba;
+}
+
+.media-btn.outline:hover {
+  border-color: #0e73ba;
+  background: #f5f9ff;
+}
+
+/* Danger */
+.media-btn.danger {
+  background: #e63946;
+  color: #ffffff;
+}
+
+.media-btn.danger:hover {
+  background: #c5303a;
+}
+
+/* Small */
+.media-btn.sm {
+  padding: 5px 10px;
+  font-size: 13px;
+}
+
+/* Section header (title + button) */
+.media-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
