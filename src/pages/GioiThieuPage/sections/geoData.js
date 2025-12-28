@@ -3,27 +3,22 @@ export const geoData = [
     title: "VỊ TRÍ THUẬN LỢI",
     img: require("../../../assets/vechungtoi/loithe2.jpg"),
     desc: [
-      "Bệnh viện có vị trí thuận lợi, dễ dàng tiếp cận. Bệnh viện có vị trí thuận lợi, dễ dàng tiếp cận. Bệnh viện có vị trí thuận lợi, dễ dàng tiếp cận.",
-      "Cơ sở hạ tầng hiện đại, không gian thoáng đãng. Thuận tiện cho người bệnh và thân nhân khi di chuyển.",
-      "Thuận tiện cho người bệnh và thân nhân khi di chuyển. Thuận tiện cho người bệnh và thân nhân khi di chuyển. Thuận tiện cho người bệnh và thân nhân khi di chuyển.",
-    ],
-  },
-  {
-    title: "TRUNG TÂM PHÁT TRIỂN",
-    img: require("../../../assets/vechungtoi/loithe3.jpg"),
-    desc: [
-      "Nằm ở khu vực trung tâm phát triển năng động. Nằm ở khu vực trung tâm phát triển năng động. Nằm ở khu vực trung tâm phát triển năng động.",
-      "Gần nhiều tuyến đường lớn, giảm thời gian di chuyển. Gần nhiều tuyến đường lớn, giảm thời gian di chuyển. Gần nhiều tuyến đường lớn, giảm thời gian di chuyển.",
-      "Liên kết nhanh chóng với các cơ sở y tế lân cận. Gần nhiều tuyến đường lớn, giảm thời gian di chuyển. Gần nhiều tuyến đường lớn, giảm thời gian di chuyển.",
+      "Giáp ranh với nhiều tỉnh ở khu vực miền Trung - Tây Nguyên, tạo điều kiện thuận lợi cho người dân đến khám bệnh và chữa bệnh. Chính vì thế, Hệ thống Y tế Hùng Vương đã chọn Gia Lai là địa điểm xây dựng Dự án Bệnh viện đa khoa, cụ thể Bệnh viện Hùng Vương Gia Lai tọa lạc ở địa chỉ 236A Lê Duẩn, P. Hội Phú, Gia Lai.",
     ],
   },
   {
     title: "MẬT ĐỘ DÂN CƯ CAO",
     img: require("../../../assets/vechungtoi/loithedialy2.png"),
     desc: [
-      "Khu vực dân cư đông đúc, nhu cầu khám chữa bệnh cao. Khu vực dân cư đông đúc, nhu cầu khám chữa bệnh cao. Khu vực dân cư đông đúc, nhu cầu khám chữa bệnh cao.",
-      "Dễ dàng tiếp cận dịch vụ y tế chất lượng. Khu vực dân cư đông đúc, nhu cầu khám chữa bệnh cao. Phục vụ tốt công tác chăm sóc sức khoẻ cộng đồng. Phục vụ tốt công tác chăm sóc sức khoẻ cộng đồng.",
-      "Phục vụ tốt công tác chăm sóc sức khoẻ cộng đồng. Phục vụ tốt công tác chăm sóc sức khoẻ cộng đồng. Phục vụ tốt công tác chăm sóc sức khoẻ cộng đồng.",
+      "Cao hơn đáng kể so với mật độ chung của tỉnh Gia Lai (khoảng 160-170 người/km²), do là trung tâm hành chính và kinh tế, tập trung dân cư đông đúc và đô thị hóa mạnh mẽ, đặc biệt ở các phường trung tâm, trong khi các vùng lân cận có mật độ thấp hơn nhiều, phân bố rải rác hơn.",
+      
+    ],
+  },
+  {
+    title: "PHÁT TRIỂN KINH TẾ XÃ HỘI",
+    img: require("../../../assets/vechungtoi/loithe3.jpg"),
+    desc: [
+      "Cơ sở hạ tầng và dịch vụ ở Pleiku phát triển hơn, kéo theo mật độ dân số cao hơn các khu vực nông thôn xung quanh.",
     ],
   },
 ];

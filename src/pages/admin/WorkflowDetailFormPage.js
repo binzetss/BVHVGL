@@ -1,6 +1,7 @@
 // src/pages/admin/WorkflowDetailFormPage.js
 import React, { useEffect, useState } from "react";
 import { API_BASE } from "../../config";
+import CKEditorClassic from "../../components/CKEditorClassic";
 
 export default function WorkflowDetailFormPage({ workflowId }) {
   const [sections, setSections] = useState([]);
@@ -72,10 +73,7 @@ export default function WorkflowDetailFormPage({ workflowId }) {
               {s.type === "text" ? "Khối Văn Bản" : "Khối Hình Ảnh"}
             </strong>
 
-            <button
-              className="btn btn-sm btn-danger"
-              onClick={() => remove(i)}
-            >
+            <button className="btn btn-sm btn-danger" onClick={() => remove(i)}>
               Xóa
             </button>
           </div>
@@ -88,11 +86,9 @@ export default function WorkflowDetailFormPage({ workflowId }) {
                 value={s.title || ""}
                 onChange={(e) => update(i, "title", e.target.value)}
               />
-              <textarea
-                className="admin-news-input mb-2"
-                placeholder="Nội dung"
+              <CKEditorClassic
                 value={s.content || ""}
-                onChange={(e) => update(i, "content", e.target.value)}
+                onChange={(data) => update(i, "content", data)}
               />
             </>
           ) : (
@@ -117,9 +113,7 @@ export default function WorkflowDetailFormPage({ workflowId }) {
             type="number"
             placeholder="Thứ tự"
             value={s.sortOrder ?? i + 1}
-            onChange={(e) =>
-              update(i, "sortOrder", Number(e.target.value))
-            }
+            onChange={(e) => update(i, "sortOrder", Number(e.target.value))}
           />
         </div>
       ))}

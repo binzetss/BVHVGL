@@ -112,7 +112,7 @@ background: linear-gradient(to bottom, #ffffff 0%, #f4f8fd 40%, #e3f0ff 100%);
 
 @media (max-width: 768px) {
   .sv-container {
-    padding: 0px 14px 40px;
+    padding: 1px 14px 40px;
   }
 
   /* GRID 2 CỘT */

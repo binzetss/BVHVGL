@@ -52,13 +52,6 @@ export default function GioiThieuSlider() {
         {fullSlides.map((img, i) => (
           <SwiperSlide key={i}>
 
-            {/* ⭐ OVERLAY TEXT ⭐ */}
-            <div className="gt-overlay">
-              <h1 className="gt-title-text">Giới thiệu</h1>
-              <p className="gt-sub-text">
-                Hệ thống Y tế Hùng Vương Gia Lai – Thân thiện, chuyên nghiệp, chu đáo.
-              </p>
-            </div>
 
             <LazyImage
               src={img}

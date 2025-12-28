@@ -6,46 +6,11 @@
 /* KHUNG CHÍNH */
 .workflow-wrapper {
   max-width: 1500px;
-  margin: 10px auto 0;
+  margin: 0px auto 0;
   padding: 0 20px 40px;
 }
 
-/* BREADCRUMB */
-/* .breadcrumb {
-  font-size: 14px;
-  margin: 12px 0 14px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #666;
-}
 
-.home-link {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  color: #0e73ba;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.home-link:hover {
-  text-decoration: underline;
-}
-
-.icon-home {
-  font-size: 15px;
-}
-
-.sep {
-  opacity: 0.6;
-}
-
-.current {
-  text-transform: capitalize;
-} */
-
-/* HEADER */
 .workflow-header-box {
   padding: 24px 26px 20px;
   border-radius: 18px;

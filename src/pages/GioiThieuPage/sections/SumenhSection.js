@@ -90,22 +90,11 @@ export default function SumenhSection() {
           <h2 className="lt-title-left">LỢI THẾ ĐỊA LÝ CỦA HÙNG VƯƠNG</h2>
 
           <p>
-            Vị trí thuận lợi giúp bệnh viện dễ dàng tiếp cận, thuận tiện cho
-            người bệnh và thân nhân. Môi trường thân thiện, cơ sở vật chất hiện
-            đại tạo điều kiện chăm sóc hiệu quả.
+            Gia Lai là một tỉnh miền núi, nằm ở phía Bắc Tây Nguyên, Phía Bắc
+            giáp tỉnh Kon Tum, phía Nam giáp tỉnh Đắk Lắk, phía Tây giáp Vương
+            quốc Campuchia, và phía Đông giáp tỉnh Quảng Ngãi và Biển Đông (qua
+            địa phận tỉnh Bình Định, nay thuộc Gia Lai).
           </p>
-
-          <p>
-            Môi trường thân thiện, cơ sở vật chất hiện đại tạo điều kiện chăm
-            sóc hiệu quả. Vị trí thuận lợi giúp bệnh viện dễ dàng tiếp cận,
-            thuận tiện cho người bệnh và thân nhân.
-          </p>
-          <p>
-            Môi trường thân thiện, cơ sở vật chất hiện đại tạo điều kiện chăm
-            sóc hiệu quả. Vị trí thuận lợi giúp bệnh viện dễ dàng tiếp cận,
-            thuận tiện cho người bệnh và thân nhân.
-          </p>
-          
         </div>
       </div>
 

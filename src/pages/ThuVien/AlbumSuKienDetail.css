@@ -44,7 +44,7 @@
 }
 
 .album-hero-title {
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 800;
 }
 
@@ -301,7 +301,7 @@
   }
 
   .album-hero-title {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   /* Gallery - 2 COLUMNS */
@@ -359,7 +359,7 @@
 
 @media (max-width: 576px) {
   .album-hero-title {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .album-summary-box {
@@ -378,4 +378,15 @@
   .album-gallery-grid {
     gap: 10px;
   }
+}
+/* ===== INTRO CLAMP ===== */
+.album-intro-clamp {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 6;   
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

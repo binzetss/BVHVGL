@@ -55,6 +55,7 @@
 /* ẢNH */
 .why-image img {
   width: 100%;
+  height: 430px;
   border-radius: 10px;
 }
 
@@ -162,6 +163,7 @@
   }
 
   .why-image img {
+    height: auto;
     border-radius: 8px;
   }
 

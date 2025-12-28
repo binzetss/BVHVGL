@@ -64,10 +64,8 @@ export default function ServiceSection() {
           <Swiper
             ref={swiperRef}
             modules={[Navigation, Pagination, Autoplay]}
-            slidesPerView={1}
-            spaceBetween={25}
             loop
-            centeredSlides
+            centeredSlides={false}
             navigation={{
               nextEl: ".btn-next",
               prevEl: ".btn-prev",
@@ -79,8 +77,18 @@ export default function ServiceSection() {
               pauseOnMouseEnter: true,
             }}
             breakpoints={{
-              768: { slidesPerView: 2 },
-              1200: { slidesPerView: 3 },
+              0: {
+                slidesPerView: 2,      // ✅ MOBILE
+                spaceBetween: 12,
+              },
+              768: {
+                slidesPerView: 2,      // tablet
+                spaceBetween: 20,
+              },
+              1200: {
+                slidesPerView: 4,      // desktop
+                spaceBetween: 25,
+              },
             }}
             className="service-swiper"
           >
@@ -100,7 +108,7 @@ export default function ServiceSection() {
                     <div className="service-box">
                       <h3>{item.name}</h3>
                       <p>{item.mainTitle}</p>
-                      <div className="plus-icon">＋</div>
+                    
                     </div>
                   </div>
                 </Link>

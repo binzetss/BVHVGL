@@ -202,3 +202,21 @@
 
   }
 }
+.svd-main-menu {
+  width: 100%;
+  background: #d9e9ff;
+  border: 1px solid #c0d7fa;
+  padding: 12px 16px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 17px;
+  color: #0e73ba;
+  margin: 16px 0;
+}
+.svd-main-icon {
+  font-size: 20px;
+  opacity: 0.7;
+}

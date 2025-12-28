@@ -12,7 +12,10 @@ export default function NewsSection() {
 
   const [categories, setCategories] = useState([]);
   const [newsData, setNewsData] = useState({});
-
+  const isTextSelected = () => {
+    const selection = window.getSelection();
+    return selection && selection.toString().length > 0;
+  };
   // ======================
   // FETCH DATA
   // ======================
@@ -82,7 +85,13 @@ export default function NewsSection() {
       <div className="news-grid">
         {/* LEFT BIG NEWS */}
         {bigNews && (
-          <div className="news-big" onClick={() => openDetail(bigNews.id)}>
+          <div
+            className="news-big"
+            onClick={() => {
+              if (isTextSelected()) return;
+              openDetail(bigNews.id);
+            }}
+          >
             <LazyImage
               src={bigNews.thumbnailUrl}
               alt={bigNews.title}
@@ -112,7 +121,10 @@ export default function NewsSection() {
             <div
               className="news-item"
               key={item.id}
-              onClick={() => openDetail(item.id)}
+              onClick={() => {
+                if (isTextSelected()) return;
+                openDetail(item.id);
+              }}
             >
               <LazyImage
                 src={item.thumbnailUrl}
@@ -126,7 +138,6 @@ export default function NewsSection() {
 
                 <div className="news-item-link">
                   <span>XEM CHI TIẾT</span>
-                
                 </div>
               </div>
             </div>

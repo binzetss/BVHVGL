@@ -97,7 +97,8 @@ export default function AlbumSuKienDetail() {
                   Xem chi tiết
                 </button>
               </div>
-              <p>{album.intro}</p>
+
+              <p className="album-intro-clamp">{album.intro}</p>
             </div>
           </div>
 
@@ -123,7 +124,9 @@ export default function AlbumSuKienDetail() {
               <div key={img.id} className="album-photo-card">
                 <div
                   className="album-photo-thumb"
-                  onClick={() => openLightbox(normalizeImageUrl(img.imageUrl))}
+                  onClick={() =>
+                    openLightbox(normalizeImageUrl(img.imageUrl))
+                  }
                 >
                   <img src={normalizeImageUrl(img.imageUrl)} alt="" />
                   <div className="album-photo-overlay">
@@ -141,7 +144,6 @@ export default function AlbumSuKienDetail() {
 
           <Swiper
             modules={[Autoplay]}
-            slidesPerView={4}
             spaceBetween={18}
             loop
             autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -155,7 +157,9 @@ export default function AlbumSuKienDetail() {
               <SwiperSlide key={item.id}>
                 <div
                   className="album-other-events-card"
-                  onClick={() => navigate(`/thu-vien/anh-su-kien/${item.id}`)}
+                  onClick={() =>
+                    navigate(`/thu-vien/anh-su-kien/${item.id}`)
+                  }
                 >
                   <img src={item.imageUrl} alt={item.title} />
                   <div className="album-other-events-card-title">
@@ -182,7 +186,7 @@ export default function AlbumSuKienDetail() {
         </div>
       )}
 
-      {/* ===== SUMMARY POPUP (KHÔNG PHÁ) ===== */}
+      {/* ===== SUMMARY POPUP ===== */}
       {summaryModalOpen && (
         <div
           className="album-summary-modal-backdrop"
@@ -202,33 +206,48 @@ export default function AlbumSuKienDetail() {
             <div className="album-summary-modal-content">
               {/* ===== LEFT CONTENT ===== */}
               <div className="album-summary-modal-left">
+                {album.intro && (
+                  <div className="album-summary-section">
+                    <h3>Giới thiệu</h3>
+                    <p>{album.intro}</p>
+                  </div>
+                )}
+
                 {album.sections?.map((s, idx) => (
                   <div key={idx} className="album-summary-section">
                     {s.heading && <h3>{s.heading}</h3>}
                     {s.bullets && (
-                      <div dangerouslySetInnerHTML={{ __html: s.bullets }} />
+                      <div
+                        dangerouslySetInnerHTML={{ __html: s.bullets }}
+                      />
                     )}
                   </div>
                 ))}
               </div>
 
-              {/* ===== RIGHT SLIDER ===== */}
+              {/* ===== RIGHT SLIDER (FIX MOBILE) ===== */}
               <div className="album-summary-modal-right">
                 <Swiper
                   modules={[Autoplay]}
                   direction="vertical"
-                  slidesPerView={3}
                   spaceBetween={12}
                   loop
                   autoplay={{
                     delay: 2000,
                     disableOnInteraction: false,
                   }}
+                  breakpoints={{
+                    0: { slidesPerView: 1 },     // 📱 mobile
+                    768: { slidesPerView: 3 },  // 💻 tablet & desktop
+                  }}
                   className="album-summary-slider"
                 >
                   {albumImages.map((img) => (
                     <SwiperSlide key={img.id}>
-                      <img src={normalizeImageUrl(img.imageUrl)} alt="" />
+                      <img
+                        src={normalizeImageUrl(img.imageUrl)}
+                        alt=""
+                      />
                     </SwiperSlide>
                   ))}
                 </Swiper>

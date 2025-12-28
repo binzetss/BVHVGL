@@ -53,7 +53,7 @@ useEffect(() => {
 
           <div className="why-features">
             <div className="feat-box">
-              14 NĂM <br /> KINH NGHIỆM
+              15 NĂM <br /> KINH NGHIỆM
             </div>
             <div className="feat-box">
               THIẾT BỊ <br /> ĐỒNG BỘ

@@ -18,7 +18,6 @@ import menuIcon from "../../assets/icons/menu.png";
 import phoneCallIcon from "../../assets/icons/phone-call.png";
 import chevronDownIcon from "../../assets/icons/chevron-down.png";
 import chevronUpIcon from "../../assets/icons/chevron-up.png";
-import closeIcon from "../../assets/icons/close.png";
 
 import { normalize, makeShort, menuSearchData } from "../data/searchIndex";
 
@@ -188,7 +187,7 @@ export default function Header() {
           </a>
           <img
             src={searchIcon}
-            className="m-icon-btn"
+            className="m-icon-seach"
             alt="Tìm kiếm"
             onClick={() => setShowSearch((prev) => !prev)}
           />
@@ -269,9 +268,7 @@ export default function Header() {
 
             {openDropdown === "about" && (
               <ul className="m-submenu">
-                  <li onClick={() => mobileNavigate("/")}>
-                Trang chủ
-                </li>
+                <li onClick={() => mobileNavigate("/")}>Trang chủ</li>
                 <li onClick={() => mobileNavigate("/gioi-thieu")}>
                   Giới thiệu chung
                 </li>
@@ -383,27 +380,31 @@ export default function Header() {
 
             {openDropdown === "service" && (
               <ul className="m-submenu">
-                <li onClick={() => navigate("/dich-vu/1")}>Cấp cứu</li>
-                <li onClick={() => navigate("/dich-vu/2")}>
+                <li onClick={() => mobileNavigate("/dich-vu/1")}>Cấp cứu</li>
+                <li onClick={() => mobileNavigate("/dich-vu/2")}>
                   Khám sức khỏe VIP, doanh nghiệp
                 </li>
-                <li onClick={() => navigate("/dich-vu/3")}>
+                <li onClick={() => mobileNavigate("/dich-vu/3")}>
                   Tim mạch - Điện quang can thiệp
                 </li>
-                <li onClick={() => navigate("/dich-vu/4")}>
+                <li onClick={() => mobileNavigate("/dich-vu/4")}>
                   Phẫu thuật thẩm mỹ
                 </li>
-                <li onClick={() => navigate("/dich-vu/5")}>Da liễu thẩm mỹ</li>
-                <li onClick={() => navigate("/dich-vu/6")}>Nha Khoa</li>
-                <li onClick={() => navigate("/dich-vu/7")}>Tiêm chủng</li>
-                <li onClick={() => navigate("/dich-vu/8")}>
+                <li onClick={() => mobileNavigate("/dich-vu/5")}>
+                  Da liễu thẩm mỹ
+                </li>
+                <li onClick={() => mobileNavigate("/dich-vu/6")}>Nha Khoa</li>
+                <li onClick={() => mobileNavigate("/dich-vu/7")}>Tiêm chủng</li>
+                <li onClick={() => mobileNavigate("/dich-vu/8")}>
                   Hỗ trợ sinh sản IUI
                 </li>
-                <li onClick={() => navigate("/dich-vu/9")}>Tâm bệnh</li>
-                <li onClick={() => navigate("/dich-vu/10")}>
+                <li onClick={() => mobileNavigate("/dich-vu/9")}>Tâm bệnh</li>
+                <li onClick={() => mobileNavigate("/dich-vu/10")}>
                   Nội soi &amp; thăm dò chức năng
                 </li>
-                <li onClick={() => navigate("/dich-vu/11")}>Thận nhân tạo</li>
+                <li onClick={() => mobileNavigate("/dich-vu/11")}>
+                  Thận nhân tạo
+                </li>
               </ul>
             )}
           </li>

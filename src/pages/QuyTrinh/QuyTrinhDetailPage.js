@@ -59,7 +59,10 @@ export default function QuyTrinhDetailPage() {
                           {idx + 1}. {sec.title}
                         </h4>
                       )}
-                      <p className="wf-text">{sec.content}</p>
+                      <div
+                        className="wf-text"
+                        dangerouslySetInnerHTML={{ __html: sec.content }}
+                      />
                     </div>
                   );
                 }

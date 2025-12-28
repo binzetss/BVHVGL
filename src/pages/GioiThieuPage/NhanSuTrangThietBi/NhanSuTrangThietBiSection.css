@@ -1,17 +1,23 @@
-/* WRAPPER */
+/* =========================
+   WRAPPER
+========================= */
 .nstb-wrapper {
   width: 100%;
   padding: 30px 0;
 }
 
-/* CONTAINER */
+/* =========================
+   CONTAINER
+========================= */
 .nstb-container {
   max-width: 1500px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* TITLE */
+/* =========================
+   TITLE
+========================= */
 .gt-title {
   font-size: 28px;
   font-weight: 800;
@@ -32,51 +38,52 @@
   background: #0e73ba;
   border-radius: 4px;
 }
-/* ========================== */
-/* 1) ĐỘI NGŨ NHÂN SỰ – BOX */
-/* ========================== */
 
+/* =========================
+   1) ĐỘI NGŨ NHÂN SỰ – DESKTOP
+========================= */
+
+/* 🔥 ÉP 3 BOX CAO ĐỀU */
 .nstb-row {
   display: flex;
   gap: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
+  align-items: stretch;
 }
 
-/* 3 BOX – nền là ảnh thật */
+/* BOX */
 .nstb-box {
   flex: 1;
-  padding: 25px;
+  padding: 26px;
   border-radius: 16px;
   color: white;
   position: relative;
   overflow: hidden;
-  min-height: 200px;
+
+  min-height: 320px; /* 🔥 desktop đều */
 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 
   box-shadow: 0 8px 16px rgba(0,0,0,0.09);
-
   background-size: cover;
   background-position: center;
 }
 
-/* BACKGROUND ẢNH */
+/* BACKGROUND */
 .nstb-box.bg1 {
   background-image: url("../../../assets/vechungtoi/lichsuhinhthanh/ls-2022.jpg");
 }
-
 .nstb-box.bg2 {
   background-image: url("../../../assets/vechungtoi/lichsuhinhthanh/ls-2023.jpg");
 }
-
 .nstb-box.bg3 {
   background-image: url("../../../assets/vechungtoi/lichsuhinhthanh/ls-2024.jpg");
 }
 
-/* OVERLAY — mỗi box 1 màu khác nhau */
+/* OVERLAY */
 .nstb-box.bg1::before,
 .nstb-box.bg2::before,
 .nstb-box.bg3::before {
@@ -87,54 +94,54 @@
   border-radius: 16px;
 }
 
-/* Màu overlay CHUẨN theo mẫu bạn gửi */
 .nstb-box.bg1::before {
-  background: rgba(14, 115, 186, 0.75); /* xanh đậm */
+  background: rgba(14, 115, 186, 0.75);
 }
-
 .nstb-box.bg2::before {
-  background: rgba(46, 142, 214, 0.75); /* xanh trung bình */
+  background: rgba(46, 142, 214, 0.75);
 }
-
 .nstb-box.bg3::before {
-  background: rgba(102, 174, 233, 0.75); /* xanh nhạt */
+  background: rgba(102, 174, 233, 0.75);
 }
 
-/* Nội dung bên trong */
+/* CONTENT */
 .nstb-box * {
   position: relative;
   z-index: 2;
 }
 
-/* TITLE + dấu › */
+/* 🔥 HEADER CỐ ĐỊNH CHIỀU CAO */
 .nstb-box-header {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 600;
-  margin-bottom: 10px;
+  line-height: 1.2;
+  margin-bottom: 12px;
   color: #fff;
 
+  min-height: 72px; /* 🔥 không làm lệch box */
 }
 
 .nstb-box-header::before {
   content: "› ";
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 900;
   margin-right: 4px;
 }
 
-/* TEXT */
+/* 🔥 TEXT DESKTOP */
 .nstb-box p {
- font-size: 18px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.65;
   color: #fff;
   margin: 0;
-  text-align: justify;     
-  text-align-last: left; 
 
+  text-align: justify;
+  text-align-last: left;
 }
 
-/* ========================== */
-/* 2) TRANG THIẾT BỊ */
+/* =========================
+   2) TRANG THIẾT BỊ – DESKTOP
+========================= */
 .nstb-equip-row {
   margin-top: 40px;
   display: flex;
@@ -155,6 +162,7 @@
   margin-bottom: 15px;
   color: #0e73ba;
   font-size: 18px;
+  line-height: 1.6;
 }
 
 /* RIGHT */
@@ -167,17 +175,16 @@
   height: 400px;
 }
 
-/* SLIDE CARD */
+/* SLIDE */
 .nstb-slide-card {
   height: auto;
   width: 90%;
   background: #fff;
   border-radius: 20px;
   padding: 18px;
-  border: 1px solid #dcd9d9; 
+  border: 1px solid #dcd9d9;
 }
 
-/* IMAGE */
 .nstb-slide-img {
   width: 100%;
   height: 260px;
@@ -185,7 +192,6 @@
   border-radius: 16px;
 }
 
-/* TITLE */
 .nstb-slide-title {
   margin-top: 12px;
   font-size: 18px;
@@ -193,28 +199,6 @@
   color: #0e73ba;
 }
 
-.nstb-slide-underline {
-  width: 140px;
-  height: 3px;
-  background: #0e73ba;
-  margin: 6px 0 10px 0;
-  border-radius: 4px;
-}
-
-/* DESC */
-.nstb-slide-desc {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #333;
-}
-
-/* DOTS */
-.swiper-pagination-bullet {
-  background: #c3cfe6 !important;
-}
-.swiper-pagination-bullet-active {
-  background: #0e73ba !important;
-}
 @media (max-width: 768px) {
 
   /* =========================

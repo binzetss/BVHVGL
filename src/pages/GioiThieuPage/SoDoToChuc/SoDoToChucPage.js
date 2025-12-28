@@ -3,6 +3,7 @@ import React from "react";
 import { FaHome } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import "./SoDoToChucPage.css";
+import anhDuoi from "../../../assets/sodotochuc/anhduoi.jpg";
 
 const chuTich = {
   name: "LUẬT SƯ PHẠM VĂN HỌC",
@@ -189,6 +190,9 @@ export default function SoDoToChuc() {
             </div>
           ))}
         </div>
+      </div>
+      <div className="org-footer-image">
+        <img src={anhDuoi} alt="Sơ đồ tổ chức BVHGVGL" />
       </div>
     </div>
   );

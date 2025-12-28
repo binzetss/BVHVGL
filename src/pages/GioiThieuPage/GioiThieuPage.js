@@ -14,15 +14,6 @@ export default function GioiThieuPage() {
   return (
     <div className="gt-wrapper">
       <GioiThieuSlider />
-
-      <div className="breadcrumb">
-        <a href="/" className="home-link">
-          <FaHome className="icon-home" /> TRANG CHỦ
-        </a>
-        <span className="sep">/</span>
-        <span className="current">Về chúng tôi</span>
-      </div>
-
       <GioiThieuSection />
       <SumenhSection />
       <NhanSuTrangThietBiSection />

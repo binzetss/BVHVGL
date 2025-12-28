@@ -9,10 +9,14 @@ import { MdMenu } from "react-icons/md";
 export default function DepartmentDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-
+const HIDDEN_DEPT_IDS = [1, 9, 13];
   const [data, setData] = useState(null);
   const [departments, setDepartments] = useState([]);
-
+useEffect(() => {
+  if (HIDDEN_DEPT_IDS.includes(Number(id))) {
+    navigate("/chuyen-khoa");
+  }
+}, [id, navigate])
   useEffect(() => {
     fetch(`${API_BASE}/api/departments/${id}/detail`)
       .then((res) => res.json())
@@ -36,9 +40,7 @@ export default function DepartmentDetailPage() {
   return (
     <div className="dpd-wrapper">
       <div className="dpd-container">
-
         <div className="dpd-left">
-
           {/* BREADCRUMB */}
           <div className="breadcrumb">
             <span onClick={() => navigate("/")} className="link">
@@ -56,21 +58,17 @@ export default function DepartmentDetailPage() {
 
           <p className="dpd-date">
             <img src={iconCalendar2} className="dpd-date-icon" alt="" />
-            
-            
+
             {data.date}
           </p>
-<div className="svd-main-menu">
- <MdMenu className="svd-main-icon" />
-  Nội dung chính
-</div>
-
-
+          <div className="svd-main-menu">
+            <MdMenu className="svd-main-icon" />
+            Nội dung chính
+          </div>
 
           {/* RENDER TEXT + IMAGE SECTIONS */}
           {data.sections.map((sec, i) => (
             <div key={i} className="dpd-section">
-
               {sec.type === "text" && (
                 <>
                   <h2 className="dpd-subtitle">{sec.title}</h2>
@@ -92,7 +90,6 @@ export default function DepartmentDetailPage() {
               )}
             </div>
           ))}
-
         </div>
 
         {/* SIDEBAR */}
@@ -100,18 +97,19 @@ export default function DepartmentDetailPage() {
           <h3 className="dpd-right-title">Danh sách chuyên khoa</h3>
 
           <div className="dpd-right-list">
-            {departments.map((d) => (
-              <div
-                key={d.id}
-                className={`dpd-right-item ${d.id == id ? "active" : ""}`}
-                onClick={() => navigate(`/chuyen-khoa/${d.id}`)}
-              >
-                {d.name}
-              </div>
-            ))}
+            {departments
+              .filter((d) => !HIDDEN_DEPT_IDS.includes(d.id))
+              .map((d) => (
+                <div
+                  key={d.id}
+                  className={`dpd-right-item ${d.id == id ? "active" : ""}`}
+                  onClick={() => navigate(`/chuyen-khoa/${d.id}`)}
+                >
+                  {d.name}
+                </div>
+              ))}
           </div>
         </div>
-
       </div>
     </div>
   );

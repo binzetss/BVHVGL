@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { adminApi } from "../../../api/adminApi";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import "./albumcss.css";
 
 export default function MediaAlbumDetailForm({ album }) {
   const isVideo = album?.mediaType === "VIDEO";
 
+  /* ===== GIỮ NGUYÊN NHƯ BAN ĐẦU ===== */
   const [title, setTitle] = useState("");
   const [intro, setIntro] = useState("");
   const [isFeatured, setIsFeatured] = useState(false);
@@ -14,17 +13,25 @@ export default function MediaAlbumDetailForm({ album }) {
   const [sections, setSections] = useState([]);
   const [images, setImages] = useState([]);
 
+  /* ===== FEATURE IMAGE ===== */
+  const [featureImage, setFeatureImage] = useState("");
+
+  /* ===== VIDEO ===== */
   const [videoType, setVideoType] = useState("URL");
   const [videoUrl, setVideoUrl] = useState("");
   const [videoEmbed, setVideoEmbed] = useState("");
 
+  /* ===== UI ===== */
   const [openImages, setOpenImages] = useState(true);
-  const [openVideo, setOpenVideo] = useState(true);
+  const [showFolderInput, setShowFolderInput] = useState(false);
+  const [folderLink, setFolderLink] = useState("");
+  const [collapseFolderImages, setCollapseFolderImages] = useState(true);
 
-  /* ================= LOAD FEATURED FROM ALBUM ================= */
+  /* ================= LOAD ALBUM ================= */
   useEffect(() => {
     if (!album) return;
     setIsFeatured(!!album.isFeatured);
+    setFeatureImage(album.imageUrl || "");
   }, [album]);
 
   /* ================= LOAD DETAIL ================= */
@@ -58,22 +65,67 @@ export default function MediaAlbumDetailForm({ album }) {
     });
   }, [album?.id]);
 
+  /* ================= LOAD FOLDER BY LINK ================= */
+  const handleLoadFolderByLink = async () => {
+    try {
+      if (!folderLink.includes("/images/")) {
+        alert("Link folder không hợp lệ");
+        return;
+      }
+
+      const url = new URL(folderLink);
+      const base = url.origin;
+      const path = decodeURIComponent(url.pathname.split("/images/")[1]);
+
+      const apiUrl = `${base}/api/folder/media?path=${encodeURIComponent(
+        path
+      )}&recursive=true`;
+
+      const res = await fetch(apiUrl);
+      const data = await res.json();
+
+      if (!Array.isArray(data.media)) {
+        alert("Không lấy được ảnh");
+        return;
+      }
+
+      setImages(
+        data.media.map((p) => ({
+          id: Math.random(),
+          imageUrl: `${base}/images/${p}`,
+        }))
+      );
+
+      setCollapseFolderImages(true);
+      setShowFolderInput(false);
+      setFolderLink("");
+    } catch (err) {
+      console.error(err);
+      alert("Lỗi load folder ảnh");
+    }
+  };
+
+  /* ================= DELETE ALL IMAGES ================= */
+  const deleteAllImages = () => {
+    if (!window.confirm("Xóa toàn bộ ảnh khỏi album? (xóa DB)")) return;
+    setImages([]);
+    setCollapseFolderImages(true);
+  };
+
   /* ================= SAVE ================= */
   const save = async () => {
     try {
-      /* ===== 1. SAVE ALBUM (FEATURED) ===== */
       await adminApi("/api/media-albums/albums", {
         method: "PUT",
         body: {
           id: album.id,
           title: album.title,
           mediaType: album.mediaType,
-          imageUrl: album.imageUrl,
-          isFeatured, // 🔥 LƯU ĐÚNG
+          imageUrl: featureImage,
+          isFeatured,
         },
       });
 
-      /* ===== 2. SAVE DETAIL ===== */
       await adminApi("/api/media-albums/albums/detail", {
         method: "PUT",
         body: {
@@ -95,18 +147,6 @@ export default function MediaAlbumDetailForm({ album }) {
     }
   };
 
-  /* ================= DELETE ================= */
-  const deleteImage = (id) => {
-    if (!window.confirm("Xóa ảnh này?")) return;
-    setImages(images.filter((i) => i.id !== id));
-  };
-
-  const deleteVideo = () => {
-    if (!window.confirm("Xóa video?")) return;
-    setVideoUrl("");
-    setVideoEmbed("");
-  };
-
   if (!album) return null;
 
   return (
@@ -115,7 +155,7 @@ export default function MediaAlbumDetailForm({ album }) {
         Chi tiết {album.mediaType}: {album.title}
       </h5>
 
-      {/* ===== BASIC INFO ===== */}
+      {/* ===== GIỮ NGUYÊN ĐÚNG NHƯ BAN ĐẦU ===== */}
       <input
         className="admin-news-input"
         placeholder="Tiêu đề"
@@ -131,15 +171,14 @@ export default function MediaAlbumDetailForm({ album }) {
         onChange={(e) => setIntro(e.target.value)}
       />
 
-      {/* ===== FEATURED ===== */}
-      <label className="admin-news-checkbox">
-        <input
-          type="checkbox"
-          checked={isFeatured}
-          onChange={(e) => setIsFeatured(e.target.checked)}
-        />
-        Tin / Album nổi bật
-      </label>
+      {/* ===== FEATURE IMAGE ===== */}
+      <h6>Ảnh nổi bật</h6>
+      <input
+        className="admin-news-input"
+        placeholder="Link ảnh nổi bật"
+        value={featureImage}
+        onChange={(e) => setFeatureImage(e.target.value)}
+      />
 
       {/* ================= IMAGES ================= */}
       <div className="media-collapse">
@@ -150,115 +189,93 @@ export default function MediaAlbumDetailForm({ album }) {
           <div className="media-collapse-title">
             Ảnh ({images.length})
           </div>
-          <div className={`media-collapse-arrow ${openImages ? "open" : ""}`}>
-            ▶
-          </div>
         </div>
 
         {openImages && (
           <div className="media-collapse-body">
             <button
               className="media-btn outline sm"
-              onClick={() =>
-                setImages([...images, { id: Math.random(), imageUrl: "" }])
-              }
+              onClick={() => setShowFolderInput(true)}
             >
-              + Thêm ảnh
+              + Lấy ảnh từ folder
             </button>
 
-            {images.map((img) => (
-              <div key={img.id} style={{ marginTop: 10 }}>
-                <div className="media-inline-header">
-                  <strong>Ảnh</strong>
-                  <button
-                    className="media-btn danger sm"
-                    onClick={() => deleteImage(img.id)}
-                  >
-                    ✕ Xóa
-                  </button>
-                </div>
+            {images.length > 0 && (
+              <>
+                <button
+                  className="media-btn sm"
+                  style={{ marginLeft: 8 }}
+                  onClick={() =>
+                    setCollapseFolderImages(!collapseFolderImages)
+                  }
+                >
+                  {collapseFolderImages ? "Hiện ảnh" : "Thu gọn ảnh"}
+                </button>
 
+                <button
+                  className="media-btn danger sm"
+                  style={{ marginLeft: 8 }}
+                  onClick={deleteAllImages}
+                >
+                  🗑️ Xóa toàn bộ ảnh
+                </button>
+              </>
+            )}
+
+            {!collapseFolderImages &&
+              images.map((img) => (
                 <input
+                  key={img.id}
                   className="admin-news-input"
-                  placeholder="Link ảnh"
+                  style={{ marginTop: 8 }}
                   value={img.imageUrl}
                   onChange={(e) =>
-                    setImages(images.map((x) =>
-                      x.id === img.id
-                        ? { ...x, imageUrl: e.target.value }
-                        : x
-                    ))
+                    setImages(
+                      images.map((x) =>
+                        x.id === img.id
+                          ? { ...x, imageUrl: e.target.value }
+                          : x
+                      )
+                    )
                   }
                 />
-              </div>
-            ))}
+              ))}
           </div>
         )}
       </div>
 
-      {/* ================= VIDEO ================= */}
-      {isVideo && (
-        <div className="media-collapse">
-          <div
-            className="media-collapse-header"
-            onClick={() => setOpenVideo(!openVideo)}
-          >
-            <div className="media-collapse-title">Video</div>
-
-            {(videoUrl || videoEmbed) && (
-              <button
-                className="media-btn danger sm"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  deleteVideo();
-                }}
-              >
-                ✕ Xóa
-              </button>
-            )}
-
-            <div className={`media-collapse-arrow ${openVideo ? "open" : ""}`}>
-              ▶
-            </div>
-          </div>
-
-          {openVideo && (
-            <div className="media-collapse-body">
-              <select
-                className="admin-news-input"
-                value={videoType}
-                onChange={(e) => setVideoType(e.target.value)}
-              >
-                <option value="URL">Video URL</option>
-                <option value="EMBED">Nhúng iframe</option>
-              </select>
-
-              {videoType === "URL" && (
-                <input
-                  className="admin-news-input"
-                  placeholder="Link video"
-                  value={videoUrl}
-                  onChange={(e) => setVideoUrl(e.target.value)}
-                />
-              )}
-
-              {videoType === "EMBED" && (
-                <textarea
-                  className="admin-news-input"
-                  rows={4}
-                  placeholder="Iframe embed"
-                  value={videoEmbed}
-                  onChange={(e) => setVideoEmbed(e.target.value)}
-                />
-              )}
-            </div>
-          )}
-        </div>
-      )}
-
       <button className="media-btn primary mt-3" onClick={save}>
         Lưu chi tiết
       </button>
+
+      {/* ===== MODAL ===== */}
+      {showFolderInput && (
+        <div className="media-modal">
+          <div className="media-modal-content">
+            <h4>Nhập link folder ảnh</h4>
+            <input
+              className="admin-news-input"
+              placeholder="https://image.bvhvgl.com/images/..."
+              value={folderLink}
+              onChange={(e) => setFolderLink(e.target.value)}
+            />
+            <div style={{ marginTop: 10 }}>
+              <button
+                className="media-btn primary sm"
+                onClick={handleLoadFolderByLink}
+              >
+                Lấy ảnh
+              </button>
+              <button
+                className="media-btn sm"
+                onClick={() => setShowFolderInput(false)}
+              >
+                Hủy
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

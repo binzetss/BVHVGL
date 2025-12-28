@@ -1,62 +1,75 @@
-/* ===== BREADCRUMB WRAPPER ===== */
-.breadcrumb {
-  width: 100%;
-  background: #f5f9fd;
-  padding: 12px 0;
-  border-bottom: 1px solid #e1e7ec;
-}
-
-/* ===== CONTAINER max-width: 1500px ===== */
-.breadcrumb-container {
-
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 15px;
-  color: #4a5568;
-}
-
-/* ===== LINK TRANG CHỦ ===== */
-.breadcrumb-home {
-  color: #4e4f50;
-  text-decoration: none;
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-
-}
-
-.breadcrumb-home:hover {
-  text-decoration: underline;
-}
-
-/* ===== ICON HOME ===== */
-.breadcrumb-icon {
-  font-size: 16px;
-  margin-bottom: 2px;
-}
-
-/* ===== DẤU > ===== */
-.breadcrumb span {
-  opacity: 0.6;
-  margin: 0 4px;
-}
-
-/* ===== CURRENT PAGE ===== */
-.breadcrumb b {
-  color: #0e73ba;
-  font-weight: 400;
-}
 
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .breadcrumb-container {
     padding: 0 14px;
+    font-size: 14px;
+  }
+}
+/* =========================
+   GIỚI THIỆU – BREADCRUMB
+========================= */
+.gt-breadcrumb {
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  color: #0e73ba;
+  background: transparent;
+
+  margin: 10px 0 20px 230px; /* canh với title */
+}
+
+/* LINK */
+.gt-breadcrumb-link {
+  color: #0e73ba;
+  cursor: pointer;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  transition: 0.25s ease;
+}
+
+.gt-breadcrumb-link:hover {
+  color: #0e73ba;
+  text-decoration: underline;
+}
+
+/* ICON */
+.gt-breadcrumb-icon {
+  font-size: 14px;
+}
+
+/* SEPARATOR */
+.gt-breadcrumb-sep {
+  color: #000;
+  margin: 0 6px;
+}
+
+/* CURRENT */
+.gt-breadcrumb-current {
+  color: #000;
+  font-weight: 500;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .gt-breadcrumb {
+    margin-left: 0;
+    font-size: 14px;
+  }
+}
+@media (max-width: 900px) {
+  .gt-breadcrumb {
+    margin-left: 0;
     font-size: 14px;
   }
 }

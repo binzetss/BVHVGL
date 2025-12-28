@@ -7,7 +7,7 @@ export default function AdminNewsFormPage() {
   const [list, setList] = useState([]);
   const [selectedCat, setSelectedCat] = useState("");
   const [selectedNews, setSelectedNews] = useState(null);
-
+  const [collapsed, setCollapsed] = useState(false);
   const emptyNews = {
     id: "",
     categoryId: "",
@@ -38,7 +38,10 @@ export default function AdminNewsFormPage() {
     fetch(`${API_BASE}/api/news/category/${catId}`)
       .then((res) => res.json())
       .then((json) => {
-        const items = [...(json.featured ? [json.featured] : []), ...json.items];
+        const items = [
+          ...(json.featured ? [json.featured] : []),
+          ...json.items,
+        ];
         setList(items);
       });
   };
@@ -91,7 +94,6 @@ export default function AdminNewsFormPage() {
 
   return (
     <div className="admin-news-wrapper">
-
       <h2 className="admin-news-title-main">Quản lý tin tức</h2>
 
       {/* CATEGORY SELECT */}
@@ -120,28 +122,41 @@ export default function AdminNewsFormPage() {
       {selectedCat && (
         <div className="admin-news-card">
           <div className="admin-news-between">
-            <h3 className="admin-news-title">Danh sách bài viết</h3>
+            <div className="admin-news-between-left">
+              <h3 className="admin-news-title">Danh sách bài viết</h3>
+
+              <button
+                className="btn btn-success btn-sm"
+                onClick={() => setCollapsed(!collapsed)}
+              >
+                {collapsed ? "Mở danh sách" : "Thu gọn"}
+              </button>
+            </div>
 
             <button className="btn btn-success" onClick={addNew}>
               + Thêm bài viết
             </button>
           </div>
 
-          {list.map((n) => (
-            <div key={n.id} className="admin-news-item">
-              <div
-                onClick={() => selectNews(n)}
-                className="admin-news-item-left"
-              >
-                <strong className="admin-news-item-title">{n.title}</strong>
-                <div className="admin-news-item-date">{n.date}</div>
-              </div>
+          {!collapsed &&
+            list.map((n) => (
+              <div key={n.id} className="admin-news-item">
+                <div
+                  onClick={() => selectNews(n)}
+                  className="admin-news-item-left"
+                >
+                  <strong className="admin-news-item-title">{n.title}</strong>
+                  <div className="admin-news-item-date">{n.date}</div>
+                </div>
 
-              <button className="btn btn-sm btn-danger" onClick={() => del(n.id)}>
-                Xóa
-              </button>
-            </div>
-          ))}
+                <button
+                  className="btn btn-sm btn-danger"
+                  onClick={() => del(n.id)}
+                >
+                  Xóa
+                </button>
+              </div>
+            ))}
         </div>
       )}
 
@@ -168,14 +183,14 @@ export default function AdminNewsFormPage() {
             className="admin-news-input mb-2"
             placeholder="URL Thumbnail"
             value={form.thumbnailUrl}
-            onChange={(e) =>
-              setForm({ ...form, thumbnailUrl: e.target.value })
-            }
+            onChange={(e) => setForm({ ...form, thumbnailUrl: e.target.value })}
           />
+
+        
 
           <input
             className="admin-news-input mb-2"
-            placeholder="Tên tác giả"
+            placeholder="Người nhập"
             value={form.author}
             onChange={(e) => setForm({ ...form, author: e.target.value })}
           />
@@ -184,9 +199,7 @@ export default function AdminNewsFormPage() {
             <input
               type="checkbox"
               checked={form.featured}
-              onChange={(e) =>
-                setForm({ ...form, featured: e.target.checked })
-              }
+              onChange={(e) => setForm({ ...form, featured: e.target.checked })}
             />
             Bài nổi bật
           </label>

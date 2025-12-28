@@ -127,9 +127,17 @@
   padding: 12px;
   font-weight: 600;
   font-size: 14px;
-  height: auto;
+
+  /* ===== FIX CHỈ HIỂN THỊ 4 DÒNG ===== */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;      /* số dòng */
+  -webkit-box-orient: vertical;
   overflow: hidden;
+
+  line-height: 1.4;
+  min-height: calc(1.4em * 4); /* đảm bảo card cao đều */
 }
+
 
 .news-swiper .swiper-pagination {
   position: relative !important;

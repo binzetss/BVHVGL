@@ -10,7 +10,7 @@ export async function adminApi(
   const res = await fetch(`${API_BASE}${path}`, {
     method,
 
-    credentials: "include", // 🔥 BẮT BUỘC – GỬI JSESSIONID
+    credentials: "include",
 
     headers: {
       ...(isFormData

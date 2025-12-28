@@ -82,6 +82,7 @@
 }
 
 .tv-highlight-box {
+  margin-bottom: 30px;
   margin-top: 220px;
   position: relative;
   border-radius: 0 24px 24px 24px;
@@ -411,4 +412,14 @@
   .tv-highlight-label {
     font-size: 20px;
   }
+}
+.tv-intro-clamp {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

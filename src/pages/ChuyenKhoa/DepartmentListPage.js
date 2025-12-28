@@ -17,11 +17,10 @@ export default function DepartmentListPage() {
       .then((data) => setDepartments(data))
       .catch((err) => console.error("API ERROR:", err));
   }, []);
-
+  const HIDDEN_DEPT_IDS = [1, 9, 13];
   return (
     <div className="dp-wrapper">
       <div className="dp-container">
-
         <div className="breadcrumb">
           <a href="/" className="home-link">
             <FaHome className="icon-home" /> TRANG CHỦ
@@ -33,22 +32,23 @@ export default function DepartmentListPage() {
         <h1 className="dp-title">DANH SÁCH CHUYÊN KHOA</h1>
 
         <div className="dp-grid">
-          {departments.map((item) => (
-            <div
-              key={item.id}
-              className="dp-item"
-              onClick={() => navigate(`/chuyen-khoa/${item.id}`)}
-            >
-              <img
-                src={getDeptIcon(item.name)}
-                alt={item.name}
-                className="dp-icon"
-              />
-              <p className="dp-name">{item.name}</p>
-            </div>
-          ))}
+          {departments
+            .filter((item) => !HIDDEN_DEPT_IDS.includes(item.id))
+            .map((item) => (
+              <div
+                key={item.id}
+                className="dp-item"
+                onClick={() => navigate(`/chuyen-khoa/${item.id}`)}
+              >
+                <img
+                  src={getDeptIcon(item.name)}
+                  alt={item.name}
+                  className="dp-icon"
+                />
+                <p className="dp-name">{item.name}</p>
+              </div>
+            ))}
         </div>
-
       </div>
     </div>
   );

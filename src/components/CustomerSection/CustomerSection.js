@@ -23,7 +23,7 @@ export default function CustomerSection() {
 
   return (
     <div className="cus-wrapper">
-      <h2 className="cus-title">Khách Hàng Của Chúng Tôi Nhen</h2>
+      <h2 className="cus-title">Khách Hàng Của Chúng Tôi</h2>
 
       <Swiper
         ref={swiperRef}

@@ -269,7 +269,9 @@ export default function ThuVienMedia() {
                   <h3 className="tv-highlight-title">
                     {featuredPhoto.title}
                   </h3>
-                  <p className="tv-highlight-text">
+
+                  {/* ===== INTRO CLAMP ===== */}
+                  <p className="tv-highlight-text tv-intro-clamp">
                     {featuredPhotoIntro}
                   </p>
                 </div>
@@ -310,7 +312,9 @@ export default function ThuVienMedia() {
                   <h3 className="tv-highlight-title">
                     {featuredVideo.title}
                   </h3>
-                  <p className="tv-highlight-text">
+
+                  {/* ===== INTRO CLAMP ===== */}
+                  <p className="tv-highlight-text tv-intro-clamp">
                     {featuredVideoIntro}
                   </p>
                 </div>

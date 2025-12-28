@@ -27,7 +27,6 @@ export default function NhanSuTrangThietBiSection() {
 
   return (
     <div className="nstb-wrapper">
-
       {/* ==================== */}
       {/* 1) ĐỘI NGŨ NHÂN SỰ  */}
       {/* ==================== */}
@@ -36,18 +35,34 @@ export default function NhanSuTrangThietBiSection() {
 
         <div className="nstb-row">
           <div className="nstb-box bg1">
-            <div className="nstb-box-header">01 Bác sĩ</div>
-            <p>Cùng với g với việc chú trọng đào tạo chuyên môn, Bệnh viện luôn quan tâm..nh viện luôn quan tâm...</p>
+            <div className="nstb-box-header">144 Bác sĩ</div>
+            <p>
+              Bệnh viện Hùng Vương Gia Lai sẵn sàng tiếp nhận, đào tạo đội ngũ
+              bác sĩ với mong muốn nâng cao trình độ chuyên môn, đáp ứng nhu cầu
+              sử dụng dịch vụ y tế chất lượng cao của người dân trong việc tư
+              vấn chuyên môn, thăm khám trực tiếp và điều trị nội trú.
+            </p>
           </div>
 
           <div className="nstb-box bg2">
-            <div className="nstb-box-header">02 Điều dưỡng</div>
-                     <p>Cùng với g với việc chú trọng đào tạo chuyên môn, Bệnh viện luôn quan tâm..nh viện luôn quan tâm...</p>
+            <div className="nstb-box-header">259 Điều dưỡng, Hộ sinh, KTV</div>
+            <p>
+              Điều dưỡng, hộ sinh, kỹ thuật viên tại bệnh viện đều là những
+              gương mặt trẻ, nhiệt huyết, giàu kinh nghiệm, được đào tạo bài
+              bản, luôn đề cao tinh thần trách nhiệm, thân thiện với người bệnh,
+              giúp người bệnh an tâm, thoải mái trong suốt quá trình thăm khám
+              và điều trị.
+            </p>
           </div>
 
           <div className="nstb-box bg3">
-            <div className="nstb-box-header">03 Đào tạo nhân sự</div>
-            <p>Cùng với g với việc chú trọng đào tạo chuyên môn, Bệnh viện luôn quan tâm..nh viện luôn quan tâm...</p>
+            <div className="nstb-box-header"> 21 Dược sĩ</div>
+            <p>
+              Dược sĩ có nhiệm vụ bảo quản, lưu trữ, quản lý và cung cấp thuốc
+              cho người bệnh. Tham gia tư vấn cho bệnh nhân cũng như tất cả mọi
+              người về thuốc, cách thức sử dụng thuốc hiệu quả và nâng cao hiểu
+              biết về chăm sóc sức khỏe
+            </p>
           </div>
         </div>
       </div>
@@ -57,7 +72,6 @@ export default function NhanSuTrangThietBiSection() {
       {/* =================================== */}
       <div className="nstb-container">
         <div className="nstb-equip-row">
-
           {/* ===== LEFT TEXT – SYNC SLIDE ===== */}
           <div className="nstb-equip-left">
             <h2 className="gt-title">TRANG THIẾT BỊ HIỆN ĐẠI</h2>
@@ -77,9 +91,7 @@ export default function NhanSuTrangThietBiSection() {
               loop={true}
               slidesPerView={1}
               pagination={false}
-              onSlideChange={(swiper) =>
-                setActiveIndex(swiper.realIndex)
-              }
+              onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             >
               {equipments.map((item) => (
                 <SwiperSlide key={item.id}>
@@ -89,19 +101,14 @@ export default function NhanSuTrangThietBiSection() {
                       className="nstb-slide-img"
                       alt=""
                     />
-                    <div className="nstb-slide-title">
-                      {item.title}
-                    </div>
-
+                    <div className="nstb-slide-title">{item.title}</div>
                   </div>
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
-
         </div>
       </div>
-
     </div>
   );
 }
