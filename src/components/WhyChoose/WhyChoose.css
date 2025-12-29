@@ -116,29 +116,36 @@
 
 /* LOGO BỆNH VIỆN – gần nhau hơn */
 .why-partners {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột đều */
+  gap: 32px;
   margin-top: 40px;
+  align-items: start;
 }
-
 
 .partner-item {
-
-  margin: 0 auto;
+  text-align: center;
 }
-
 .partner-item img {
-  margin-left: 10px;
-  width: 140px;
-  height:140px;
-  margin-bottom: 20px;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 12px;
 }
 
 .partner-item p {
   color: #0e73ba;
   font-size: 16px;
   font-weight: 600;
+}
+
+.partner-item {
+  text-align: center;
+}
+.partner-item p {
+  color: #0e73ba;
+  font-size: 15px;
+  font-weight: 600;
+  min-height: 44px; /* giữ đều chiều cao chữ */
 }
 @media (max-width: 768px) {
 
@@ -243,4 +250,9 @@
     line-height: 1.3;
   }
 }
-
+@media (max-width: 768px) {
+  .partner-item p {
+    min-height: auto;   /* 🔴 gỡ chiều cao cứng */
+    margin-bottom: 0;   /* 🔴 tránh cộng margin */
+  }
+}

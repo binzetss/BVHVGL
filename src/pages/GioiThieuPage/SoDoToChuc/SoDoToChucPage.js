@@ -9,7 +9,7 @@ const chuTich = {
   name: "LUẬT SƯ PHẠM VĂN HỌC",
   role: "CHỦ TỊCH HDTV - TỔNG GIÁM ĐỐC",
   img: "https://image.bvhvgl.com/images/HDTV/TGD_PhamVanHoc.png",
-  hdtvId: 1,
+  maSo: "00001",
 };
 
 const phoTongGiamDoc = [
@@ -18,35 +18,35 @@ const phoTongGiamDoc = [
     name: "THẠC SĨ TRẦN LIÊN VIỆT",
     role: "PHÓ TỔNG GIÁM ĐỐC",
     img: "https://image.bvhvgl.com/images/HDTV/PTGD_TranLienViet.png",
-    hdtvId: 2,
+    hdtvId: "00002",
   },
   {
     id: 2,
     name: "BS.CKII ĐẶNG THANH HẢI",
     role: "PHÓ TỔNG GIÁM ĐỐC",
     img: "https://image.bvhvgl.com/images/HDTV/PTGD_DangThanhHai.png",
-    hdtvId: 3,
+    hdtvId: "00456",
   },
   {
     id: 3,
     name: "THẠC SĨ NGUYỄN THI",
     role: "PHÓ TỔNG GIÁM ĐỐC",
     img: "https://image.bvhvgl.com/images/HDTV/PTGD_NguyenThi.png",
-    hdtvId: 4,
+    hdtvId: "00003",
   },
   {
     id: 4,
     name: "ÔNG NGUYỄN HỒNG TOÀN",
     role: "THÀNH VIÊN HDTV",
     img: "https://image.bvhvgl.com/images/HDTV/HDTV_NguyenHongToan.png",
-    hdtvId: 5,
+    hdtvId: "00678",
   },
   {
     id: 5,
     name: "ÔNG ĐÀO TRỌNG TÚ",
     role: "THÀNH VIÊN HDTV",
     img: "https://image.bvhvgl.com/images/HDTV/HDTV_DaoTrongTu.png",
-    hdtvId: 6,
+    hdtvId: "00567",
   },
 ];
 
@@ -84,11 +84,10 @@ const phoGiamDoc = [
 export default function SoDoToChuc() {
   const navigate = useNavigate();
 
-  const handleClickHDTV = (id) => {
-    if (!id) return;
-    navigate(`/hoi-dong-thanh-vien/${id}`);
+  const handleClickHDTV = (maSo) => {
+    if (!maSo) return;
+    navigate(`/doi-ngu-hdtv/${maSo}`);
   };
-
   // 🔥 THÊM HANDLER CHO BÁC SĨ
   const handleClickDoctor = (maSo) => {
     if (!maSo) return;
@@ -117,7 +116,7 @@ export default function SoDoToChuc() {
         <div className="org-row-center">
           <div
             className="org-node main-layout no-line"
-            onClick={() => handleClickHDTV(chuTich.hdtvId)}
+            onClick={() => handleClickHDTV(chuTich.maSo)}
           >
             <div className="org-photo2">
               <img src={chuTich.img} alt={chuTich.name} />
@@ -140,6 +139,7 @@ export default function SoDoToChuc() {
               key={p.id}
               className="org-node"
               onClick={() => handleClickHDTV(p.hdtvId)}
+              style={{ cursor: "pointer" }}
             >
               <div className="org-photo">
                 <img src={p.img} alt={p.name} />
@@ -152,7 +152,7 @@ export default function SoDoToChuc() {
 
         <h1 className="org-title">BAN GIÁM ĐỐC</h1>
 
-        {/* Giám đốc - 🔥 THÊM CLICK HANDLER */}
+     
         <div className="org-row-center">
           <div
             className="org-node main-layout no-line-top"

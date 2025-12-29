@@ -45,7 +45,7 @@ export default function Footer() {
 
         <div className="col col-2">
           <h3>GIỜ LÀM VIỆC</h3>
-
+          <p>Khám bệnh tất cả các ngày trong tuần (Cả ngày nghỉ và Lễ, Tết)</p>
           <p>
             <b>Thứ 2 - Chủ nhật</b>
           </p>
@@ -55,21 +55,18 @@ export default function Footer() {
           <p>
             Chiều: <b>13h00 - 16h30</b>
           </p>
-          <p>Khám bệnh tất cả các ngày trong tuần (Cả ngày nghỉ và Lễ, Tết)</p>
 
-          <div style={{ marginTop: "14px" }}>
+          <h3 className="mt20">LIÊN HỆ</h3>
+          <div>
             Cấp cứu 24/24:
             <span className="hotline">
               <a href="tel:0914555115">0914.555.115</a>
             </span>
           </div>
-
-          <h3 className="mt20">LIÊN HỆ</h3>
-
           <div>
             Tổng đài CSKH:
             <span className="hotline">
-              <a href="tel:18008015" >1800.8015</a>
+              <a href="tel:18008015">1800.8015</a>
             </span>
           </div>
         </div>
@@ -121,9 +118,13 @@ export default function Footer() {
 
           <ul className="footer-links">
             <li>Tra cứu kết quả</li>
-            <li onClick={() => navigate("/quy-trinh-kham-benh")}>Khách hàng cần biết</li>
+            <li onClick={() => navigate("/quy-trinh-kham-benh")}>
+              Khách hàng cần biết
+            </li>
             <li onClick={() => navigate("/dich-vu")}>Dịch vụ</li>
-            <li className="lienhe" onClick={() => navigate("/lien-he")}>Liên hệ</li>
+            <li className="lienhe" onClick={() => navigate("/lien-he")}>
+              Liên hệ
+            </li>
           </ul>
 
           <h3 className="mt20">ĐĂNG KÝ ĐỂ NHẬN ƯU ĐÃI</h3>

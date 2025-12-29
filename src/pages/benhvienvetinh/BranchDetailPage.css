@@ -3,6 +3,16 @@
   width: 100%;
   background: #ffffff;
 }
+.branch-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nội dung chính sẽ giãn ra */
+.branch-wrapper {
+  flex: 1;
+}
 
 .branch-container {
   max-width: 1500px;

@@ -23,13 +23,19 @@ export default function BacSiAdminList() {
     adminApi("/api/admin/bac-si/list").then(setList);
   }, []);
 
-  const filtered = list.filter((bs) => {
+  const filtered = list
+  .filter((bs) => {
     const k = normalize(keyword);
     return (
       normalize(bs.hoVaTen).includes(k) ||
       normalize(bs.maSo).includes(k)
     );
+  })
+  .sort((a, b) => {
+   
+    return Number(a.maSo) - Number(b.maSo);
   });
+
 
   return (
     <div className="admin-card">

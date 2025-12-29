@@ -7,18 +7,18 @@
 .album-inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px 40px;
+  padding: 0 0px 0px;
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* BREADCRUMB */
 .album-breadcrumb {
-  display: flex;
-  gap: 6px;
-  font-size: 13px;
-  margin: 14px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #6b7280;
+    margin: 1px 0 1px;
 }
-
 .album-breadcrumb-home,
 .album-breadcrumb-link {
   color: #0e73ba;

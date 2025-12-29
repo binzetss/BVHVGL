@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { adminApi } from "../../../api/adminApi";
 
-const PAGE_ID = 1; // ✅ GIỐNG HỆT FacilityPageInfoForm
+const PAGE_ID = 1; // giống FacilityPageInfoForm
 
 export default function FacilityWithCaptionForm() {
   const [items, setItems] = useState([]);
+  const [collapseList, setCollapseList] = useState(false);
 
   /* ================= LOAD ================= */
   useEffect(() => {
@@ -15,7 +16,7 @@ export default function FacilityWithCaptionForm() {
       .catch(() => setItems([]));
   }, []);
 
-  /* ================= UPDATE FIELD ================= */
+  /* ================= UPDATE ================= */
   const update = (id, field, value) => {
     setItems((prev) =>
       prev.map((i) =>
@@ -26,15 +27,18 @@ export default function FacilityWithCaptionForm() {
 
   /* ================= ADD ================= */
   const addNew = () => {
+    // nếu đang thu gọn thì mở ra
+    setCollapseList(false);
+
     setItems((prev) => [
-      ...prev,
       {
-        id: null, // ⚠️ BẮT BUỘC: để Hibernate INSERT
+        id: null, // Hibernate INSERT
         title: "",
         description: "",
         imageUrl: "",
         imageCaption: "",
       },
+      ...prev,
     ]);
   };
 
@@ -62,82 +66,96 @@ export default function FacilityWithCaptionForm() {
         Slider (Có caption ảnh)
       </h5>
 
-      <button
-        className="btn btn-success btn-sm mb-3"
-        onClick={addNew}
-      >
-        + Thêm slide
-      </button>
-
-      {items.map((item, index) => (
-        <div
-          key={item.id ?? `new-${index}`}
-          className="admin-news-card mb-3"
+      {/* ===== ACTION BAR ===== */}
+      <div className="d-flex align-items-center gap-2 mb-3">
+        <button
+          className="btn btn-success btn-sm"
+          onClick={addNew}
         >
-          <input
-            className="admin-news-input mb-2"
-            placeholder="Tiêu đề"
-            value={item.title || ""}
-            onChange={(e) =>
-              update(item.id, "title", e.target.value)
-            }
-          />
+          + Thêm slide
+        </button>
 
-          <textarea
-            className="admin-news-input mb-2"
-            rows={3}
-            placeholder="Mô tả"
-            value={item.description || ""}
-            onChange={(e) =>
-              update(
-                item.id,
-                "description",
-                e.target.value
-              )
-            }
-          />
+        <button
+          className="btn btn-primary btn-sm"
+          onClick={save}
+        >
+          Lưu
+        </button>
 
-          <input
-            className="admin-news-input mb-2"
-            placeholder="URL ảnh"
-            value={item.imageUrl || ""}
-            onChange={(e) =>
-              update(
-                item.id,
-                "imageUrl",
-                e.target.value
-              )
-            }
-          />
+        <button
+          className="btn btn-outline-secondary btn-sm"
+          onClick={() => setCollapseList(!collapseList)}
+        >
+          {collapseList
+            ? `Mở danh sách (${items.length})`
+            : "Thu gọn"}
+        </button>
+      </div>
 
-          <input
-            className="admin-news-input mb-2"
-            placeholder="Caption ảnh"
-            value={item.imageCaption || ""}
-            onChange={(e) =>
-              update(
-                item.id,
-                "imageCaption",
-                e.target.value
-              )
-            }
-          />
-
-          <button
-            className="btn btn-danger btn-sm mt-2"
-            onClick={() => remove(item.id)}
+      {/* ===== LIST ===== */}
+      {!collapseList &&
+        items.map((item, index) => (
+          <div
+            key={item.id ?? `new-${index}`}
+            className="admin-news-card mb-3"
           >
-            Xóa
-          </button>
-        </div>
-      ))}
+            <input
+              className="admin-news-input mb-2"
+              placeholder="Tiêu đề"
+              value={item.title || ""}
+              onChange={(e) =>
+                update(item.id, "title", e.target.value)
+              }
+            />
 
-      <button
-        className="btn btn-primary mt-2"
-        onClick={save}
-      >
-        Lưu toàn bộ slider
-      </button>
+            <textarea
+              className="admin-news-input mb-2"
+              rows={3}
+              placeholder="Mô tả"
+              value={item.description || ""}
+              onChange={(e) =>
+                update(
+                  item.id,
+                  "description",
+                  e.target.value
+                )
+              }
+            />
+
+            <input
+              className="admin-news-input mb-2"
+              placeholder="URL ảnh"
+              value={item.imageUrl || ""}
+              onChange={(e) =>
+                update(
+                  item.id,
+                  "imageUrl",
+                  e.target.value
+                )
+              }
+            />
+
+            <input
+              className="admin-news-input mb-2"
+              placeholder="Caption ảnh"
+              value={item.imageCaption || ""}
+              onChange={(e) =>
+                update(
+                  item.id,
+                  "imageCaption",
+                  e.target.value
+                )
+              }
+            />
+
+            <button
+              className="btn btn-danger btn-sm mt-2"
+              onClick={() => remove(item.id)}
+            >
+              Xóa
+            </button>
+          </div>
+        ))}
     </div>
   );
 }

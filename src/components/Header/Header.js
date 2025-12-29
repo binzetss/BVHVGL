@@ -644,7 +644,7 @@ export default function Header() {
                 {" "}
                 Đội ngũ bác sĩ{" "}
               </li>
-              <li onClick={() => navigate("/thu-vien")}>Thư viện hìnhh ảnh</li>
+              <li onClick={() => navigate("/thu-vien")}>Thư viện hình ảnh</li>
               <li onClick={() => navigate("/benh-vien-ve-tinh")}>
                 Bệnh viện/Phòng khám vệ tinh
               </li>

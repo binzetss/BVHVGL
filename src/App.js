@@ -101,6 +101,7 @@ function WebsiteLayout() {
         <Route path="/tien-ich/:id" element={<TienIchDetailPage />} />
         <Route path="/che-do-bhyt-bao-lanh" element={<InsurancePage />} />
         <Route path="/tai-app-hvgl-care" element={<AppDownloadPage />} />
+        <Route path="/doi-ngu-hdtv/:id" element={<DoctorDetail />} />
       </Routes>
 
       <Footer />

@@ -40,6 +40,7 @@ export default function BranchDetailPage() {
   }
 
   return (
+     <div className="branch-page">
     <div className="branch-wrapper">
       <div className="branch-container">
         {/* LEFT */}
@@ -109,6 +110,7 @@ export default function BranchDetailPage() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

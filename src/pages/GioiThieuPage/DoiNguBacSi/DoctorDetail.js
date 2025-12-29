@@ -1,6 +1,6 @@
 // src/pages/GioiThieuPage/DoiNguBacSi/DoctorDetail.js
 import React, { useEffect, useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import "./doctorDetail.css";
 
@@ -12,11 +12,16 @@ import "swiper/css/navigation";
 import { adminApi } from "../../../api/adminApi";
 
 export default function DoctorDetail() {
-  const { id } = useParams(); // maSo
+  const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isHDTV = location.pathname.startsWith("/doi-ngu-hdtv");
 
   const [doctor, setDoctor] = useState(null);
   const [sameDept, setSameDept] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
+
   const fetchAvatar = async (maSo) => {
     try {
       const cms = await adminApi(`/api/admin/bac-si/${maSo}/content`);
@@ -25,19 +30,28 @@ export default function DoctorDetail() {
       return "/images/default-doctor.png";
     }
   };
-  const [isMobile, setIsMobile] = useState(false);
 
+  /* ================= RESIZE ================= */
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth <= 768);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
+
+  /* ================= LOAD DATA ================= */
   useEffect(() => {
     window.scrollTo(0, 0);
 
     const load = async () => {
-      const info = await adminApi(`/api/bac-si/${id}`);
+      const info = isHDTV
+        ? await adminApi(`/api/HDTV/chuc-vu-chuc-danh?maSo=${id}`).then(
+            (res) => res?.[0]
+          )
+        : await adminApi(`/api/bac-si/${id}`);
+
+      if (!info) return;
+
       const cms = await adminApi(`/api/admin/bac-si/${id}/content`);
 
       const sections = (cms?.sections || []).sort(
@@ -47,14 +61,9 @@ export default function DoctorDetail() {
       setDoctor({
         maSo: id,
         name: info.hoVaTen,
-
-        // 🔹 CHỨC VỤ (từ BE)
         chucVu: info.chucVuTen || "",
-
-        // 🔹 CHỨC DANH
         title: info.chucDanhTen,
         degree: info.chucDanhVietTat,
-
         department: info.khoaPhongTen || "Chuyên khoa",
         hospital: "Bệnh viện Hùng Vương Gia Lai",
         image: cms?.avatarUrl || "/images/default-doctor.png",
@@ -65,52 +74,74 @@ export default function DoctorDetail() {
         })),
       });
 
-      const list = await adminApi("/api/admin/bac-si/list");
+      // 👉 CHỈ BÁC SĨ MỚI CÓ "CÙNG CHUYÊN KHOA"
+      if (!isHDTV) {
+        const list = await adminApi("/api/admin/bac-si/list");
 
-      const related = list.filter(
-        (x) => x.khoaPhongTen === info.khoaPhongTen && x.maSo !== info.maSo
-      );
+        const related = list.filter(
+          (x) => x.khoaPhongTen === info.khoaPhongTen && x.maSo !== info.maSo
+        );
 
-      const relatedWithAvatar = await Promise.all(
-        related.map(async (d) => ({
-          ...d,
-          avatarUrl: await fetchAvatar(d.maSo), // 🔥 GẮN ẢNH
-        }))
-      );
+        const relatedWithAvatar = await Promise.all(
+          related.map(async (d) => ({
+            ...d,
+            avatarUrl: await fetchAvatar(d.maSo),
+          }))
+        );
 
-      setSameDept(relatedWithAvatar);
+        setSameDept(relatedWithAvatar);
+      }
     };
 
     load();
-  }, [id]);
+  }, [id, isHDTV]);
 
   if (!doctor) {
     return (
       <div className="wrapper">
         <div className="doctor-wrapper">
-          <p>Không tìm thấy thông tin bác sĩ.</p>
-          <Link to="/doi-ngu-bac-si" className="dd-back">
-            ← Quay lại đội ngũ bác sĩ
-          </Link>
+          <p>Không tìm thấy thông tin.</p>
         </div>
       </div>
     );
   }
 
-  const line1 = doctor.chucVu
-    ? `${doctor.chucVu} – ${doctor.title}`
-    : doctor.title || "";
+  /* ================= HDTV CHỨC DANH ================= */
+  const getHDTVChucDanh = (chucDanh) => {
+    if (!chucDanh) return "";
+
+    const cd = chucDanh.toLowerCase();
+
+    if (cd.includes("chưa xác định")) return "";
+    if (cd.includes("thạc sĩ")) return "Thạc sĩ";
+    if (cd.includes("bác sĩ ckii")) return "Bác sĩ CKII";
+
+    return "";
+  };
+
+  const displayTitle = isHDTV ? getHDTVChucDanh(doctor.title) : doctor.title;
+
   return (
     <div className="wrapper">
       <div className="doctor-wrapper doctor-detail-wrapper">
+        {/* ===== BREADCRUMB ===== */}
         <div className="breadcrumb">
           <span onClick={() => navigate("/")} className="link">
             <FaHome /> Trang chủ
           </span>
+
           <span className="sep">/</span>
-          <span onClick={() => navigate("/doi-ngu-bac-si")} className="link">
-            ĐỘI NGŨ BÁC SĨ
-          </span>
+
+          {isHDTV ? (
+            <span onClick={() => navigate("/so-do-to-chuc")} className="link">
+              Sơ Đồ Tổ Chức
+            </span>
+          ) : (
+            <span onClick={() => navigate("/doi-ngu-bac-si")} className="link">
+              ĐỘI NGŨ BÁC SĨ
+            </span>
+          )}
+
           <span className="sep">/</span>
           <span className="current">{doctor.name}</span>
         </div>
@@ -120,17 +151,27 @@ export default function DoctorDetail() {
             <div className="dd-photo-box">
               <img src={doctor.image} alt={doctor.name} />
             </div>
+
             <div className="dd-left-name-box">
               <div className="dd-left-name-row">
-                {doctor.degree && (
-                  <span className="dd-left-degree">{doctor.degree}</span>
+                {displayTitle && (
+                  <span className="dd-left-degree">{displayTitle}&nbsp;</span>
                 )}
                 <span className="dd-left-name">{doctor.name}</span>
               </div>
 
-              {line1 && <div className="dd-line-main1">{line1}</div>}
-              <div className="dd-line-main">{doctor.department}</div>
-              <div className="dd-line-main">{doctor.hospital}</div>
+              {/* ===== CHỨC VỤ: CẢ HDTV & BÁC SĨ ===== */}
+              {doctor.chucVu && (
+                <div className="dd-line-main1">{doctor.chucVu}</div>
+              )}
+
+              {/* ===== CHỈ BÁC SĨ MỚI CÓ CHUYÊN KHOA + BỆNH VIỆN ===== */}
+              {!isHDTV && (
+                <>
+                  <div className="dd-line-main">{doctor.department}</div>
+                  <div className="dd-line-main">{doctor.hospital}</div>
+                </>
+              )}
             </div>
           </div>
 
@@ -149,6 +190,7 @@ export default function DoctorDetail() {
           </div>
         </div>
 
+        {/* ===== IMAGES ===== */}
         {doctor.activities.length > 0 && (
           <section className="dd-block dd-full-block dd-activity-block">
             <div className="dd-full-inner">
@@ -170,12 +212,12 @@ export default function DoctorDetail() {
           </section>
         )}
 
-        {sameDept.length > 0 && (
+        {/* ===== RELATED (BÁC SĨ ONLY) ===== */}
+        {!isHDTV && sameDept.length > 0 && (
           <section className="dd-block dd-full-block related-wrapper">
             <div className="dd-full-inner">
               <h2 className="related-title">BÁC SĨ CÙNG CHUYÊN KHOA</h2>
 
-              {/* ===== MOBILE: LIST DỌC ===== */}
               {isMobile ? (
                 <div className="related-list">
                   {sameDept.map((d) => (
@@ -189,19 +231,14 @@ export default function DoctorDetail() {
                         alt={d.hoVaTen}
                         className="related-list-img"
                       />
-
                       <div className="related-list-info">
                         <div className="related-list-name">{d.hoVaTen}</div>
                         <div className="related-list-role">{d.chucDanhTen}</div>
-                        <div className="related-list-hospital">
-                          Bệnh viện Hùng Vương Gia Lai
-                        </div>
                       </div>
                     </Link>
                   ))}
                 </div>
               ) : (
-                /* ===== DESKTOP: GIỮ SLIDER ===== */
                 <Swiper
                   modules={[Navigation, Autoplay]}
                   slidesPerView={3}
@@ -217,20 +254,13 @@ export default function DoctorDetail() {
                         className="related-link"
                       >
                         <div className="related-card">
-                          <div className="related-card-top">
-                            <img
-                              src={d.avatarUrl || "/images/default-doctor.png"}
-                              alt={d.hoVaTen}
-                              className="related-img"
-                            />
-                          </div>
-                          <div className="related-card-bottom">
-                            <div className="related-name">{d.hoVaTen}</div>
-                            <div className="related-role">{d.chucDanhTen}</div>
-                            <div className="related-hospital">
-                              Bệnh viện Hùng Vương Gia Lai
-                            </div>
-                          </div>
+                          <img
+                            src={d.avatarUrl || "/images/default-doctor.png"}
+                            alt={d.hoVaTen}
+                            className="related-img"
+                          />
+                          <div className="related-name">{d.hoVaTen}</div>
+                          <div className="related-role">{d.chucDanhTen}</div>
                         </div>
                       </Link>
                     </SwiperSlide>

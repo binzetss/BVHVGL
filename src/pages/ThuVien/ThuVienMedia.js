@@ -65,8 +65,9 @@ export default function ThuVienMedia() {
 
     setFeaturedPhotoIntro("");
 
-    adminApi(`/api/media-albums/albums/${featuredPhoto.id}/detail`)
-      .then((d) => setFeaturedPhotoIntro(d?.intro || ""));
+    adminApi(`/api/media-albums/albums/${featuredPhoto.id}/detail`).then((d) =>
+      setFeaturedPhotoIntro(d?.intro || "")
+    );
   }, [featuredPhoto?.id]);
 
   /* ===== LOAD FEATURED VIDEO DETAIL ===== */
@@ -75,8 +76,9 @@ export default function ThuVienMedia() {
 
     setFeaturedVideoIntro("");
 
-    adminApi(`/api/media-albums/albums/${featuredVideo.id}/detail`)
-      .then((d) => setFeaturedVideoIntro(d?.intro || ""));
+    adminApi(`/api/media-albums/albums/${featuredVideo.id}/detail`).then((d) =>
+      setFeaturedVideoIntro(d?.intro || "")
+    );
   }, [featuredVideo?.id]);
 
   /* ===== HANDLER ===== */
@@ -85,8 +87,7 @@ export default function ThuVienMedia() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const getPhotoDetailPath = (id) =>
-    id ? `/thu-vien/anh-su-kien/${id}` : "#";
+  const getPhotoDetailPath = (id) => (id ? `/thu-vien/anh-su-kien/${id}` : "#");
 
   const handleFeatureClick = () => {
     if (featuredPhoto?.id) {
@@ -114,9 +115,7 @@ export default function ThuVienMedia() {
                     className="tv-thumb-img"
                   />
                 </div>
-                <div className="tv-thumb-caption">
-                  {item.title}
-                </div>
+                <div className="tv-thumb-caption">{item.title}</div>
               </div>
             </Link>
           ))}
@@ -151,9 +150,7 @@ export default function ThuVienMedia() {
                     className="tv-thumb-img"
                   />
                 </div>
-                <div className="tv-thumb-caption">
-                  {item.title}
-                </div>
+                <div className="tv-thumb-caption">{item.title}</div>
               </div>
             </Link>
           </SwiperSlide>
@@ -182,9 +179,7 @@ export default function ThuVienMedia() {
                 />
                 <div className="tv-thumb-play">▶</div>
               </div>
-              <div className="tv-thumb-caption">
-                {item.title}
-              </div>
+              <div className="tv-thumb-caption">{item.title}</div>
             </div>
           ))}
         </div>
@@ -219,9 +214,7 @@ export default function ThuVienMedia() {
                 />
                 <div className="tv-thumb-play">▶</div>
               </div>
-              <div className="tv-thumb-caption">
-                {item.title}
-              </div>
+              <div className="tv-thumb-caption">{item.title}</div>
             </div>
           </SwiperSlide>
         ))}
@@ -254,10 +247,7 @@ export default function ThuVienMedia() {
             >
               <div className="tv-feature-left">
                 <div className="tv-main-photo">
-                  <img
-                    src={featuredPhoto.imageUrl}
-                    alt={featuredPhoto.title}
-                  />
+                  <img src={featuredPhoto.imageUrl} alt={featuredPhoto.title} />
                 </div>
               </div>
 
@@ -266,21 +256,17 @@ export default function ThuVienMedia() {
                   <div className="tv-highlight-header">
                     <h2 className="tv-highlight-label">Ảnh nổi bật</h2>
                   </div>
-                  <h3 className="tv-highlight-title">
-                    {featuredPhoto.title}
-                  </h3>
+                  <h3 className="tv-highlight-title">{featuredPhoto.title}</h3>
 
-                  {/* ===== INTRO CLAMP ===== */}
-                  <p className="tv-highlight-text tv-intro-clamp">
-                    {featuredPhotoIntro}
-                  </p>
+                  <div
+                    className="tv-highlight-text tv-intro-clamp"
+                    dangerouslySetInnerHTML={{ __html: featuredPhotoIntro }}
+                  />
                 </div>
               </div>
             </div>
 
-            <div className="tv-slider-wrapper">
-              {renderPhotoGallery()}
-            </div>
+            <div className="tv-slider-wrapper">{renderPhotoGallery()}</div>
           </section>
         )}
 
@@ -296,10 +282,7 @@ export default function ThuVienMedia() {
             >
               <div className="tv-feature-left">
                 <div className="tv-main-video">
-                  <img
-                    src={featuredVideo.imageUrl}
-                    alt={featuredVideo.title}
-                  />
+                  <img src={featuredVideo.imageUrl} alt={featuredVideo.title} />
                   <div className="tv-video-play-icon">▶</div>
                 </div>
               </div>
@@ -309,21 +292,18 @@ export default function ThuVienMedia() {
                   <div className="tv-highlight-header">
                     <h2 className="tv-highlight-label">Video nổi bật</h2>
                   </div>
-                  <h3 className="tv-highlight-title">
-                    {featuredVideo.title}
-                  </h3>
+                  <h3 className="tv-highlight-title">{featuredVideo.title}</h3>
 
                   {/* ===== INTRO CLAMP ===== */}
-                  <p className="tv-highlight-text tv-intro-clamp">
-                    {featuredVideoIntro}
-                  </p>
+                  <div
+                    className="tv-highlight-text tv-intro-clamp"
+                    dangerouslySetInnerHTML={{ __html: featuredVideoIntro }}
+                  />
                 </div>
               </div>
             </div>
 
-            <div className="tv-slider-wrapper">
-              {renderVideoGallery()}
-            </div>
+            <div className="tv-slider-wrapper">{renderVideoGallery()}</div>
           </section>
         )}
       </div>

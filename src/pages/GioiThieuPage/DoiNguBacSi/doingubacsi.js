@@ -53,7 +53,7 @@ export default function DoiNguBacSi() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const perPage = 8;
-  
+
   const fetchAvatar = async (maSo) => {
     try {
       const cms = await adminApi(`/api/admin/bac-si/${maSo}/content`);
@@ -69,9 +69,12 @@ export default function DoiNguBacSi() {
 
     const load = async () => {
       const list = await adminApi("/api/admin/bac-si/list");
+      const doctorOnly = list.filter((bs) =>
+        (bs.chucDanhVietTat || "").includes("BS")
+      );
 
       const mapped = await Promise.all(
-        list.map(async (bs) => {
+        doctorOnly.map(async (bs) => {
           const avatar = await fetchAvatar(bs.maSo);
 
           const vietTat = bs.chucDanhVietTat || "";
@@ -87,7 +90,10 @@ export default function DoiNguBacSi() {
             maSo: bs.maSo,
             name: bs.hoVaTen,
 
-            chucVu: bs.chucVuTen || "",
+            chucVu:
+              bs.chucVuTen && bs.chucVuTen.toLowerCase().trim() !== "không"
+                ? bs.chucVuTen
+                : "",
             title: bs.chucDanhTen,
             degree: bs.chucDanhVietTat,
             hocHam,
@@ -285,7 +291,8 @@ export default function DoiNguBacSi() {
                     <div className="doctor-line">
                       <img src={iconDegree} alt="" />
                       <span>
-                        {d.chucVu ? `${d.chucVu} – ${d.title}` : d.title}
+                        {d.chucVu && <strong>{d.chucVu} – </strong>}
+                        {d.title}
                       </span>
                     </div>
 

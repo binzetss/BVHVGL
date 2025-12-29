@@ -11,7 +11,14 @@ export default function MediaAlbumForm({ album, onSaved }) {
     isFeatured: false,
   });
   const [saving, setSaving] = useState(false);
-
+  const resetForm = () => {
+    setForm({
+      title: "",
+      mediaType: "PHOTO",
+      imageUrl: "",
+      isFeatured: false,
+    });
+  };
   /* ===== LOAD ALBUM TO EDIT ===== */
   useEffect(() => {
     if (!album) {
@@ -50,20 +57,28 @@ export default function MediaAlbumForm({ album, onSaved }) {
       };
 
       if (isEdit) {
-        // 🔁 UPDATE
-        await adminApi(`/api/media-albums/albums/${album.id}`, {
+        await adminApi("/api/media-albums/albums", {
           method: "PUT",
-          body: payload,
+          body: {
+            id: album.id,
+            title: form.title,
+            mediaType: album.mediaType,
+            imageUrl: form.imageUrl,
+            isFeatured: !!form.isFeatured,
+          },
         });
         alert("Đã cập nhật album");
       } else {
-        // ➕ CREATE
         await adminApi("/api/media-albums/albums", {
           method: "PUT",
           body: payload,
         });
         alert("Đã tạo album");
       }
+
+      /* ✅ RESET FORM NGAY SAU KHI LƯU */
+      resetForm();
+      onSaved();
 
       onSaved();
     } catch (err) {
@@ -76,25 +91,19 @@ export default function MediaAlbumForm({ album, onSaved }) {
 
   return (
     <div className="admin-news-card">
-      <h5>
-        {isEdit ? "✏️ Chỉnh sửa Album" : "➕ Tạo Album"}
-      </h5>
+      <h5>{isEdit ? "✏️ Chỉnh sửa Album" : "➕ Tạo Album"}</h5>
 
       <input
         className="admin-news-input"
         placeholder="Tiêu đề album"
         value={form.title}
-        onChange={(e) =>
-          setForm({ ...form, title: e.target.value })
-        }
+        onChange={(e) => setForm({ ...form, title: e.target.value })}
       />
 
       <select
         className="admin-news-input"
         value={form.mediaType}
-        onChange={(e) =>
-          setForm({ ...form, mediaType: e.target.value })
-        }
+        onChange={(e) => setForm({ ...form, mediaType: e.target.value })}
         disabled={isEdit} // thường không cho đổi type
       >
         <option value="PHOTO">PHOTO</option>
@@ -105,32 +114,20 @@ export default function MediaAlbumForm({ album, onSaved }) {
         className="admin-news-input"
         placeholder="Ảnh cover (URL)"
         value={form.imageUrl}
-        onChange={(e) =>
-          setForm({ ...form, imageUrl: e.target.value })
-        }
+        onChange={(e) => setForm({ ...form, imageUrl: e.target.value })}
       />
 
       <label style={{ display: "block", marginTop: 6 }}>
         <input
           type="checkbox"
           checked={form.isFeatured}
-          onChange={(e) =>
-            setForm({ ...form, isFeatured: e.target.checked })
-          }
+          onChange={(e) => setForm({ ...form, isFeatured: e.target.checked })}
         />{" "}
         Album nổi bật
       </label>
 
-      <button
-        className="btn btn-primary mt-2"
-        onClick={save}
-        disabled={saving}
-      >
-        {saving
-          ? "Đang lưu..."
-          : isEdit
-          ? "Cập nhật"
-          : "Tạo album"}
+      <button className="btn btn-primary mt-2" onClick={save} disabled={saving}>
+        {saving ? "Đang lưu..." : isEdit ? "Cập nhật" : "Tạo album"}
       </button>
 
       {isEdit && (

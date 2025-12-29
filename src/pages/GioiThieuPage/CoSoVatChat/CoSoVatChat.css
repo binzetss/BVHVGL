@@ -237,14 +237,16 @@
   opacity: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+ justify-content: flex-start;
   text-align: center;
   transition: opacity 0.35s ease;
 }
 
+
 .equip-overlay h3 {
   font-size: 16px;
   font-weight: 700;
+  margin-top: 10px; 
   margin-bottom: 6px;
 }
 

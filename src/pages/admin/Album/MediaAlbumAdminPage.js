@@ -4,6 +4,7 @@ import MediaAlbumForm from "./MediaAlbumForm";
 import MediaAlbumDetailForm from "./MediaAlbumDetailForm";
 
 function AlbumItem({ album, activeAlbum, setActiveAlbum, reload }) {
+  const [editingAlbum, setEditingAlbum] = useState(null);
   return (
     <div
       className={`admin-list-item d-flex justify-content-between align-items-center ${
@@ -43,9 +44,9 @@ function AlbumItem({ album, activeAlbum, setActiveAlbum, reload }) {
 export default function MediaAlbumAdminPage() {
   const [albums, setAlbums] = useState([]);
   const [activeAlbum, setActiveAlbum] = useState(null);
-  const [tab, setTab] = useState("PHOTO"); // PHOTO | VIDEO
+  const [editingAlbum, setEditingAlbum] = useState(null);
+  const [tab, setTab] = useState("PHOTO");
   const [loading, setLoading] = useState(false);
-
   const load = async () => {
     try {
       setLoading(true);
@@ -70,15 +71,19 @@ export default function MediaAlbumAdminPage() {
     setActiveAlbum(null);
   }, [tab]);
 
-  const filteredAlbums = albums.filter(
-    (a) => (a.mediaType || "PHOTO") === tab
-  );
+  const filteredAlbums = albums.filter((a) => (a.mediaType || "PHOTO") === tab);
 
   return (
     <div>
       <h3 className="admin-page-title">Quản lý Media Album</h3>
 
-      <MediaAlbumForm onSaved={load} />
+      <MediaAlbumForm
+        album={editingAlbum}
+        onSaved={() => {
+          setEditingAlbum(null);
+          load();
+        }}
+      />
 
       {/* TAB */}
       <div className="btn-group mt-3">
@@ -125,11 +130,12 @@ export default function MediaAlbumAdminPage() {
         {/* DETAIL */}
         <div className="col-md-8">
           {activeAlbum ? (
-            <MediaAlbumDetailForm album={activeAlbum} onSaved={load} />
+            <MediaAlbumDetailForm
+              album={activeAlbum}
+              onEditAlbum={() => setEditingAlbum(activeAlbum)}
+            />
           ) : (
-            <div className="text-muted">
-              Chọn album để quản lý nội dung
-            </div>
+            <div className="text-muted">Chọn album để quản lý nội dung</div>
           )}
         </div>
       </div>

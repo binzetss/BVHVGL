@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 import { adminApi } from "../../../api/adminApi";
 
 export default function FacilityWithoutCaptionForm() {
-  /* ===== PAGE INFO (SECTION TEXT) ===== */
+  /* ===== PAGE INFO ===== */
   const [pageInfo, setPageInfo] = useState({
     equipmentTitle: "",
     equipmentDescription: "",
   });
 
-  /* ===== SLIDER ITEMS ===== */
+  /* ===== ITEMS ===== */
   const [items, setItems] = useState([]);
+
+  /* ===== UI ===== */
+  const [collapseList, setCollapseList] = useState(false);
 
   /* ================= LOAD ================= */
   const load = async () => {
@@ -38,14 +41,17 @@ export default function FacilityWithoutCaptionForm() {
 
   /* ================= ADD ================= */
   const addNew = () => {
+    // tự mở list nếu đang thu gọn
+    setCollapseList(false);
+
     setItems((prev) => [
-      ...prev,
       {
-        id: null, // ⚠️ để Hibernate INSERT
+        id: null, // backend sẽ INSERT
         title: "",
         description: "",
         imageUrl: "",
       },
+      ...prev,
     ]);
   };
 
@@ -55,7 +61,7 @@ export default function FacilityWithoutCaptionForm() {
     setItems((prev) => prev.filter((i) => i.id !== id));
   };
 
-  /* ================= SAVE ALL ================= */
+  /* ================= SAVE ================= */
   const save = async () => {
     await adminApi("/api/facility-pages/1", {
       method: "PUT",
@@ -104,65 +110,86 @@ export default function FacilityWithoutCaptionForm() {
 
       <hr />
 
-      {/* ===== SLIDER ===== */}
-      <button
-        className="btn btn-success btn-sm mb-3"
-        onClick={addNew}
-      >
-        + Thêm thiết bị
-      </button>
-
-      {items.map((item, index) => (
-        <div
-          key={item.id ?? `new-${index}`}
-          className="admin-news-card mb-3"
+      {/* ===== ACTION BAR ===== */}
+      <div className="d-flex align-items-center gap-2 mb-3">
+        <button
+          className="btn btn-success btn-sm"
+          onClick={addNew}
         >
-          <input
-            className="admin-news-input mb-2"
-            placeholder="Tiêu đề thiết bị"
-            value={item.title || ""}
-            onChange={(e) =>
-              updateItem(item.id, "title", e.target.value)
-            }
-          />
+          + Thêm thiết bị
+        </button>
 
-          <textarea
-            className="admin-news-input mb-2"
-            placeholder="Mô tả"
-            value={item.description || ""}
-            onChange={(e) =>
-              updateItem(
-                item.id,
-                "description",
-                e.target.value
-              )
-            }
-          />
+        <button
+          className="btn btn-primary btn-sm"
+          onClick={save}
+        >
+          Lưu
+        </button>
 
-          <input
-            className="admin-news-input mb-2"
-            placeholder="URL ảnh"
-            value={item.imageUrl || ""}
-            onChange={(e) =>
-              updateItem(item.id, "imageUrl", e.target.value)
-            }
-          />
+        <button
+          className="btn btn-outline-secondary btn-sm"
+          onClick={() => setCollapseList(!collapseList)}
+        >
+          {collapseList
+            ? `Mở danh sách (${items.length})`
+            : "Thu gọn"}
+        </button>
+      </div>
 
-          <button
-            className="btn btn-danger btn-sm"
-            onClick={() => remove(item.id)}
+      {/* ===== LIST ===== */}
+      {!collapseList &&
+        items.map((item, index) => (
+          <div
+            key={item.id ?? `new-${index}`}
+            className="admin-news-card mb-3"
           >
-            Xóa
-          </button>
-        </div>
-      ))}
+            <input
+              className="admin-news-input mb-2"
+              placeholder="Tiêu đề thiết bị"
+              value={item.title || ""}
+              onChange={(e) =>
+                updateItem(
+                  item.id,
+                  "title",
+                  e.target.value
+                )
+              }
+            />
 
-      <button
-        className="btn btn-primary mt-2"
-        onClick={save}
-      >
-        Lưu toàn bộ trang thiết bị y khoa
-      </button>
+            <textarea
+              className="admin-news-input mb-2"
+              placeholder="Mô tả"
+              value={item.description || ""}
+              onChange={(e) =>
+                updateItem(
+                  item.id,
+                  "description",
+                  e.target.value
+                )
+              }
+            />
+
+            <input
+              className="admin-news-input mb-2"
+              placeholder="URL ảnh"
+              value={item.imageUrl || ""}
+              onChange={(e) =>
+                updateItem(
+                  item.id,
+                  "imageUrl",
+                  e.target.value
+                )
+              }
+            />
+
+            <button
+              className="btn btn-danger btn-sm"
+              onClick={() => remove(item.id)}
+            >
+              Xóa
+            </button>
+          </div>
+        ))}
     </div>
   );
 }

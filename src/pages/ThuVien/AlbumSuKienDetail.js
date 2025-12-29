@@ -98,7 +98,10 @@ export default function AlbumSuKienDetail() {
                 </button>
               </div>
 
-              <p className="album-intro-clamp">{album.intro}</p>
+              <div
+                className="album-intro-clamp"
+                dangerouslySetInnerHTML={{ __html: album.intro }}
+              />
             </div>
           </div>
 
@@ -124,9 +127,7 @@ export default function AlbumSuKienDetail() {
               <div key={img.id} className="album-photo-card">
                 <div
                   className="album-photo-thumb"
-                  onClick={() =>
-                    openLightbox(normalizeImageUrl(img.imageUrl))
-                  }
+                  onClick={() => openLightbox(normalizeImageUrl(img.imageUrl))}
                 >
                   <img src={normalizeImageUrl(img.imageUrl)} alt="" />
                   <div className="album-photo-overlay">
@@ -157,9 +158,7 @@ export default function AlbumSuKienDetail() {
               <SwiperSlide key={item.id}>
                 <div
                   className="album-other-events-card"
-                  onClick={() =>
-                    navigate(`/thu-vien/anh-su-kien/${item.id}`)
-                  }
+                  onClick={() => navigate(`/thu-vien/anh-su-kien/${item.id}`)}
                 >
                   <img src={item.imageUrl} alt={item.title} />
                   <div className="album-other-events-card-title">
@@ -209,7 +208,7 @@ export default function AlbumSuKienDetail() {
                 {album.intro && (
                   <div className="album-summary-section">
                     <h3>Giới thiệu</h3>
-                    <p>{album.intro}</p>
+                    <div dangerouslySetInnerHTML={{ __html: album.intro }} />
                   </div>
                 )}
 
@@ -217,9 +216,7 @@ export default function AlbumSuKienDetail() {
                   <div key={idx} className="album-summary-section">
                     {s.heading && <h3>{s.heading}</h3>}
                     {s.bullets && (
-                      <div
-                        dangerouslySetInnerHTML={{ __html: s.bullets }}
-                      />
+                      <div dangerouslySetInnerHTML={{ __html: s.bullets }} />
                     )}
                   </div>
                 ))}
@@ -237,17 +234,14 @@ export default function AlbumSuKienDetail() {
                     disableOnInteraction: false,
                   }}
                   breakpoints={{
-                    0: { slidesPerView: 1 },     // 📱 mobile
-                    768: { slidesPerView: 3 },  // 💻 tablet & desktop
+                    0: { slidesPerView: 1 }, // 📱 mobile
+                    768: { slidesPerView: 3 }, // 💻 tablet & desktop
                   }}
                   className="album-summary-slider"
                 >
                   {albumImages.map((img) => (
                     <SwiperSlide key={img.id}>
-                      <img
-                        src={normalizeImageUrl(img.imageUrl)}
-                        alt=""
-                      />
+                      <img src={normalizeImageUrl(img.imageUrl)} alt="" />
                     </SwiperSlide>
                   ))}
                 </Swiper>

@@ -11,7 +11,7 @@
 .appdl-inner {
   max-width: 1500px;
   margin:  auto;
-  padding: 0 20px 0;
+  padding: 0px 20px 10px;
 }
 
 /* ===== HERO ===== */
@@ -34,6 +34,7 @@
 }
 
 .appdl-hero-overlay {
+
   position: absolute;
   inset: 0;
   /* background: linear-gradient(
@@ -85,7 +86,7 @@
 }
 
 /* BREADCRUMB – tái sử dụng style giống PriceDetailPage */
-/* .breadcrumb {
+.breadcrumbb {
   margin: 18px 0 14px;
   display: flex;
   gap: 6px;
@@ -94,7 +95,7 @@
   flex-wrap: wrap;
 }
 
-.breadcrumb .link {
+.breadcrumbb .link {
   color: #0e73ba;
   cursor: pointer;
   display: inline-flex;
@@ -102,21 +103,21 @@
   gap: 4px;
 }
 
-.breadcrumb .link:hover {
+.breadcrumbb .link:hover {
   text-decoration: underline;
 }
 
-.breadcrumb .sep {
+.breadcrumbb .sep {
   opacity: 0.7;
 }
 
-.breadcrumb .current {
+.breadcrumbb .current {
   font-weight: 700;
 }
 
 .icon-home {
   font-size: 14px;
-} */
+}
 
 /* BLOCK CHÍNH */
 .appdl-block {
@@ -650,5 +651,13 @@
 @media (max-width: 768px) {
   .appdl-steps {
     margin-top: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .appdl-hero {
+    height: auto;
+    background-size: 400px !important;
+    background-position: center center !important;
+   
   }
 }

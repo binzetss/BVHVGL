@@ -9,7 +9,6 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 
-import FeatureImage from "../../assets/bgmyapp.png";
 import BgHero from "../../assets/app/bghero.png";
 
 import QrIos from "../../assets/app/QR.png";
@@ -86,7 +85,7 @@ export default function AppDownloadPage() {
           {/* LEFT CONTENT */}
           <div className="appdl-left">
             {/* Breadcrumb */}
-            <div className="breadcrumb">
+            <div className="breadcrumbb">
               <span className="link" onClick={() => navigate("/")}>
                 <FaHome className="icon-home" /> TRANG CHỦ
               </span>
@@ -189,7 +188,10 @@ export default function AppDownloadPage() {
 
             {/* BANNER TÍNH NĂNG */}
             <div className="appdl-feature-section">
-              <img src={FeatureImage} alt="Tính năng ứng dụng HVGL Care" />
+              <img
+                src="https://image.bvhvgl.com/images/LoGo%20HVGL/App/app.jpg"
+                alt="Tính năng ứng dụng HVGL Care"
+              />
             </div>
           </div>
 

@@ -9,7 +9,7 @@
 .doctor-wrapper {
   flex: 1; /* đẩy footer xuống */
 width: 1300px;
-  margin: 10px auto 40px;
+  margin: 0px auto 40px;
   padding: 0 20px 0px;
   box-sizing: border-box;
 }
