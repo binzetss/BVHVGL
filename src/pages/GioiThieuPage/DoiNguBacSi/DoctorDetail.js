@@ -118,8 +118,27 @@ export default function DoctorDetail() {
 
     return "";
   };
+  let finalTitle = isHDTV ? getHDTVChucDanh(doctor.title) : doctor.title;
 
-  const displayTitle = isHDTV ? getHDTVChucDanh(doctor.title) : doctor.title;
+  let finalChucVu = doctor.chucVu;
+
+  // Chuẩn hóa giá trị chức vụ
+  const rawChucVu = (doctor.chucVu || "").trim().toLowerCase();
+
+  // 🎯 HDTV không có chức vụ hợp lệ
+  if (
+    isHDTV &&
+    (!rawChucVu ||
+      rawChucVu === "không" ||
+      rawChucVu === "khong" ||
+      rawChucVu.includes("chưa xác định"))
+  ) {
+    finalChucVu = "Thành Viên HDTV";
+  }
+  // 🎯 CASE ĐẶC BIỆT: HDTV + mã 00001
+  if (isHDTV && id === "00001") {
+    finalTitle = "Luật Sư";
+  }
 
   return (
     <div className="wrapper">
@@ -154,15 +173,15 @@ export default function DoctorDetail() {
 
             <div className="dd-left-name-box">
               <div className="dd-left-name-row">
-                {displayTitle && (
-                  <span className="dd-left-degree">{displayTitle}&nbsp;</span>
+                {finalTitle && (
+                  <span className="dd-left-degree">{finalTitle}&nbsp;</span>
                 )}
                 <span className="dd-left-name">{doctor.name}</span>
               </div>
 
               {/* ===== CHỨC VỤ: CẢ HDTV & BÁC SĨ ===== */}
-              {doctor.chucVu && (
-                <div className="dd-line-main1">{doctor.chucVu}</div>
+              {finalChucVu && (
+                <div className="dd-line-main1">{finalChucVu}</div>
               )}
 
               {/* ===== CHỈ BÁC SĨ MỚI CÓ CHUYÊN KHOA + BỆNH VIỆN ===== */}

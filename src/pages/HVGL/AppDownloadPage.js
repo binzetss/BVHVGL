@@ -19,6 +19,8 @@ import App3 from "../../assets/app/anh3.png";
 import App4 from "../../assets/app/anh4.png";
 import App5 from "../../assets/app/anh5.png";
 import App6 from "../../assets/app/anh6.png";
+import App7 from "../../assets/app/anh7.png";
+import App8 from "../../assets/app/anh8.png";
 
 import "./AppDownloadPage.css";
 
@@ -26,7 +28,7 @@ export default function AppDownloadPage() {
   const navigate = useNavigate();
 
   // Danh sách ảnh chạy slider bên phải
-  const screenshots = [App1, App2, App3, App4, App5, App6];
+  const screenshots = [App1, App2, App3, App4, App5, App6,App7, App8 ];
 
   // Slider index
   const [currentIndex, setCurrentIndex] = useState(0);

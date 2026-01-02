@@ -179,7 +179,13 @@ export default function Header() {
           onClick={() => setShowMenu(true)}
         />
 
-        <img src={logo} className="m-logo" alt="logo" />
+        <img
+          src={logo}
+          className="m-logo"
+          alt="logo"
+          onClick={() => navigate("/")}
+          style={{ cursor: "pointer" }}
+        />
 
         <div className="m-icons">
           <a href="tel:18008015">

@@ -8,13 +8,13 @@ import "swiper/css/effect-fade";
 import "./HomeSlider.css";
 import { LazyImage } from "../LazyImage/LazyImage";
 
-import banner1 from "../../assets/banner1.jpg";
-
+import banner1 from "../../assets/bgslide.jpg";
+import banner2 from "../../assets/bgheader2.jpg";
 // ORIGINAL SLIDES
-const slides = [banner1];
+const slides = [banner1,banner2];
 
 // AUTO DUPLICATE IF ONLY 1 SLIDE
-const fullSlides = slides.length < 2 ? [...slides, ...slides] : slides;
+const fullSlides = slides.length > 2 ? [...slides, ...slides] : slides;
 
 export default function HomeSlider() {
   const swiperRef = useRef(null);

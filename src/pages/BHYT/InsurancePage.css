@@ -364,6 +364,7 @@
 /* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
   .ins-container {
+    gap: 0px;
     flex-direction: column;
   }
 

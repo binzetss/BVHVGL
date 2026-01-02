@@ -84,19 +84,26 @@
   border-radius: 18px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.2);
 }
-
 .eq-box h3 {
   font-size: 20px;
   font-weight: 700;
   color: #0e73ba;
+
+  flex-shrink: 0;             /* 🔥 không bị ép */
 }
 
 .eq-box p {
   font-size: 14px;
   line-height: 20px;
   margin-top: 10px;
-}
 
+  flex: 1 1 auto;             /* 🔥 chiếm phần giữa */
+  overflow: hidden;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: unset;  /* 🔥 clamp động */
+}
 /* ===== BUTTON ===== */
 .eq-btn {
   margin-top: 20px;
@@ -107,6 +114,7 @@
   border: none;
   font-size: 15px;
   cursor: pointer;
+   flex-shrink: 0;    
 }
 
 /* ===== NAV ===== */
@@ -131,13 +139,7 @@
 .eq-next { right: 10px; }
 
 
-.eq-box h3,
-.eq-box p {
-  display: block;
-  -webkit-line-clamp: unset;
-  -webkit-box-orient: unset;
-  overflow: visible;
-}
+
 /* ================= MOBILE ONLY ================= */
 @media (max-width: 768px) {
 
@@ -194,19 +196,18 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+.eq-box p {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 10px;
 
-  .eq-box p {
-    font-size: 14px;
-    line-height: 1.5;
+  flex: 1 1 auto;
+  min-height: 0;          /* 🔥 CỰC KỲ QUAN TRỌNG */
+  overflow: hidden;
 
-    display: -webkit-box;
-    -webkit-line-clamp: 6;      /* description tối đa 6 dòng */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-
-    word-break: break-word;
-    overflow-wrap: anywhere;
-  }
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
 
   .eq-btn {
     width: 100%;
@@ -286,22 +287,23 @@
   object-fit: cover;
 }
 
-/* ===== TEXT (READ ZONE – NO SWIPE) ===== */
 .eq-box {
   position: absolute;
   left: 40px;
   top: 50%;
   transform: translateY(-50%);
   width: 380px;
+  height: 330px;              /* 🔥 size cố định */
+
   background: #fff;
   padding: 25px 28px;
   border-radius: 18px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.2);
 
-  cursor: text;          /* 🔥 đọc */
-  user-select: text;     /* 🔥 bôi đen */
+  display: flex;              /* 🔥 quan trọng */
+  flex-direction: column;
+  overflow: hidden;           /* 🔥 cắt gọn */
 }
-
 /* ===== SWIPER NO SWIPE CLASS ===== */
 .no-swiping {
   pointer-events: auto;

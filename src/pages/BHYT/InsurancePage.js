@@ -78,39 +78,19 @@ export default function InsurancePage() {
                   toán phụ thuộc vào mức hưởng ghi trên thẻ BHYT và tuyến đăng
                   ký khám chữa bệnh ban đầu.
                 </p>
-                <div className="ins-grid-two">
-                  <div className="ins-card">
-                    <h4 className="ins-card-title">Trường hợp đúng tuyến</h4>
-                    <ul className="ins-list">
-                      <li>
-                        Được quỹ BHYT thanh toán theo mức hưởng ghi trên thẻ.
-                      </li>
-                      <li>
-                        Thanh toán trực tiếp giữa bệnh viện và cơ quan BHYT đối
-                        với các dịch vụ được hưởng.
-                      </li>
-                      <li>
-                        Người bệnh chỉ thanh toán phần đồng chi trả (nếu có).
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="ins-card">
-                    <h4 className="ins-card-title">Trường hợp trái tuyến</h4>
-                    <ul className="ins-list">
-                      <li>
-                        Được hưởng theo tỷ lệ thanh toán BHYT theo quy định hiện
-                        hành.
-                      </li>
-                      <li>
-                        Một số dịch vụ kỹ thuật cao, chi phí lớn có thể không
-                        nằm trong phạm vi chi trả.
-                      </li>
-                      <li>
-                        Khách hàng nên liên hệ trước để được tư vấn cụ thể từng
-                        trường hợp.
-                      </li>
-                    </ul>
-                  </div>
+                <div className="ins-card">
+                  <h4 className="ins-card-title">Hưởng BHYT thông tuyến</h4>
+                  <ul className="ins-list">
+                    <li>
+                      Được quỹ BHYT thanh toán theo mức hưởng ghi trên thẻ.
+                    </li>
+                    <li>
+                      Thanh toán trực tiếp giữa bệnh viện và cơ quan BHYT.
+                    </li>
+                    <li>
+                      Người bệnh chỉ thanh toán phần đồng chi trả.
+                    </li>
+                  </ul>
                 </div>
               </div>
 
@@ -189,7 +169,7 @@ export default function InsurancePage() {
                   <div className="ins-card">
                     <h4 className="ins-card-title">Hồ sơ cần chuẩn bị</h4>
                     <ul className="ins-list">
-                      <li>CMND/CCCD hoặc giấy tờ tùy thân có ảnh.</li>
+                      <li>CMND/CCCD/ hộ chiếu hoặc Giấy khai sinh (nếu Người được bảo hiểm là trẻ em dưới 18 tuổi)</li>
                       <li>Thẻ bảo hiểm / Giấy chứng nhận bảo hiểm.</li>
                       <li>Thẻ BHYT (nếu có, để được hưởng đồng thời).</li>
                       <li>
@@ -207,16 +187,26 @@ export default function InsurancePage() {
                   4. Một số công ty bảo hiểm đang liên kết
                 </h3>
                 <p className="ins-text">
-                  Danh sách dưới đây mang tính chất minh họa. Bạn có thể cập
-                  nhật lại cho đúng với thực tế của bệnh viện:
+                  {/* Danh sách dưới đây mang tính chất minh họa. Bạn có thể cập
+                  nhật lại cho đúng với thực tế của bệnh viện: */}
                 </p>
                 <div className="ins-tag-list">
-                  <span className="ins-tag">Bảo hiểm Bảo Việt</span>
-                  <span className="ins-tag">Bảo hiểm PVI</span>
-                  <span className="ins-tag">Bảo hiểm PTI</span>
-                  <span className="ins-tag">Bảo hiểm VietinBank</span>
+                  <span className="ins-tag">Bảo hiểm Papaya</span>
+                  <span className="ins-tag">Bảo hiểm Pacific Cross</span>
+                  <span className="ins-tag">Bảo hiểm Leapstack</span>
                   <span className="ins-tag">Bảo hiểm Manulife</span>
                   <span className="ins-tag">Bảo hiểm Prudential</span>
+                  <span className="ins-tag">Bảo hiểm Sun Life</span>
+                  <span className="ins-tag">Bảo hiểm Hanwha Life</span>
+                  <span className="ins-tag">Bảo hiểm Bảo Long</span>
+                  <span className="ins-tag">Bảo hiểm VNI</span>
+                  <span className="ins-tag">Bảo hiểm Generali</span>
+                  <span className="ins-tag">Bảo hiểm AIA</span>
+                  <span className="ins-tag">Bảo hiểm Bảo Minh</span>
+                  <span className="ins-tag">Bảo hiểm Dai-ichi Life</span>
+                  <span className="ins-tag">Bảo hiểm VietinBank</span>
+                  <span className="ins-tag">Bảo hiểm Insmart</span>
+                  <span className="ins-tag">Bảo hiểm Fullerton</span>
                 </div>
               </div>
 
@@ -259,39 +249,34 @@ export default function InsurancePage() {
             {/* Hộp hỗ trợ */}
             <div className="ins-side-box">
               <h3 className="ins-side-title">Cần hỗ trợ ngay?</h3>
-              <p className="ins-side-text">
-                Đội ngũ tư vấn BHYT &amp; bảo lãnh viện phí luôn sẵn sàng hỗ
-                trợ.
-              </p>
-              <div className="ins-side-row">
-                <FaPhoneAlt className="ins-side-icon" />
-                <div>
-                  <div className="ins-side-label">Hotline tư vấn</div>
-                  <div className="ins-side-value">1800.8015</div>
-                </div>
-              </div>
-              <div className="ins-side-row">
-                <FaRegClock className="ins-side-icon" />
-                <div>
-                  <div className="ins-side-label">Thời gian làm việc</div>
-                  <div className="ins-side-value">
-                    07:00 – 20:00 (Thứ 2 – Chủ nhật)
+
+              <div className="ins-side-box">
+                <h3 className="ins-side-title">Tổng đài CSKH</h3>
+
+                <div className="ins-side-row">
+                  <FaPhoneAlt className="ins-side-icon" />
+                  <div>
+                    <div className="ins-side-label">
+                      Hỗ trợ BHYT & đăng ký BHYT
+                    </div>
+                    <div className="ins-side-value">1800 8015</div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Hộp hướng dẫn nhanh */}
-            <div className="ins-side-box">
-              <h3 className="ins-side-title">Hướng dẫn nhanh</h3>
-              <ul className="ins-side-list">
-                <li>Chuẩn bị thẻ BHYT và giấy tờ tùy thân.</li>
-                <li>
-                  Thông báo với quầy tiếp nhận nếu có bảo hiểm thương mại.
-                </li>
-                <li>Giữ lại hóa đơn, chứng từ để làm bảo lãnh/bồi thường.</li>
-                <li>Liên hệ quầy tư vấn nếu còn thắc mắc.</li>
-              </ul>
+              <div className="ins-side-box">
+                <h3 className="ins-side-title">Bảo lãnh viện phí</h3>
+
+                <div className="ins-side-row">
+                  <FaRegClock className="ins-side-icon" />
+                  <div>
+                    <div className="ins-side-label">
+                      Thông tin KCB được bảo lãnh
+                    </div>
+                    <div className="ins-side-value">Hotline: 0342 531 359</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

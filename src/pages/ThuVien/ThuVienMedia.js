@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, Grid } from "swiper/modules";
+import { Navigation, Autoplay, Grid } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -125,9 +125,9 @@ export default function ThuVienMedia() {
 
     return (
       <Swiper
-        modules={[Navigation, Pagination, Autoplay, Grid]}
+        modules={[Navigation, Autoplay, Grid]}
         navigation
-        pagination={{ clickable: true }}
+  
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         slidesPerView={4}
         slidesPerGroup={1}
@@ -188,9 +188,9 @@ export default function ThuVienMedia() {
 
     return (
       <Swiper
-        modules={[Navigation, Pagination, Autoplay, Grid]}
+        modules={[Navigation, Autoplay, Grid]}
         navigation
-        pagination={{ clickable: true }}
+     
         autoplay={{ delay: 3500, disableOnInteraction: false }}
         slidesPerView={4}
         slidesPerGroup={1}

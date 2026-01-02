@@ -11,7 +11,11 @@ html {
   font-family: "Roboto", sans-serif !important;
 }
 }
-
+a,
+button,
+.clickable {
+  cursor: pointer;
+}
 
 .breadcrumb {
   display: flex;

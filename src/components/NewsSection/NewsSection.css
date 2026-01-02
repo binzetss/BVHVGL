@@ -335,15 +335,9 @@
     white-space: normal;
   }
 
-  /* LIST NEWS TITLE */
-  .news-item-content h4 {
-    display: block;
-    -webkit-line-clamp: unset;
-    -webkit-box-orient: unset;
-    overflow: visible;
-    max-height: none;
-    white-space: normal;
-  }
+
+
+
 }
 @media (max-width: 768px) {
   .news-big-text h3 {
@@ -360,8 +354,15 @@
 
 @media (max-width: 768px) {
   .news-item-content h4 {
-    text-align: left;       
+    text-align: justify;
+    text-justify: inter-word;
     line-height: 1.35;
     word-break: break-word;
+  }
+}
+@media (max-width: 768px) {
+  .news-big-text p {
+    text-align: justify;
+    text-justify: inter-word;
   }
 }
