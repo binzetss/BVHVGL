@@ -1,0 +1,43 @@
+/**
+ * TetEffect.css - Hiệu ứng hoa rơi nhẹ nhàng - Tết 2026
+ */
+
+.tet-container {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: none !important;
+  z-index: 99999 !important;
+  overflow: hidden !important;
+}
+
+.tet-flower {
+  position: absolute !important;
+  top: -50px;
+  object-fit: contain !important;
+  animation-name: hoaroi;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes hoaroi {
+  0% {
+    top: -50px;
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(var(--sway, 10px)) rotate(10deg);
+  }
+  50% {
+    transform: translateX(calc(var(--sway, 10px) * -0.5)) rotate(-5deg);
+  }
+  75% {
+    transform: translateX(var(--sway, 10px)) rotate(8deg);
+  }
+  100% {
+    top: 105vh;
+    transform: translateX(0) rotate(0deg);
+  }
+}

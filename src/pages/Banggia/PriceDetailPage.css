@@ -75,6 +75,7 @@
 
   .price-left {
     flex: 1;
+    min-width: 0;
   }
 
   /* BREADCRUMB */
@@ -138,7 +139,16 @@
     line-height: 1.6;
     color: #333;
     text-align: justify;
+
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
+  .price-text a {
+  color: #0e73ba;
+  text-decoration: underline;
+  word-break: break-all;
+}
 
   /* Nhóm các mục con */
   .price-sections {
@@ -219,3 +229,8 @@
       margin-top: 10px;
     }
   }
+  @media (max-width: 768px) {
+  .price-text {
+    word-break: break-all;
+  }
+}

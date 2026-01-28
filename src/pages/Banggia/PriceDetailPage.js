@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import "./PriceDetailPage.css";
 import { API_BASE } from "../../config";
-
+import Linkify from "linkify-react";
 export default function PriceDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -64,7 +64,18 @@ export default function PriceDetailPage() {
               {item.mainTitle && (
                 <h3 className="price-subtitle">{item.mainTitle}</h3>
               )}
-              {item.mainText && <p className="price-text">{item.mainText}</p>}
+              {item.mainText && (
+                <p className="price-text">
+                  <Linkify
+                    options={{
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                    }}
+                  >
+                    {item.mainText}
+                  </Linkify>
+                </p>
+              )}
 
               {item.sections?.map((sec, idx) => {
                 if (sec.type === "text") {
@@ -73,7 +84,16 @@ export default function PriceDetailPage() {
                       <h4 className="price-section-title">
                         {idx + 1}. {sec.title}
                       </h4>
-                      <p className="price-text">{sec.content}</p>
+                      <p className="price-text">
+                        <Linkify
+                          options={{
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                          }}
+                        >
+                          {sec.content}
+                        </Linkify>
+                      </p>
                     </div>
                   );
                 }

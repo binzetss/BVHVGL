@@ -7,11 +7,13 @@ import imgHospital from "../../assets/hospital-building.jpg";
 import logoNhiDong from "../../assets/logo-nhidong.png";
 import logoChoRay from "../../assets/logo-choray.png";
 import logoHungVuong from "../../assets/logo-hv.png";
+import logoBachMai from "../../assets/BACHMAI.png";
 
 const partnerLogos = [
   { id: 1, src: logoNhiDong, name: "BỆNH VIỆN NHI ĐỒNG I" },
   { id: 2, src: logoChoRay, name: "BỆNH VIỆN CHỢ RẪY" },
   { id: 3, src: logoHungVuong, name: "BỆNH VIỆN HÙNG VƯƠNG" },
+  { id: 4, src: logoBachMai, name: "BỆNH VIỆN BẠCH MAI" },
 ];
 
 export default function WhyChoose() {

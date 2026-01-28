@@ -2,18 +2,17 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Header.css";
 import "./search.css";
+
+/* Banner Tết 2026 - Comment dòng dưới để tắt */
+import TetBanner from "../TetBanner/TetBanner";
 import { FaTimes } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import calendarIcon from "../../assets/calendar.png";
 import phoneIcon from "../../assets/telephone.png";
-
 import flagVN from "../../assets/vietnam.png";
 import flagEN from "../../assets/united-kingdom.png";
 import flagKH from "../../assets/flag.png";
-
 import searchIcon from "../../assets/icons/searh.png";
-
-// ICON MOBILE
 import menuIcon from "../../assets/icons/menu.png";
 import phoneCallIcon from "../../assets/icons/phone-call.png";
 import chevronDownIcon from "../../assets/icons/chevron-down.png";
@@ -29,7 +28,6 @@ export default function Header() {
   const [results, setResults] = useState([]);
   const [activeIndex, setActiveIndex] = useState(-1);
 
-  // MOBILE STATES
   const [showMenu, setShowMenu] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -39,7 +37,7 @@ export default function Header() {
     setResults([]);
     setActiveIndex(-1);
     setSearchText("");
-    setShowSearch(false); // mobile
+    setShowSearch(false);
   };
   const [language, setLanguage] = useState({
     code: "vi",
@@ -52,13 +50,13 @@ export default function Header() {
     setLangOpen(false);
   };
 
-  // =================== SEARCH ===================
+
   const handleSearch = (value) => {
     setSearchText(value);
     const key = normalize(value);
 
     if (!key) {
-      closeSearch(); // ✅ TỰ ĐÓNG SEARCH
+      closeSearch(); 
       return;
     }
 
@@ -100,11 +98,11 @@ export default function Header() {
       if (!item || item.type === "empty") return;
 
       navigate(item.path);
-      closeSearch(); // ✅
+      closeSearch(); 
     }
 
     if (e.key === "Escape") {
-      closeSearch(); // ✅
+      closeSearch(); 
     }
   };
   useEffect(() => {
@@ -118,7 +116,7 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // =================== MOBILE DROPDOWN ===================
+  
   const toggleDropdown = (menu) => {
     setOpenDropdown((prev) => (prev === menu ? null : menu));
   };
@@ -292,6 +290,9 @@ export default function Header() {
                 </li>
                 <li onClick={() => mobileNavigate("/benh-vien-ve-tinh")}>
                   Bệnh viện/Phòng khám vệ tinh
+                </li>
+                <li onClick={() => mobileNavigate("/quan-ly-chat-luong")}>
+                  Quản lý Chất lượng
                 </li>
               </ul>
             )}
@@ -471,7 +472,7 @@ export default function Header() {
                 <li onClick={() => mobileNavigate("/tien-ich")}>Tiện ích</li>
 
                 <li onClick={() => mobileNavigate("/che-do-bhyt-bao-lanh")}>
-                  Chế độ BHYT/Bảo lãnh viện
+                  Chế độ BHYT/Bảo lãnh viện phí
                 </li>
 
                 <li onClick={() => mobileNavigate("/bang-gia")}>
@@ -528,6 +529,9 @@ export default function Header() {
       )}
       {/* ================= DESKTOP HEADER ================= */}
       <div className="hv-top">
+        {/* Banner Tết 2026 - Xóa dòng dưới để tắt */}
+        <TetBanner />
+
         <div className="hv-left">
           <Link to="/">
             <img src={logo} className="hv-logo" alt="logo" />
@@ -654,6 +658,9 @@ export default function Header() {
               <li onClick={() => navigate("/benh-vien-ve-tinh")}>
                 Bệnh viện/Phòng khám vệ tinh
               </li>
+              <li onClick={() => navigate("/quan-ly-chat-luong")}>
+                Quản lý Chất lượng
+              </li>
             </ul>
           </li>
           <li onClick={() => navigate("/chuyen-khoa")}>
@@ -738,7 +745,7 @@ export default function Header() {
               </li>
               <li onClick={() => navigate("/tien-ich")}>Tiện ích</li>
               <li onClick={() => navigate("/che-do-bhyt-bao-lanh")}>
-                Chế độ BHYT/Bảo lãnh viện
+                Chế độ BHYT/Bảo lãnh viện phí
               </li>
               <li onClick={() => navigate("/bang-gia")}>Bảng giá dịch vụ</li>
               <li

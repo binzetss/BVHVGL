@@ -30,7 +30,7 @@ const phoTongGiamDoc = [
   {
     id: 3,
     name: "THẠC SĨ NGUYỄN THI",
-    role: "PHÓ TỔNG GIÁM ĐỐC",
+    role: "PHÓ TỔNG GIÁM ĐỐC THƯỜNG TRỰC",
     img: "https://image.bvhvgl.com/images/HDTV/PTGD_NguyenThi.png",
     hdtvId: "00003",
   },
@@ -60,7 +60,7 @@ const giamDoc = {
 const phoGiamDoc = [
   {
     id: 1,
-    name: "BS.CKII BÙI VIỆT HOÀNG",
+    name: "BS.CKII BÙI VIẾT HOÀNG",
     role: "PHÓ GIÁM ĐỐC Y KHOA",
     img: "https://image.bvhvgl.com/images/BGD/PGD_BuiVietHoang.png",
     maSo: "00243", // 🔥 THÊM MÃ SỐ

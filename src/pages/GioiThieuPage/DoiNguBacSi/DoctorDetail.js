@@ -39,24 +39,35 @@ export default function DoctorDetail() {
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  /* ================= LOAD DATA ================= */
-  useEffect(() => {
-    window.scrollTo(0, 0);
+ useEffect(() => {
+  window.scrollTo(0, 0);
 
-    const load = async () => {
+  const load = async () => {
+    try {
+      // ===== 1. LOAD INFO =====
       const info = isHDTV
         ? await adminApi(`/api/HDTV/chuc-vu-chuc-danh?maSo=${id}`).then(
-            (res) => res?.[0]
+            (res) => (Array.isArray(res) ? res[0] : null)
           )
         : await adminApi(`/api/bac-si/${id}`);
 
       if (!info) return;
 
+      // ===== 2. LOAD CMS =====
       const cms = await adminApi(`/api/admin/bac-si/${id}/content`);
 
-      const sections = (cms?.sections || []).sort(
-        (a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0)
-      );
+      const sections = Array.isArray(cms?.sections)
+        ? [...cms.sections].sort(
+            (a, b) => (a.sortOrder ?? 0) - (b.sortOrder ?? 0)
+          )
+        : [];
+
+      const activities = Array.isArray(cms?.images)
+        ? cms.images.map((img) => ({
+            src: img.imageUrl,
+            caption: img.caption,
+          }))
+        : [];
 
       setDoctor({
         maSo: id,
@@ -68,15 +79,13 @@ export default function DoctorDetail() {
         hospital: "Bệnh viện Hùng Vương Gia Lai",
         image: cms?.avatarUrl || "/images/default-doctor.png",
         sections,
-        activities: (cms?.images || []).map((img) => ({
-          src: img.imageUrl,
-          caption: img.caption,
-        })),
+        activities,
       });
 
-      // 👉 CHỈ BÁC SĨ MỚI CÓ "CÙNG CHUYÊN KHOA"
+      // ===== 3. RELATED DOCTORS =====
       if (!isHDTV) {
-        const list = await adminApi("/api/admin/bac-si/list");
+        const res = await adminApi("/api/admin/bac-si/list");
+        const list = Array.isArray(res) ? res : [];
 
         const related = list.filter(
           (x) => x.khoaPhongTen === info.khoaPhongTen && x.maSo !== info.maSo
@@ -91,10 +100,15 @@ export default function DoctorDetail() {
 
         setSameDept(relatedWithAvatar);
       }
-    };
+    } catch (err) {
+      console.error("DoctorDetail load error:", err);
+      setDoctor(null);
+    }
+  };
 
-    load();
-  }, [id, isHDTV]);
+  load();
+}, [id, isHDTV]);
+
 
   if (!doctor) {
     return (
@@ -195,7 +209,7 @@ export default function DoctorDetail() {
           </div>
 
           <div className="dd-right">
-            <h1 className="dd-name-main">{doctor.name}</h1>
+            
 
             {doctor.sections.map((s) => (
               <section className="dd-block" key={s.id}>
@@ -253,6 +267,8 @@ export default function DoctorDetail() {
                       <div className="related-list-info">
                         <div className="related-list-name">{d.hoVaTen}</div>
                         <div className="related-list-role">{d.chucDanhTen}</div>
+                        <div className="related-list-hospital">{d.khoaPhongTen}</div>
+
                       </div>
                     </Link>
                   ))}
@@ -280,6 +296,7 @@ export default function DoctorDetail() {
                           />
                           <div className="related-name">{d.hoVaTen}</div>
                           <div className="related-role">{d.chucDanhTen}</div>
+                          <div className="related-hospital">{d.khoaPhongTen}</div>
                         </div>
                       </Link>
                     </SwiperSlide>

@@ -10,12 +10,14 @@
 
 /* =============================== TOP BAR – DESKTOP ================================ */
 .hv-top {
+  position: relative; /* Để chứa TetBanner */
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: 12px 40px;
   column-gap: 30px;
   margin: 0 170px;
+  overflow: hidden; /* Ẩn phần banner tràn ra */
 }
 
 .hv-logo {

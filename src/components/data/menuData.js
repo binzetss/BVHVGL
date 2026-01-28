@@ -9,6 +9,7 @@ export const menuData = [
       { title: "Đội ngũ bác sĩ", path: "/doi-ngu-bac-si" },
       { title: "Thư viện hình ảnh", path: "/thu-vien" },
       { title: "Bệnh viện/Phòng khám vệ tinh", path: "/benh-vien-ve-tinh" },
+      { title: "Quản lý Chất lượng", path: "/quan-ly-chat-luong" },
     ],
   },
 

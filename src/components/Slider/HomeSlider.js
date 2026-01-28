@@ -9,12 +9,14 @@ import "./HomeSlider.css";
 import { LazyImage } from "../LazyImage/LazyImage";
 
 import banner1 from "../../assets/bgslide.jpg";
-import banner2 from "../../assets/bgheader2.jpg";
-// ORIGINAL SLIDES
-const slides = [banner1,banner2];
+import banner2 from "../../assets/cttm.jpg";
+import banner3 from "../../assets/cc115.jpg";
+import banner4 from "../../assets/KSK.jpg";
+import banner5 from "../../assets/NƠI KHÁM CHỮA BỆNH.jpg";
+import banner6 from "../../assets/tblkcb.jpg";
 
-// AUTO DUPLICATE IF ONLY 1 SLIDE
-const fullSlides = slides.length > 2 ? [...slides, ...slides] : slides;
+const slides = [banner1,banner2,banner3,banner4,banner5,banner6];
+const fullSlides = slides.length > 6 ? [...slides, ...slides] : slides;
 
 export default function HomeSlider() {
   const swiperRef = useRef(null);

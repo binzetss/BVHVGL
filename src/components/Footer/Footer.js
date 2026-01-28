@@ -138,14 +138,20 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="footer-info fancy-footer">
+      <a
+        href="https://zalo.me/0376299300"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="footer-info fancy-footer"
+        style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
+      >
         <span className="footer-brand">
           Copyright {new Date().getFullYear()} Hùng Vương Gia Lai
         </span>
         <span className="footer-brand">
           Powered by Phòng Công Nghệ Thông Tin - leanhquan™
         </span>
-      </div>
+      </a>
     </footer>
   );
 }

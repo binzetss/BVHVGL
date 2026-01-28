@@ -68,11 +68,16 @@ export default function DoiNguBacSi() {
     window.scrollTo({ top: 0 });
 
     const load = async () => {
-      const list = await adminApi("/api/admin/bac-si/list");
-      const doctorOnly = list.filter((bs) =>
-        (bs.chucDanhVietTat || "").includes("BS")
-      );
+      const res = await adminApi("/api/admin/bac-si/list");
 
+      const list = Array.isArray(res) ? res : [];
+
+      const doctorOnly = list.filter((bs) => {
+        const ten = (bs.chucDanhTen || "").toLowerCase();
+        const vietTat = (bs.chucDanhVietTat || "").toUpperCase();
+
+        return ten.includes("bác sĩ") || vietTat.includes("BS");
+      });
       const mapped = await Promise.all(
         doctorOnly.map(async (bs) => {
           const avatar = await fetchAvatar(bs.maSo);

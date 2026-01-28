@@ -37,6 +37,8 @@ export default function ThuVienMedia() {
 
   const [featuredPhotoIntro, setFeaturedPhotoIntro] = useState("");
   const [featuredVideoIntro, setFeaturedVideoIntro] = useState("");
+  
+  const DESKTOP_LIMIT = 8;
 
   /* ===== LOAD LIST ===== */
   useEffect(() => {
@@ -125,18 +127,17 @@ export default function ThuVienMedia() {
 
     return (
       <Swiper
-        modules={[Navigation, Autoplay, Grid]}
+        modules={[Navigation, Grid]}
         navigation
-  
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
         slidesPerView={4}
-        slidesPerGroup={1}
+        slidesPerGroup={4}
         grid={{ rows: 2, fill: "row" }}
         spaceBetween={24}
-        rewind
+        allowTouchMove={false}
+        rewind={false}
         className="tv-swiper"
       >
-        {photoAlbums.map((item) => (
+        {photoAlbums.slice(0, DESKTOP_LIMIT).map((item) => (
           <SwiperSlide key={item.id}>
             <Link
               to={getPhotoDetailPath(item.id)}
@@ -188,18 +189,17 @@ export default function ThuVienMedia() {
 
     return (
       <Swiper
-        modules={[Navigation, Autoplay, Grid]}
+        modules={[Navigation, Grid]}
         navigation
-     
-        autoplay={{ delay: 3500, disableOnInteraction: false }}
         slidesPerView={4}
-        slidesPerGroup={1}
+        slidesPerGroup={4}
         grid={{ rows: 2, fill: "row" }}
         spaceBetween={24}
-        rewind
+        allowTouchMove={false}
+        rewind={false}
         className="tv-swiper"
       >
-        {videoAlbums.map((item) => (
+        {videoAlbums.slice(0, DESKTOP_LIMIT).map((item) => (
           <SwiperSlide key={item.id}>
             <div
               className="tv-thumb-card"
@@ -294,7 +294,6 @@ export default function ThuVienMedia() {
                   </div>
                   <h3 className="tv-highlight-title">{featuredVideo.title}</h3>
 
-                  {/* ===== INTRO CLAMP ===== */}
                   <div
                     className="tv-highlight-text tv-intro-clamp"
                     dangerouslySetInnerHTML={{ __html: featuredVideoIntro }}

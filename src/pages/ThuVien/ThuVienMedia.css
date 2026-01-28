@@ -265,6 +265,19 @@
   display: block;
 }
 
+/* ====== FIX: FORCE 4 COLUMNS FOR DESKTOP ====== */
+@media (min-width: 993px) {
+  .tv-swiper .swiper-slide {
+    width: calc(25% - 18px) !important;
+    margin-right: 24px !important;
+  }
+  
+  /* Remove margin for every 4th item */
+  .tv-swiper .swiper-slide:nth-child(4n) {
+    margin-right: 0 !important;
+  }
+}
+
 /* ====== MOBILE STYLES ====== */
 @media (max-width: 992px) {
   /* Container - FIX SCROLL NGANG */
@@ -413,11 +426,11 @@
     font-size: 20px;
   }
 }
+
 .tv-intro-clamp {
   font-size: 14px;
   line-height: 1.6;
   color: #374151;
-
   display: -webkit-box;
   -webkit-line-clamp: 10;
   -webkit-box-orient: vertical;

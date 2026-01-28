@@ -116,7 +116,7 @@
 .org-name.main-name {
   background: #0060aa;
   color: #fff;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 800;
   padding: 8px 18px;
   border-radius: 0 0 4px 4px;
@@ -145,12 +145,12 @@
   justify-content: center;
   gap: 150px;
   margin-top: 25px;
-  margin-left: 14px; /* bạn chỉnh tay → mình giữ nguyên */
+  margin-left: 14px;
 }
 
-/* ===== CHỦ TỊCH / GIÁM ĐỐC: ẢNH TRÁI - TEXT PHẢI ===== */
+
 .org-node.main-layout {
-  margin-left: 230px;   
+  margin-left: 200px;   
   display: flex;
   align-items: center;
   gap: -30px;
@@ -177,13 +177,13 @@
 
 .line-vertical.big {
   height: 30px;
-  margin-left: 742px; 
+  margin-left: 739.2px; 
   margin-bottom: -12px;
   margin-top: 20px;
 }
 .line-vertical.big2 {
   height: 30px;
-  margin-left: 744px; 
+  margin-left: 736px; 
   margin-bottom: -12px;
   margin-top: 20px;
 }
@@ -194,20 +194,20 @@
 }
 
 .line-horizontal.big {
-  width: 85.66%;
+  width: 83.9%;
   margin: 12px auto 30px;
   position: relative;
   margin-bottom: 40px;
-  margin-left:112px;
+  margin-left:123.4px;
 }
 
 .line-horizontal.small {
-  width: 49.88%;
-  margin-left: 445.2px; /* giữ nguyên */
+  width: 45.9%;
+  margin-left: 500.2px; /* giữ nguyên */
   margin: 12px auto 30px;
   position: relative;
    margin-bottom: 40px;
-   margin-left: 377px;
+   margin-left: 402px;
 }
 
 /* ===== LINE DOWN ===== */

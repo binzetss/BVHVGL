@@ -3,6 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import ScrollToTop from "./ScrollToTop";
 
+/* Hiệu ứng Tết 2026 - Comment dòng dưới để tắt hiệu ứng hoa đào hoa mai */
+import TetEffect from "./components/TetEffect/TetEffect";
+import TuyendungPage from "./pages/tuyendung/components";
+import TraCuuTuyenDung from "./pages/tracuutuyendung/TraCuuTuyenDung";
+
 /* WEBSITE LAYOUT */
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -36,12 +41,13 @@ import TienIchListPage from "./pages/TienIch/TienIchListPage";
 import TienIchDetailPage from "./pages/TienIch/TienIchDetailPage";
 import InsurancePage from "./pages/BHYT/InsurancePage";
 import AppDownloadPage from "./pages/HVGL/AppDownloadPage";
+import QualityListPage from "./pages/QualityManagement/QualityListPage";
+import QualityDetailPage from "./pages/QualityManagement/QualityDetailPage";
 
 /* ADMIN */
 import AdminLayout from "./pages/admin/AdminLayout";
 
 function WebsiteLayout() {
-
   useEffect(() => {
     if (window.innerWidth > 768) return;
 
@@ -74,6 +80,9 @@ function WebsiteLayout() {
       <FloatingContact />
 
       <Routes>
+        <Route path="/tuyendung" element={<TuyendungPage />} />
+        <Route path="/tracuutuyendung" element={<TraCuuTuyenDung />} />
+
         <Route path="/" element={<Home />} />
         <Route path="/dat-lich-kham" element={<BookingPage />} />
         <Route path="/gioi-thieu" element={<GioiThieuPage />} />
@@ -81,8 +90,14 @@ function WebsiteLayout() {
         <Route path="/doi-ngu-bac-si/:id" element={<DoctorDetail />} />
         <Route path="/so-do-to-chuc" element={<SoDoToChucPage />} />
         <Route path="/thu-vien" element={<ThuVienMedia />} />
-        <Route path="/thu-vien/anh-su-kien/:id" element={<AlbumSuKienDetail />} />
-        <Route path="/thu-vien/video/:id" element={<AlbumSuKienDetailVideo />} />
+        <Route
+          path="/thu-vien/anh-su-kien/:id"
+          element={<AlbumSuKienDetail />}
+        />
+        <Route
+          path="/thu-vien/video/:id"
+          element={<AlbumSuKienDetailVideo />}
+        />
         <Route path="/co-so-vat-chat" element={<CoSoVatChatPage />} />
         <Route path="/chuyen-khoa" element={<DepartmentListPage />} />
         <Route path="/chuyen-khoa/:id" element={<DepartmentDetailPage />} />
@@ -102,6 +117,8 @@ function WebsiteLayout() {
         <Route path="/che-do-bhyt-bao-lanh" element={<InsurancePage />} />
         <Route path="/tai-app-hvgl-care" element={<AppDownloadPage />} />
         <Route path="/doi-ngu-hdtv/:id" element={<DoctorDetail />} />
+        <Route path="/quan-ly-chat-luong" element={<QualityListPage />} />
+        <Route path="/quan-ly-chat-luong/:id" element={<QualityDetailPage />} />
       </Routes>
 
       <Footer />
@@ -111,14 +128,18 @@ function WebsiteLayout() {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
+    <>
+      {/* Hiệu ứng hoa đào hoa mai Tết 2026 - Comment dòng dưới để tắt */}
+      <TetEffect />
 
-      <Routes>
-        <Route path="/*" element={<WebsiteLayout />} />
-        <Route path="/admin/*" element={<AdminLayout />} />
-      </Routes>
-    </Router>
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/*" element={<WebsiteLayout />} />
+          <Route path="/admin/*" element={<AdminLayout />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 

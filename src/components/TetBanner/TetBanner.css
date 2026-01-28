@@ -1,0 +1,219 @@
+/**
+ * TetBanner.css - Banner chúc mừng năm mới
+ * Background full width, chữ ở giữa
+ */
+
+.tet-banner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 85px;
+  z-index: 99998;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Background full width */
+.tet-banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #b91c3c 0%,
+    #c41e3a 20%,
+    #dc2f02 50%,
+    #c41e3a 80%,
+    #b91c3c 100%
+  );
+  box-shadow:
+    0 4px 20px rgba(196, 30, 58, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Chữ ở giữa */
+.tet-banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 1;
+}
+
+/* ========== PHASE: SLIDE IN ========== */
+.phase-slideIn .tet-banner-bg {
+  animation: bgSlideIn 2s ease-out forwards;
+}
+
+.phase-slideIn .tet-banner-text {
+  animation: textSlideIn 2s ease-out forwards;
+}
+
+@keyframes bgSlideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes textSlideIn {
+  0% {
+    transform: translate(-150%, -50%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+/* ========== PHASE: STAY ========== */
+.phase-stay .tet-banner-bg {
+  transform: translateX(0);
+}
+
+.phase-stay .tet-banner-text {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+/* ========== PHASE: FADE OUT ========== */
+.phase-fadeOut .tet-banner-bg {
+  animation: bgFadeOut 2s ease-in forwards;
+}
+
+.phase-fadeOut .tet-banner-text {
+  animation: textFadeOut 2s ease-in forwards;
+}
+
+@keyframes bgFadeOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes textFadeOut {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+  }
+}
+
+/* ========== NỘI DUNG CHỮ ========== */
+.tet-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.tet-main-line {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 215, 0, 0.5);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.tet-year {
+  color: #ffd700;
+  font-size: 28px;
+  font-weight: 800;
+  text-shadow:
+    0 0 10px rgba(255, 215, 0, 0.9),
+    0 0 25px rgba(255, 215, 0, 0.6),
+    0 0 40px rgba(255, 215, 0, 0.4);
+  animation: glowYear 1.5s ease-in-out infinite;
+}
+
+@keyframes glowYear {
+  0%, 100% {
+    text-shadow:
+      0 0 10px rgba(255, 215, 0, 0.9),
+      0 0 25px rgba(255, 215, 0, 0.6);
+  }
+  50% {
+    text-shadow:
+      0 0 20px rgba(255, 215, 0, 1),
+      0 0 45px rgba(255, 215, 0, 0.9),
+      0 0 70px rgba(255, 215, 0, 0.6);
+  }
+}
+
+.tet-sub-line {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffe4b5;
+  letter-spacing: 3px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.tet-icon {
+  font-size: 40px;
+  animation: swingLantern 1.2s ease-in-out infinite;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes swingLantern {
+  0%, 100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .tet-banner-wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .tet-main-line {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  .tet-year {
+    font-size: 22px;
+  }
+
+  .tet-sub-line {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .tet-icon {
+    font-size: 32px;
+  }
+
+  .tet-banner-text {
+    gap: 15px;
+  }
+}

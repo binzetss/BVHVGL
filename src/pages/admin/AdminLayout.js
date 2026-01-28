@@ -47,6 +47,10 @@ import BacSiAdminDetail from "./BacSiCMS/BacSiCMSDetail";
 /* ===== CƠ SỞ ===== */
 import BranchAdminPage from "./Branches/BranchAdminPage";
 
+/* ===== QUẢN LÝ CHẤT LƯỢNG ===== */
+import QualityManagementList from "./QualityManagement/QualityManagementList";
+import QualityManagementDetail from "./QualityManagement/QualityManagementDetail";
+
 /* ===== LOGIN ===== */
 import LoginDialog from "./LoginDialog";
 import { getAuth, clearAuth } from "../../auth/authStorage";
@@ -67,6 +71,7 @@ export default function AdminLayout() {
     operations: true,
     cosovatchat: true,
     history: true,
+    qualityMgmt: true,
   });
 
   const toggleMenu = (key) =>
@@ -108,6 +113,10 @@ export default function AdminLayout() {
       ? "Nhà tài trợ"
       : pathname.includes("/media-albums")
       ? "Media Album"
+      : pathname.startsWith("/admin/quality-management/")
+      ? "Chi tiết Quản lý Chất lượng"
+      : pathname === "/admin/quality-management"
+      ? "Quản lý Chất lượng"
       : "";
 
   /* ================= AUTH CHECK ================= */
@@ -319,6 +328,23 @@ export default function AdminLayout() {
             </List>
           </Collapse>
 
+          {/* ===== QUẢN LÝ CHẤT LƯỢNG ===== */}
+          <ListItemButton onClick={() => toggleMenu("qualityMgmt")}>
+            <ListItemIcon>
+              <ChecklistIcon />
+            </ListItemIcon>
+            <ListItemText primary="Quản lý Chất lượng" />
+            {openMenu.qualityMgmt ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+
+          <Collapse in={openMenu.qualityMgmt}>
+            <List sx={{ pl: 4 }}>
+              <ListItemButton onClick={() => navigate("/admin/quality-management")}>
+                <ListItemText primary="Danh sách bài viết" />
+              </ListItemButton>
+            </List>
+          </Collapse>
+
           <ListItemButton onClick={() => navigate("/admin/media-albums")}>
             <ListItemText primary="Media Album" />
           </ListItemButton>
@@ -355,6 +381,8 @@ export default function AdminLayout() {
           <Route path="cooperation" element={<CooperationAdminForm />} />
           <Route path="sponsor" element={<SponsorAdminForm />} />
           <Route path="media-albums" element={<MediaAlbumAdminPage />} />
+          <Route path="quality-management" element={<QualityManagementList />} />
+          <Route path="quality-management/:id" element={<QualityManagementDetail />} />
         </Routes>
       </Box>
     </Box>
